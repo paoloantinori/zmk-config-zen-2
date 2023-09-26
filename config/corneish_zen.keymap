@@ -41,7 +41,7 @@
 		&mt LSHIFT A    &mt LCTRL S &mt LALT D  &mt LGUI F  &kp G 		&mt RGUI H  &mt RALT J &mt RCTRL K  &mt RSHIFT L &kp ENTER
 		&kp Z           &kp X       &kp C       &kp V       &kp B       &kp N   &kp M       &kp COMMA   &kp DOT     &kp SLASH
           				
-                                           &none     &kp TAB     &to 1      &kp ENTER &kp SPACE  &none
+                                           &kp LCTRL    &kp TAB     &to 1      &kp ENTER &kp SPACE &kp RSHIFT
 		>;
 		};
 
