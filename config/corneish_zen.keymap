@@ -34,6 +34,11 @@
                 compatible = "zmk,keymap";
         
         // Base alpha layer
+		// legenda:
+		// 
+		// kp = tap
+		// mt = hold
+
        		default_layer {
                         label = "BASE";
 		bindings = <
