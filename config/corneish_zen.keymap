@@ -60,7 +60,7 @@
 		compatible = "zmk,combos";
 		
 		// Left-hand combos
-		COMBO(AT_SIGN, 1 2)
+		COMBO(TAB, 1 2)
 		COMBO(LEFT_BRACE, 2 3)
 		COMBO(EXCLAMATION, 1 11)
 		COMBO(HASH, 2 12)
@@ -91,6 +91,7 @@
 		COMBO(RIGHT_BRACKET, 26 27)
 		COMBO(UNDERSCORE, 27 28)
 		COMBO(QUESTION, 28 29)
+		
 		};
 
 
