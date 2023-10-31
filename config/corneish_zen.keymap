@@ -77,7 +77,8 @@
 
 		// Right-hand combos
 		COMBO(RIGHT_BRACE, 6 7)
-		COMBO(DOUBLE_QUOTES, 7 8)
+		// this are supposed to be double quotes
+		COMBO(AT_SIGN, 7 8)
 		COMBO(BACKSPACE, 8 9)
 		COMBO(EQUAL, 6 16)
 		COMBO(PIPE, 7 17)
@@ -106,6 +107,8 @@
 		// mt = hold
 		// hm = homerow_mods
 		// lt = layer_tap
+		// &kp LS(A) = LEFT_SHIFT+A
+		// &kp LC(RA(B)) = LEFT_CONTROL+RIGHT_ALT+B
 
        	default_layer {
                         label = "BASE";
@@ -115,16 +118,16 @@
 			&mt LCTRL Z			&kp X			&kp C		&kp V		&kp B			&kp N   	&kp M		&kp COMMA		&kp DOT     	&kp SLASH
 							
 //							&kp LCTRL	&kp LALT				&to NAVIGATION      		&kp ENTER	&lt NUM SPACE	&kp RSHIFT
-							&kp LCTRL	&lt NAVIGATION &none	&to NAVIGATION      		&kp ENTER	&lt NUM SPACE	&kp RSHIFT
+							&kp LALTj	&lt NAVIGATION &none	&to NAVIGATION      		&kp ENTER	&lt NUM SPACE	&kp RSHIFT
 			>;
 		};
 
        	navigation_layer {
                         label = "NAVI";
 			bindings = <
-			&kp ESC         &mwh SCROLL_LEFT    &mmv MOVE_UP    &mwh SCROLL_RIGHT   &mwh SCROLL_UP 				&kp PG_UP   &kp HOME    &kp UP           &kp END        &kp DELETE
-			&kp LSHIFT      &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT     &mwh SCROLL_DOWN  			&kp PG_DN   &kp LEFT    &kp DOWN         &kp RIGHT      &kp BACKSPACE 
-			&mt TILDE GRAVE &kp  LCTRL          &kp  LALT       &kp  LGUI           &mkp MCLK   				&kp INS     &kp RC(TAB) &kp LC(LS(TAB))  &kp SYSREQ     &mt DOUBLE_QUOTES SINGLE_QUOTE  
+			&kp ESC				&kp TAB				&mmv MOVE_UP		&mwh SCROLL_RIGHT	&mwh SCROLL_UP				&kp PG_UP	&kp HOME	&kp UP			&kp END		&kp DELETE
+			&kp LSHIFT			&mmv MOVE_LEFT		&mmv MOVE_DOWN		&mmv MOVE_RIGHT		&mwh SCROLL_DOWN			&kp PG_DN	&kp LEFT	&kp RIGHT		&kp UP		&kp DOWN 
+			&mt TILDE GRAVE		&kp  LCTRL			&kp  LALT			&kp  LGUI			&mkp MCLK					&kp INS		&kp RC(TAB)	&kp LC(LS(TAB))	&kp SYSREQ	&mt DOUBLE_QUOTES SINGLE_QUOTE  
 									
 														&none       &mkp LCLK           &to NUM  					&to BASE       &mkp RCLK &none
 			>;
