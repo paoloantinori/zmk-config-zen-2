@@ -1,14 +1,16 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/mouse.h>
 #include "italian.keycodes"
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 // Layer definitions
-    #define BASE 0
-    #define NAVIGATION 1
-    #define NUM 2
-    #define FUNCTIONS 3
+
+#define BASE 0
+#define NAVIGATION 1
+#define NUM 2
+#define FUNCTIONS 3
+
 // -----------------
 
 #define COMBO(NAME, KEYPOS) \
@@ -18,49 +20,51 @@
     	bindings = <&kp NAME>; \
   };
 
-
 &mt {
     flavor = "tap-preferred";
     tapping_term_ms = <200>;
 };
 
 &mmv {
-   	time-to-max-speed-ms = <680>;
-   	acceleration-exponent=<2>;
+    time-to-max-speed-ms = <680>;
+    acceleration-exponent = <2>;
 };
 
 &lt {
-  flavor = "tap-preferred";
-  tapping-term-ms = <200>;
-  quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
 };
 
-/{
-	chosen {
-		//zmk,matrix_transform = &default_transform;
-		zmk,matrix_transform = &five_column_transform;
-	};
+/ {
+    chosen {
+        //zmk,matrix_transform = &default_transform;
+
+        zmk,matrix_transform = &five_column_transform;
+    };
 };
 
 //KEYMAP
-/{ 
+
+/ {
     behaviors {
-      hm: homerow_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick_tap_ms = <0>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-      };
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
     };
 
-	combos {
-		compatible = "zmk,combos";
-		
-		// Left-hand combos
-		COMBO(TAB, 1 2)
+    combos {
+        compatible = "zmk,combos";
+
+        // Left-hand combos
+
+        COMBO(TAB, 1 2)
 		COMBO(LEFT_BRACE, 2 3)
 		COMBO(EXCLAMATION, 1 11)
 		COMBO(HASH, 2 12)
@@ -73,12 +77,15 @@
 		COMBO(AMPERSAND, 13 23)
 		COMBO(TILDE, 20 21)
 		COMBO(SEMICOLON, 21 22)
-		COMBO(LEFT_BRACKET, 22 23) 
+		COMBO(LEFT_BRACKET, 22 23)
 
-		// Right-hand combos
-		COMBO(RIGHT_BRACE, 6 7)
-		// this are supposed to be double quotes
-		COMBO(AT_SIGN, 7 8)
+        // Right-hand combos
+
+        COMBO(RIGHT_BRACE, 6 7)
+
+        // this are supposed to be double quotes
+
+        COMBO(AT_SIGN, 7 8)
 		COMBO(BACKSPACE, 8 9)
 		COMBO(EQUAL, 6 16)
 		COMBO(PIPE, 7 17)
@@ -93,67 +100,64 @@
 		COMBO(RIGHT_BRACKET, 26 27)
 		COMBO(UNDERSCORE, 27 28)
 		COMBO(QUESTION, 28 29)
-		
-		};
 
+        test {
+            bindings = <&kp H>;
+            key-positions = <4 14>;
+        };
+    };
 
-        keymap {
-            compatible = "zmk,keymap";
-        
+    keymap {
+        compatible = "zmk,keymap";
+
         // Base alpha layer
-		// legenda:
-		// 
-		// kp = tap
-		// mt = hold
-		// hm = homerow_mods
-		// lt = layer_tap
-		// &kp LS(A) = LEFT_SHIFT+A
-		// &kp LC(RA(B)) = LEFT_CONTROL+RIGHT_ALT+B
+        // legenda:
+        // 
+        // kp = tap
+        // mt = hold
+        // hm = homerow_mods
+        // lt = layer_tap
+        // &kp LS(A) = LEFT_SHIFT+A
+        // &kp LC(RA(B)) = LEFT_CONTROL+RIGHT_ALT+B
 
-       	default_layer {
-                        label = "BASE";
-			bindings = <
-			&mt ESC Q			&mt TAB W		&kp E		&kp R		&kp T			&kp Y       &kp U      	&kp I			&kp O 			&kp P 
-			&hm LSHFT A			&hm LCTRL S		&mt LALT D	&mt LGUI F	&kp G			&mt RGUI H  &mt RALT J 	&mt RCTRL K		&mt RSHIFT L	&kp ENTER
-			&mt LCTRL Z			&kp X			&kp C		&kp V		&kp B			&kp N   	&kp M		&kp COMMA		&kp DOT     	&kp SLASH
-							
-//							&kp LCTRL	&kp LALT				&to NAVIGATION      		&kp ENTER	&lt NUM SPACE	&kp RSHIFT
-							&kp LALT	&lt NAVIGATION &none	&to NAVIGATION      		&kp ENTER	&lt NUM SPACE	&kp RSHIFT
-			>;
-		};
+        default_layer {
+            label = "BASE";
+            bindings = <
+  &mt ESC Q    &mt TAB W    &kp E       &kp R           &kp T    &kp Y           &kp U       &kp I          &kp O         &kp P
+  &hm LSHFT A  &hm LCTRL S  &mt LALT D  &mt LGUI F      &kp G    &mt RGUI H      &mt RALT J  &mt RCTRL K    &mt RSHIFT L  &kp ENTER
+  &mt LCTRL Z  &kp X        &kp C       &kp V           &kp B    &kp N           &kp M       &kp COMMA      &kp DOT       &kp SLASH
+                            &kp LALT    &lt NAVIGATION  &none    &to NAVIGATION  &kp ENTER   &lt NUM SPACE
+            >;
+        };
 
-       	navigation_layer {
-                        label = "NAVI";
-			bindings = <
-			&kp ESC				&kp TAB				&mmv MOVE_UP		&mwh SCROLL_RIGHT	&mwh SCROLL_UP				&kp PG_UP	&kp HOME	&kp UP			&kp END		&kp DELETE
-			&kp LSHIFT			&mmv MOVE_LEFT		&mmv MOVE_DOWN		&mmv MOVE_RIGHT		&mwh SCROLL_DOWN			&kp PG_DN	&kp LEFT	&kp RIGHT		&kp UP		&kp DOWN 
-			&mt TILDE GRAVE		&kp  LCTRL			&kp  LALT			&kp  LGUI			&mkp MCLK					&kp INS		&kp RC(TAB)	&kp LC(LS(TAB))	&kp SYSREQ	&mt DOUBLE_QUOTES SINGLE_QUOTE  
-									
-														&none       &mkp LCLK           &to NUM  					&to BASE       &mkp RCLK &none
-			>;
-		};
-		
-		numsymbol_layer {
-                        label = "SYMB";
-			bindings = <
-			&kp NUMBER_1    &kp NUMBER_2    &kp NUMBER_3    &kp NUMBER_4    &kp NUMBER_5    				&kp NUMBER_6    &kp NUMBER_7            &kp NUMBER_8    &kp NUMBER_9            &kp NUMBER_0 
-			&mt LSHIFT LT   &mt LCTRL LPAR  &mt LALT LBRC   &mt LGUI LBKT   &kp MINUS 			      		&kp EQUAL       &mt RGUI EXCLAMATION    &mt RALT HASH   &mt RCTRL SEMICOLON     &mt RSHIFT BACKSLASH
-			&kp GT          &kp RPAR        &kp RBRC        &kp RBKT        &kp UNDERSCORE             		&kp PLUS        &kp AT_SIGN             &kp DOLLAR      &kp COLON               &kp PIPE
-							
-											&none	&kp AMPERSAND	&to FUNCTIONS                           &to BASE	&kp ASTERISK	&none
-			>;
-		};	
-		
-		functions_layer {
-            			label = "FUNC";
-			bindings = <
-			&kp F1      &kp F2      &kp F3      &kp F4      &kp F5 						&kp F6      &kp F7      &kp F8        &kp F9        &kp F10
-			&kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI    &none  		    			&none       &kp RGUI    &kp RALT      &kp RCTRL     &mt RSHIFT F11 
-			&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &bootloader &reset   					&reset      &bootloader &bt BT_SEL 0  &bt BT_SEL 1  &kp F12   
-						
-										&none	&none	&to NAVIGATION  					&to BASE	&none	&none
-			>;
-		};	
-        
-	};
+        navigation_layer {
+            label = "NAVI";
+            bindings = <
+  &kp ESC          &kp TAB         &mmv MOVE_UP    &mwh SCROLL_RIGHT  &mwh SCROLL_UP      &kp PG_UP  &kp HOME     &kp UP           &kp END     &kp DELETE
+  &kp LSHIFT       &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &mwh SCROLL_DOWN    &kp PG_DN  &kp LEFT     &kp RIGHT        &kp UP      &kp DOWN
+  &mt TILDE GRAVE  &kp LCTRL       &kp LALT        &kp LGUI           &mkp MCLK           &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp SYSREQ  &mt DOUBLE_QUOTES SINGLE_QUOTE
+                                   &none           &mkp LCLK          &to NUM             &to BASE   &mkp RCLK    &none
+            >;
+        };
+
+        numsymbol_layer {
+            label = "SYMB";
+            bindings = <
+  &kp NUMBER_1   &kp NUMBER_2    &kp NUMBER_3   &kp NUMBER_4   &kp NUMBER_5      &kp NUMBER_6  &kp NUMBER_7          &kp NUMBER_8   &kp NUMBER_9         &kp NUMBER_0
+  &mt LSHIFT LT  &mt LCTRL LPAR  &mt LALT LBRC  &mt LGUI LBKT  &kp MINUS         &kp EQUAL     &mt RGUI EXCLAMATION  &mt RALT HASH  &mt RCTRL SEMICOLON  &mt RSHIFT BACKSLASH
+  &kp GT         &kp RPAR        &kp RBRC       &kp RBKT       &kp UNDERSCORE    &kp PLUS      &kp AT_SIGN           &kp DOLLAR     &kp COLON            &kp PIPE
+                                 &none          &kp AMPERSAND  &to FUNCTIONS     &to BASE      &kp ASTERISK          &none
+            >;
+        };
+
+        functions_layer {
+            label = "FUNC";
+            bindings = <
+  &kp F1      &kp F2      &kp F3      &kp F4       &kp F5            &kp F6    &kp F7       &kp F8        &kp F9        &kp F10
+  &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI     &none             &none     &kp RGUI     &kp RALT      &kp RCTRL     &mt RSHIFT F11
+  &bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &bootloader  &reset            &reset    &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &kp F12
+                          &none       &none        &to NAVIGATION    &to BASE  &none        &none
+            >;
+        };
+    };
 };
