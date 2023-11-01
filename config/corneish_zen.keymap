@@ -10,7 +10,7 @@
 #define NAVIGATION 1
 #define NUM 2
 #define FUNCTIONS 3
-#define COMBO_TIMEOUT_MS = <80>
+#define COMBO_TIMEOUT_MS <80>
 
 // -----------------
 
