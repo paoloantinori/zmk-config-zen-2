@@ -137,6 +137,11 @@
             timeout-ms =
             COMBO_TIMEOUT_MS;
         };
+
+        apostrophe {
+            bindings = <&kp APOSTROPHE>;
+            key-positions = <19 18>;
+        };
     };
 
     keymap {
@@ -155,10 +160,10 @@
         default_layer {
             label = "BASE";
             bindings = <
-&mt ESC Q    &mt TAB W   &kp E         &kp R        &kp T           &kp Y         &kp U        &kp I           &kp O       &kp P
-&hm LGUI A   &hm LALT S  &mt LSHIFT D  &mt LCTRL F  &kp G           &mt RSHIFT H  &mt RSHFT J  &mt RALT K      &mt RGUI L  &kp ENTER
-&mt LCTRL Z  &kp X       &kp C         &kp V        &kp B           &kp N         &kp M        &kp COMMA       &kp DOT     &kp SLASH
-                                       &kp LALT     &lt NAVIGATION  &to NAVIGATION               &kp ENTER   &lt NUM SPACE &kp RALT
+&mt ESC Q    &mt TAB W   &kp E         &kp R        &kp T           &kp Y           &kp U        &kp I       &kp O          &kp P
+&hm LGUI A   &hm LALT S  &mt LSHIFT D  &mt LCTRL F  &kp G           &mt RSHIFT H    &mt RSHFT J  &mt RALT K  &mt RGUI L     &kp ENTER
+&mt LCTRL Z  &kp X       &kp C         &kp V        &kp B           &kp N           &kp M        &kp COMMA   &kp DOT        &kp SLASH
+                                       &kp LALT     &lt NAVIGATION  &to NAVIGATION               &kp ENTER   &lt NUM SPACE  &kp RALT
             >;
         };
 
