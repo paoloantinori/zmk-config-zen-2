@@ -160,10 +160,10 @@
         default_layer {
             label = "BASE";
             bindings = <
-&mt ESC Q    &mt TAB W   &kp E         &kp R        &kp T           &kp Y           &kp U        &kp I       &kp O          &kp P
-&hm LGUI A   &hm LALT S  &mt LSHIFT D  &mt LCTRL F  &kp G           &mt RCTRL H    &mt RSHFT J  &mt RALT K  &mt RGUI L     &kp ENTER
-&mt LCTRL Z  &kp X       &kp C         &kp V        &kp B           &kp N           &kp M        &kp COMMA   &kp DOT        &kp SLASH
-                                       &kp LALT     &lt NAVIGATION NUMBER_3 &to NAVIGATION                      &to BASE  &kp ENTER   &lt NUM SPACE
+&mt ESC Q    &mt TAB W   &kp E         &kp R        &kp T                    &kp Y           &kp U        &kp I       &kp O          &kp P
+&hm LGUI A   &hm LALT S  &mt LSHIFT D  &mt LCTRL F  &kp G                    &mt RCTRL H     &mt RSHFT J  &mt RALT K  &mt RGUI L     &kp ENTER
+&mt LCTRL Z  &kp X       &kp C         &kp V        &kp B                    &kp N           &kp M        &kp COMMA   &kp DOT        &kp SLASH
+                                       &lt 4 LALT   &lt NAVIGATION NUMBER_3  &to NAVIGATION  &to BASE     &kp ENTER   &lt NUM SPACE
             >;
         };
 
@@ -173,7 +173,7 @@
 &kp ESC          &kp TAB         &mmv MOVE_UP    &mwh SCROLL_RIGHT  &mwh SCROLL_UP    &kp PG_UP  &kp HOME     &kp UP           &kp END     &kp DELETE
 &kp LSHIFT       &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &mwh SCROLL_DOWN  &kp PG_DN  &kp LEFT     &kp RIGHT        &kp UP      &kp DOWN
 &mt TILDE GRAVE  &kp LCTRL       &kp LALT        &kp LGUI           &mkp MCLK         &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp SYSREQ  &mt DOUBLE_QUOTES SINGLE_QUOTE
-                                                 &none              &mkp LCLK         &to NUM                 &to BASE         &mkp RCLK   &none
+                                                 &none              &mkp LCLK         &to NUM    &to BASE     &mkp RCLK        &none
             >;
         };
 
@@ -183,7 +183,7 @@
 &kp NUMBER_1   &kp NUMBER_2    &kp NUMBER_3   &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6   &kp NUMBER_7          &kp NUMBER_8   &kp NUMBER_9         &kp NUMBER_0
 &mt LSHIFT LT  &mt LCTRL LPAR  &mt LALT LBRC  &mt LGUI LBKT  &kp MINUS       &kp EQUAL      &mt RGUI EXCLAMATION  &mt RALT HASH  &mt RCTRL SEMICOLON  &mt RSHIFT BACKSLASH
 &kp GT         &kp RPAR        &kp RBRC       &kp RBKT       &kp UNDERSCORE  &kp PLUS       &kp AT_SIGN           &kp DOLLAR     &kp COLON            &kp PIPE
-                                              &none          &kp AMPERSAND   &to FUNCTIONS                        &to BASE       &kp ASTERISK         &none
+                                              &none          &kp AMPERSAND   &to FUNCTIONS  &to BASE              &kp ASTERISK   &none
             >;
         };
 
@@ -193,8 +193,19 @@
 &kp F1      &kp F2      &kp F3      &kp F4       &kp F5  &kp F6          &kp F7       &kp F8        &kp F9        &kp F10
 &kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI     &none   &none           &kp RGUI     &kp RALT      &kp RCTRL     &mt RSHIFT F11
 &bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &bootloader  &reset  &reset          &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &kp F12
-                                    &none        &none   &to NAVIGATION               &to BASE      &none         &none
+                                    &none        &none   &to NAVIGATION  &to BASE     &none         &none
             >;
+        };
+
+        shortcuts_layer {
+            bindings = <
+&kp GRAVE  &kp TAB  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp TAB    &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans     &trans   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans  &trans  &trans  &trans  &trans  &trans
+            >;
+
+            label = "SHORTCUTS";
         };
     };
 };
