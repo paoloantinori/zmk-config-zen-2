@@ -1,8 +1,12 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-//#include <dt-bindings/zmk/mouse.h>
+#include <dt-bindings/zmk/mouse.h>
 #include "italian.keycodes"
+
+#include "mouse.dtsi"
+#define MS_ACT(key) &lt MSE key
+
 
 // Layer definitions
 
@@ -253,6 +257,20 @@
             >;
 
 //            label = "SHORTCUTS";
+        };
+        mouse_layer {
+            label = "MSE";
+            bindings = <
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+     &none         &none         &none         &none         &none             &mwh S_LEFT   &mwh S_DOWN   &mmv M_UP     &mwh S_UP     &mwh S_RIGHT
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp LCTRL     &kp LGUI      &kp LALT      &kp LSHFT     &none             &none         &mmv M_LEFT   &mmv M_DOWN   &mmv M_RIGHT  &none
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     ALP_XXX       &none         &none         &none         ALP_XXX           ALP_XXX       &mkp MB4      &mkp MCLK     &mkp MB5      ALP_XXX
+// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                 T3_XXX        &none         &none             &mkp LCLK     &mkp RCLK     T3_XXX
+//                                           ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+            >;
         };
     };
 };

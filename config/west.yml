@@ -1,24 +1,25 @@
-# manifest:
-#   remotes:
-#     - name: zmkfirmware
-#       url-base: https://github.com/zmkfirmware
-#     - name: caksoylar
-#       url-base: https://github.com/caksoylar
-#   projects:
-#     - name: zmk
-#       remote: caksoylar
-#       revision: caksoylar/zen-v2+mouse
-#       import: app/west.yml
-#   self:
-#     path: config
 manifest:
   remotes:
-    - name: morou
-      url-base: https://github.com/morou
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
   projects:
     - name: zmk
-      remote: morou
-      revision: zen-v1+v2-debug
+      remote: caksoylar
+      revision: caksoylar/zen-8bit
       import: app/west.yml
   self:
     path: config
+# manifest:
+#   remotes:
+#     - name: morou
+#       url-base: https://github.com/morou
+#   projects:
+#     - name: zmk
+#       remote: morou
+#       revision: zen-v1+v2-debug
+#       import: app/west.yml
+#   self:
+#     path: config
+
