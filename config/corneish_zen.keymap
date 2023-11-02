@@ -163,7 +163,7 @@
 &mt ESC Q    &mt TAB W   &kp E         &kp R        &kp T           &kp Y           &kp U        &kp I       &kp O          &kp P
 &hm LGUI A   &hm LALT S  &mt LSHIFT D  &mt LCTRL F  &kp G           &mt RCTRL H    &mt RSHFT J  &mt RALT K  &mt RGUI L     &kp ENTER
 &mt LCTRL Z  &kp X       &kp C         &kp V        &kp B           &kp N           &kp M        &kp COMMA   &kp DOT        &kp SLASH
-                                       &kp LALT     &lt NAVIGATION 1 &to NAVIGATION                      &to BASE  &kp ENTER   &lt NUM SPACE
+                                       &kp LALT     &lt NAVIGATION NUMBER_3 &to NAVIGATION                      &to BASE  &kp ENTER   &lt NUM SPACE
             >;
         };
 
