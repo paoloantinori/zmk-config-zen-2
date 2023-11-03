@@ -244,7 +244,7 @@
             bindings = <
 &kp ESC          &kp TAB    &none     &none     &none  &kp PG_UP  &kp HOME     &kp UP           &kp END     &kp DELETE
 &kp LSHIFT       &none      &none     &none     &none  &kp PG_DN  &kp LEFT     &kp DOWN         &kp RIGHT   &none
-&mt TILDE GRAVE  &kp LCTRL  &kp LALT  &kp LGUI  &none  &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp SYSREQ  &mt DOUBLE_QUOTES SINGLE_QUOTE
+&mt TILDE GRAVE  &kp LCTRL  &kp LALT  &kp LGUI  &none  &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp SYSREQ  &mt IT_DQUOT SINGLE_QUOTE
                                       &none     &none  &to NUM    &to BASE     &none            &none
             >;
         };
