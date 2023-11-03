@@ -114,7 +114,7 @@
 			label = "SWAPPER";
 			#binding-cells = <0>;
 			bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-			ignored-key-positions = <SWP_POS>;
+			//ignored-key-positions = <SWP_POS>;
 		};
 	};
 
