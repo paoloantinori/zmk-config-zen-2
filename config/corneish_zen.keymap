@@ -20,8 +20,8 @@
 // -----------------
 
 &mt {
-	flavor = "tap-preferred";
-	tapping_term_ms = <200>;
+    flavor = "tap-preferred";
+    tapping_term_ms = <200>;
 };
 
 // &mmv {
@@ -30,27 +30,27 @@
 // };
 
 &lt {
-	flavor = "tap-preferred";
-	tapping-term-ms = <200>;
-	quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
 };
 
 / {
-	macros {
-		zed_em_kay: zed_em_kay {
-			label = "ZM_zed_em_kay";
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings =
-				<&macro_press>,
-				<&kp LSHFT>,
-				<&macro_tap>,
-				<&kp Z &kp M &kp K>,
-				<&macro_release>,
-				<&kp LSHFT>;
-		};
+    macros {
+        zed_em_kay: zed_em_kay {
+            label = "ZM_zed_em_kay";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LSHFT>,
+                <&macro_tap>,
+                <&kp Z &kp M &kp K>,
+                <&macro_release>,
+                <&kp LSHFT>;
+        };
 
-		/**
+        /**
 		* Temporarily switches to a layer (`&mo`) while a modifier is held.
 		* Analogous to QMK's `LM()`, using a parameterized macro.
 		*
@@ -62,218 +62,232 @@
 		*  `&lm NUM_LAYER LSHIFT`
 		*/
 
-		/omit-if-no-ref/
+        /omit-if-no-ref/
 
-		lm: lm {
-			label = "Layer Mod";
-			wait-ms = <0>;
-			tap-ms = <0>;
-			compatible = "zmk,behavior-macro-two-param";
-			#binding-cells = <2>;
-			bindings =
-				<&macro_param_1to1>,
-				<&macro_press>,
-				<&mo MACRO_PLACEHOLDER &macro_param_2to1>,
-				<&macro_press>,
-				<&kp MACRO_PLACEHOLDER>,
-				<&macro_pause_for_release>,
-				<&macro_param_2to1>,
-				<&macro_release>,
-				<&kp MACRO_PLACEHOLDER &macro_param_1to1>,
-				<&macro_release>,
-				<&mo MACRO_PLACEHOLDER>;
-		};
-	};
+        lm: lm {
+            label = "Layer Mod";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings =
+                <&macro_param_1to1>,
+                <&macro_press>,
+                <&mo MACRO_PLACEHOLDER &macro_param_2to1>,
+                <&macro_press>,
+                <&kp MACRO_PLACEHOLDER>,
+                <&macro_pause_for_release>,
+                <&macro_param_2to1>,
+                <&macro_release>,
+                <&kp MACRO_PLACEHOLDER &macro_param_1to1>,
+                <&macro_release>,
+                <&mo MACRO_PLACEHOLDER>;
+        };
+    };
 };
 
 / {
-	chosen {
-		//zmk,matrix_transform = &default_transform;
+    chosen {
+        //zmk,matrix_transform = &default_transform;
 
-		zmk,matrix_transform = &five_column_transform;
-	};
+        zmk,matrix_transform = &five_column_transform;
+    };
 };
 
 //KEYMAP
 
 / {
-	behaviors {
-		hm: homerow_mods {
-			compatible = "zmk,behavior-hold-tap";
-			label = "HOMEROW_MODS";
-			#binding-cells = <2>;
-			tapping-term-ms = <200>;
-			quick_tap_ms = <0>;
-			flavor = "tap-preferred";
-			bindings = <&kp>, <&kp>;
-		};
-		
-		// Swapper for smart alt+tab
-		swapper: swapper {
-			compatible = "zmk,behavior-tri-state";
-			label = "SWAPPER";
-			#binding-cells = <0>;
-			bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-			//ignored-key-positions = <SWP_POS>;
-		};
-	};
+    behaviors {
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
 
-	combos {
-		compatible = "zmk,combos";
+        // Swapper for smart alt+tab
 
-		///////// Left-hand combos
+        swapper: swapper {
+            compatible = "zmk,behavior-tri-state";
+            label = "SWAPPER";
+            #binding-cells = <0>;
+            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
 
-		tab {
-			bindings = <&kp TAB>;
-			key-positions = <1 2>;
-			timeout-ms =  COMBO_TIMEOUT_MS;
-		};
+            //ignored-key-positions = <SWP_POS>;
+        };
+    };
 
-		left_brace {
-			bindings = <&kp LEFT_BRACE>;
-			key-positions = <2 3>;
-			timeout-ms = COMBO_TIMEOUT_MS;
-		};
+    combos {
+        compatible = "zmk,combos";
 
-		left_parenthesis {
-			bindings = <&kp LEFT_PARENTHESIS>;
-			key-positions = <12 13>;
-			timeout-ms = COMBO_TIMEOUT_MS;
-		};
+        ///////// Left-hand combos
 
-		left_bracket {
-			bindings = <&kp LEFT_BRACKET>;
-			key-positions = <22 23>;
-			timeout-ms = COMBO_TIMEOUT_MS;
-		};
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <1 2>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+        };
 
-		///////// Right-hand combos
-		// this are supposed to be double quotes
+        left_brace {
+            bindings = <&kp LEFT_BRACE>;
+            key-positions = <2 3>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+        };
 
-		backspace {
-			bindings = <&kp BACKSPACE>;
-			key-positions = <8 9>;
-			timeout-ms = COMBO_TIMEOUT_MS;
-		};
+        left_parenthesis {
+            bindings = <&kp LEFT_PARENTHESIS>;
+            key-positions = <12 13>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+        };
 
-		minus {
-			bindings = <&kp MINUS>;
-			key-positions = <17 18>;
-			timeout-ms = COMBO_TIMEOUT_MS;
-		};
+        left_bracket {
+            bindings = <&kp LEFT_BRACKET>;
+            key-positions = <22 23>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+        };
 
-		delete {
-			bindings = <&kp DELETE>;
-			key-positions = <9 19>;
-			timeout-ms = COMBO_TIMEOUT_MS;
-		};
+        ///////// Right-hand combos
+        // this are supposed to be double quotes
 
-		right_brace {
-			bindings = <&kp RIGHT_BRACE>;
-			key-positions = <6 7>;
-			timeout-ms = COMBO_TIMEOUT_MS;
-		};
+        backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <8 9>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+        };
 
-		right_parenthesis {
-			bindings = <&kp RIGHT_PARENTHESIS>;
-			key-positions = <16 17>;
-			timeout-ms = COMBO_TIMEOUT_MS;
-		};
+        minus {
+            bindings = <&kp MINUS>;
+            key-positions = <17 18>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+        };
 
-		right_bracket {
-			bindings = <&kp RIGHT_BRACKET>;
-			key-positions = <26 27>;
-			timeout-ms = COMBO_TIMEOUT_MS;
-		};
+        delete {
+            bindings = <&kp DELETE>;
+            key-positions = <9 19>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+        };
 
-		question {
-			bindings = <&kp QUESTION>;
-			key-positions = <28 29>;
-			timeout-ms = COMBO_TIMEOUT_MS;
-		};
+        right_brace {
+            bindings = <&kp RIGHT_BRACE>;
+            key-positions = <6 7>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+        };
 
-		apostrophe {
-			bindings = <&kp APOSTROPHE>;
-			key-positions = <19 18>;
-		};
-	};
+        right_parenthesis {
+            bindings = <&kp RIGHT_PARENTHESIS>;
+            key-positions = <16 17>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+        };
 
-	keymap {
-		compatible = "zmk,keymap";
+        right_bracket {
+            bindings = <&kp RIGHT_BRACKET>;
+            key-positions = <26 27>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+        };
 
-		// Base alpha layer
-		// legenda:
-		// 
-		// kp = tap
-		// mt = hold
-		// hm = homerow_mods
-		// lt = layer_tap
-		// &kp LS(A) = LEFT_SHIFT+A
-		// &kp LC(RA(B)) = LEFT_CONTROL+RIGHT_ALT+B
+        question {
+            bindings = <&kp QUESTION>;
+            key-positions = <28 29>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+        };
 
-		default_layer {
-						label = "BASE";
+        apostrophe {
+            bindings = <&kp APOSTROPHE>;
+            key-positions = <19 18>;
+        };
 
-			bindings = <
-&mt ESC Q    &mt TAB W   &kp E         &kp R               &kp T                    &kp Y           &kp U        &kp I       &kp O          &kp P
-&hm LGUI A   &hm LALT S  &mt LSHIFT D  &mt LCTRL F         &kp G                    &mt RCTRL H     &mt RSHFT J  &mt RALT K  &mt RGUI L     &kp ENTER
-&mt LCTRL Z  &kp X       &kp C         &kp V               &kp B                    &kp N           &kp M        &kp COMMA   &kp DOT        &kp SLASH
-									   &lm SHORTCUTS LALT  &lt NAVIGATION NUMBER_3  &to NAVIGATION  &to BASE   &lt NUM SPACE  &swapper
-			>;
-		};
+        windows {
+            bindings = <&kp LWIN>;
+            key-positions = <30 31>;
+        };
+    };
 
-		navigation_layer {
-						label = "NAVI";
+    keymap {
+        compatible = "zmk,keymap";
 
-			bindings = <
+        // Base alpha layer
+        // legenda:
+        // 
+        // kp = tap
+        // mt = hold
+        // hm = homerow_mods
+        // lt = layer_tap
+        // &kp LS(A) = LEFT_SHIFT+A
+        // &kp LC(RA(B)) = LEFT_CONTROL+RIGHT_ALT+B
+
+        default_layer {
+            label = "BASE";
+            bindings = <
+&mt ESC Q    &mt TAB W   &kp E         &kp R               &kp T                    &kp Y           &kp U        &kp I          &kp O       &kp P
+&hm LGUI A   &hm LALT S  &mt LSHIFT D  &mt LCTRL F         &kp G                    &mt RCTRL H     &mt RSHFT J  &mt RALT K     &mt RGUI L  &kp ENTER
+&mt LCTRL Z  &kp X       &kp C         &kp V               &kp B                    &kp N           &kp M        &kp COMMA      &kp DOT     &kp SLASH
+                                       &lm SHORTCUTS LALT  &lt NAVIGATION NUMBER_3  &to NAVIGATION  &to BASE     &lt NUM SPACE  &swapper
+            >;
+        };
+
+        navigation_layer {
+            label = "NAVI";
+            bindings = <
 &kp ESC          &kp TAB    &none     &none     &none  &kp PG_UP  &kp HOME     &kp UP           &kp END     &kp DELETE
-&kp LSHIFT       &none      &none     &none     &none  &kp PG_DN  &kp LEFT     &kp DOWN        &kp RIGHT    &none     
+&kp LSHIFT       &none      &none     &none     &none  &kp PG_DN  &kp LEFT     &kp DOWN         &kp RIGHT   &none
 &mt TILDE GRAVE  &kp LCTRL  &kp LALT  &kp LGUI  &none  &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp SYSREQ  &mt DOUBLE_QUOTES SINGLE_QUOTE
-									  &none     &none  &to NUM    &to BASE     &none            &none
-			>;
-		};
+                                      &none     &none  &to NUM    &to BASE     &none            &none
+            >;
+        };
 
-		numsymbol_layer {
-						label = "SYMB";
-
-			bindings = <
+        numsymbol_layer {
+            label = "SYMB";
+            bindings = <
 &kp NUMBER_1   &kp NUMBER_2    &kp NUMBER_3   &kp NUMBER_4   &kp NUMBER_5    &kp NUMBER_6   &kp NUMBER_7          &kp NUMBER_8   &kp NUMBER_9         &kp NUMBER_0
 &mt LSHIFT LT  &mt LCTRL LPAR  &mt LALT LBRC  &mt LGUI LBKT  &kp MINUS       &kp EQUAL      &mt RGUI EXCLAMATION  &mt RALT HASH  &mt RCTRL SEMICOLON  &mt RSHIFT BACKSLASH
 &kp GT         &kp RPAR        &kp RBRC       &kp RBKT       &kp UNDERSCORE  &kp PLUS       &kp AT_SIGN           &kp DOLLAR     &kp COLON            &kp PIPE
-											  &none          &kp AMPERSAND   &to FUNCTIONS  &to BASE              &kp ASTERISK   &none
-			>;
-		};
+                                              &none          &kp AMPERSAND   &to FUNCTIONS  &to BASE              &kp ASTERISK   &none
+            >;
+        };
 
-		functions_layer {
-						label = "FUNC";
+        functions_layer {
+            label = "FUNC";
+            bindings = <
+&kp F1      &kp F2      &kp F3      &kp F4       &kp F5      &kp F6      &kp F7       &kp F8        &kp F9        &kp F10
+&kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI     &none       &none       &kp RGUI     &kp RALT      &kp RCTRL     &mt RSHIFT F11
+&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &bootloader  &sys_reset  &sys_reset  &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &kp F12
+                                    &none        &none       &to MOUSE   &to BASE     &none         &none
+            >;
+        };
 
-			bindings = <
-&kp F1      &kp F2      &kp F3      &kp F4       &kp F5      &kp F6          &kp F7       &kp F8        &kp F9        &kp F10
-&kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI     &none       &none           &kp RGUI     &kp RALT      &kp RCTRL     &mt RSHIFT F11
-&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &bootloader  &sys_reset  &sys_reset      &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &kp F12
-									&none        &none       &to MOUSE  &to BASE     &none         &none
-			>;
-		};
-
-		shortcuts_layer {
-			bindings = <
+        shortcuts_layer {
+            bindings = <
 &kp GRAVE  &kp TAB  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &kp TAB    &trans   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans     &trans   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-							&kp LALT  &trans  &trans  &trans  &trans  &trans
-			>;
+                            &kp LALT  &trans  &trans  &trans  &trans  &trans
+            >;
 
-						label = "SHORTCUTS";
-		};
+            label = "SHORTCUTS";
+        };
 
-		mouse_layer {
-			label = "MSE";
-			bindings = <
-&none      &none     &none     &none      &none  &mwh S_LEFT  &mwh S_DOWN  &mmv M_UP    &mwh S_UP     &mwh S_RIGHT
-&kp LCTRL  &kp LGUI  &kp LALT  &kp LSHFT  &none  &none        &mmv M_LEFT  &mmv M_DOWN  &mmv M_RIGHT  &none
-&none      &none     &none     &none      &none  &none        &mkp MB4     &mkp MCLK    &mkp MB5      &none
-							   &none      &none  &to NAVIGATION      &to BASE  &mkp LCLK    &mkp RCLK   
-			>;
-		};
-	};
+        mouse_layer {
+            label = "MSE";
+            bindings = <
+&none      &none     &none     &none      &none  &mwh S_LEFT     &mwh S_DOWN  &mmv M_UP    &mwh S_UP     &mwh S_RIGHT
+&kp LCTRL  &kp LGUI  &kp LALT  &kp LSHFT  &none  &none           &mmv M_LEFT  &mmv M_DOWN  &mmv M_RIGHT  &none
+&none      &none     &none     &none      &none  &none           &mkp MB4     &mkp MCLK    &mkp MB5      &none
+                               &none      &none  &to NAVIGATION  &to BASE     &mkp LCLK    &mkp RCLK
+            >;
+        };
+    };
 };
