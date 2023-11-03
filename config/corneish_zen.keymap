@@ -274,7 +274,7 @@
 &kp GRAVE  &kp TAB  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &kp TAB    &trans   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
 &trans     &trans   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                            &kp LALT  &trans  &trans  &trans  &trans  &trans
+                            &kp LALT  &trans  &trans  &trans  &trans  &none
             >;
 
             label = "SHORTCUTS";
