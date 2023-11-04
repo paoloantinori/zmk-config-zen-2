@@ -39,20 +39,20 @@ layers:
   - '&swapper'
   NAVI:
   - ESC
-  - TAB
-  - ''
-  - ''
-  - ''
+  - '&mwh SCROLL_LEFT'
+  - '&mmv MOVE_UP'
+  - '&mwh SCROLL_RIGHT'
+  - '&mwh SCROLL_UP'
   - PG UP
   - HOME
   - UP
   - END
   - DELETE
   - LSHIFT
-  - ''
-  - ''
-  - ''
-  - ''
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_RIGHT'
+  - '&mwh SCROLL_DOWN'
   - PG DN
   - LEFT
   - DOWN
@@ -60,13 +60,13 @@ layers:
   - ''
   - {t: '`', h: '~'}
   - LCTRL
-  - LALT
-  - LGUI
-  - ''
+  - '&mkp LCLK'
+  - '&mkp RCLK'
+  - '&mkp RCLK'
   - INS
   - RC(TAB)
   - LC(LS(TAB))
-  - SYSREQ
+  - PSCRN
   - {t: '''', h: LS(2)}
   - ''
   - {type: held}
