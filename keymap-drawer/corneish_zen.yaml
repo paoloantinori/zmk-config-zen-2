@@ -58,7 +58,7 @@ layers:
   - DOWN
   - RIGHT
   - ''
-  - {t: RA(MINUS), h: RA(EQUAL)}
+  - {t: '`', h: '|'}
   - LCTRL
   - '&mkp LCLK'
   - '&mkp RCLK'
