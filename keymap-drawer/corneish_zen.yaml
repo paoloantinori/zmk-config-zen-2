@@ -191,27 +191,40 @@ layers:
 combos:
 - p: [1, 2]
   k: TAB
+  l: [BASE]
 - p: [2, 3]
   k: '{'
+  l: [BASE]
 - p: [12, 13]
   k: (
+  l: [BASE]
 - p: [22, 23]
   k: '['
+  l: [BASE]
 - p: [8, 9]
   k: BACKSPACE
+  l: [BASE]
 - p: [17, 18]
   k: '-'
+  l: [BASE]
 - p: [9, 19]
   k: DELETE
+  l: [BASE]
 - p: [6, 7]
   k: '}'
+  l: [BASE]
 - p: [16, 17]
   k: )
+  l: [BASE]
 - p: [26, 27]
   k: ']'
+  l: [BASE]
 - p: [28, 29]
   k: '?'
+  l: [BASE]
 - p: [19, 18]
   k: <
+  l: [BASE]
 - p: [30, 31]
   k: LWIN
+  l: [BASE]
