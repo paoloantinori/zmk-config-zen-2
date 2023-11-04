@@ -257,7 +257,7 @@
 			bindings = <
 &kp ESC          &mwh SCROLL_LEFT    &mmv MOVE_UP    &mwh SCROLL_RIGHT   &mwh SCROLL_UP  &kp PG_UP  &kp HOME     &kp UP           &kp END     &kp DELETE
 &kp LSHIFT       &mmv MOVE_LEFT      &mmv MOVE_DOWN  &mmv MOVE_RIGHT     &mwh SCROLL_DOWN  &kp PG_DN  &kp LEFT     &kp DOWN         &kp RIGHT   &none
-&mt TILDE GRAVE  &kp LCTRL  &mkp LCLK  &mkp RCLK   &mkp RCLK  &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp PSCRN  &mt IT_DQUOT SINGLE_QUOTE
+&mt IT_TILDE IT_BKTK  &kp LCTRL  &mkp LCLK  &mkp RCLK   &mkp RCLK  &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp PSCRN  &mt IT_DQUOT SINGLE_QUOTE
 									  &none     &none  &to NUM    &to BASE     &none            &none
 			>;
 		};
