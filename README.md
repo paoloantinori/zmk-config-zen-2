@@ -10,6 +10,8 @@ I'm also using his Keymap diagram generator to produce the nice images you see b
 
 And, I'm also using https://nickcoutsos.github.io/keymap-editor/ as an editor to modify things on the fly.
 
+Oh, and including country keys from here: https://github.com/joelspadin/zmk-locale-generator/releases
+
 
 Below representation was generated with [`keymap-drawer`](https://github.com/caksoylar/keymap-drawer) -- check out the automatically generated layouts using the [automated Github workflow](https://github.com/caksoylar/keymap-drawer/tree/main#setting-up-an-automated-drawing-workflow) for each keyboard in the [`keymap-drawer` folder](keymap-drawer/), which is always up to date with the config.
 
