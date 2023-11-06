@@ -246,10 +246,10 @@
         default_layer {
             label = "BASE";
             bindings = <
-&mt GB_ESCAPE_CHARACTER GB_Q    &mt TAB GB_W   &kp GB_E         &kp GB_R               &kp GB_T                    &kp GB_Y           &kp GB_U        &kp GB_I          &kp GB_O       &kp GB_P
+&mt ESC GB_Q    &mt TAB GB_W   &kp GB_E         &kp GB_R               &kp GB_T                    &kp GB_Y           &kp GB_U        &kp GB_I          &kp GB_O       &kp GB_P
 &hm LGUI GB_A   &hm LALT GB_S  &hm LSHIFT GB_D  &hm LCTRL GB_F         &kp GB_G                    &hm RCTRL GB_H     &hm RSHFT GB_J  &hm RALT GB_K     &hm RGUI GB_L  &kp ENTER
 &mt LCTRL GB_Z  &kp GB_X       &kp GB_C         &kp GB_V               &kp GB_B                    &kp GB_N           &kp GB_M        &kp GB_COMMA      &kp GB_DOT     &kp GB_SLASH
-                                       &lm SHORTCUTS LALT  &lt NAVIGATION GB_SPACE  &to NAVIGATION  &to BASE     &lt NUM GB_SPACE  &swapper
+                                       &lm SHORTCUTS LALT  &lt NAVIGATION GB_SPACE  &to NAVIGATION  &to BASE     &lt NUM GB_SPACE  &none
             >;
         };
 
