@@ -179,14 +179,38 @@ parse_config:
       type: info
       tap: $$mdi:bluetooth-off$$
       hold: Clr All
-    '&out OUT_USB': $$mdi:usb$$
-    '&bootloader': 'Boot'
-    '&reset': 'Reset'
-    '&sys_reset': 'Reset'
 
-  zmk_keycode_map:
-    "ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_A)": 'A'
-    "HID_USAGE_KEY_KEYBOARD_A": "A"
+    '&reset': Reset
+    '&sys_reset': Reset
+    '&bootloader': Boot
+    '&swapper': Win Next
+    '&inv_qm': ¿
+
+    '&out OUT_USB': Out USB
+    '&out OUT_BLE': Out BLE
+
+    '&bt BT_SEL 0': BT 1
+    '&bt BT_SEL 1': BT 2
+    '&bt BT_SEL 2': BT 3
+    '&bt BT_SEL 3': BT 4
+    '&bt BT_SEL 4': BT 5
+
+    '&mmv M_UP': M↑
+    '&mmv M_DOWN': M↓
+    '&mmv M_LEFT': M←
+    '&mmv M_RIGHT': M→
+
+    '&mwh S_UP': MW↑
+    '&mwh S_DOWN': MW↓
+    '&mwh S_LEFT': MW←
+    '&mwh S_RIGHT': MW→
+
+    '&mkp LCLK': Left Click
+    '&mkp RCLK': Right Click
+    '&mkp MCLK': Middle Click
+    '&mkp MB4': Back Click
+    '&mkp MB5': Forward Click
+
     '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_A))': 'A'
     '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_B))': 'B'
     '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_C))': 'C'
@@ -203,6 +227,46 @@ parse_config:
     '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_N))': 'N'
     '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_O))': 'O'
     '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_P))': 'P'
+    '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Q))': 'Q'
+    '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_R))': 'R'
+    '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_S))': 'S'
+    '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_T))': 'T'
+    '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_U))': 'U'
+    '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_V))': 'V'
+    '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_W))': 'W'
+    '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_X))': 'X'
+    '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Y))': 'Y'
+    '(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Z))': 'Z'
+
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_A))': 'A'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_B))': 'B'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_C))': 'C'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_D))': 'D'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_E))': 'E'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F))': 'F'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_G))': 'G'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_H))': 'H'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_I))': 'I'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_J))': 'J'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_K))': 'K'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_L))': 'L'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_M))': 'M'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_N))': 'N'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_O))': 'O'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_P))': 'P'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Q))': 'Q'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_R))': 'R'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_S))': 'S'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_T))': 'T'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_U))': 'U'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_V))': 'V'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_W))': 'W'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_X))': 'X'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Y))': 'Y'
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Z))': 'Z'
+
+
+  zmk_keycode_map:
     RET:
       type: enter
       tap: $$mdi:keyboard-return$$
