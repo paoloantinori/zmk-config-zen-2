@@ -241,6 +241,7 @@
         // &kp LS(A) = LEFT_SHIFT+A
         // &kp LC(RA(B)) = LEFT_CONTROL+RIGHT_ALT+B
 
+
         default_layer {
             label = "BASE";
             bindings = <
