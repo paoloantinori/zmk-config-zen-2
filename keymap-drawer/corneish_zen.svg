@@ -106,8 +106,7 @@ path.combo {
 <g transform="translate(28, 49)" class="key keypos-0">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
 <text x="0" y="0" class="key tap">
-<tspan x="0" dy="-2.4em" style="font-size: 60%">&amp;mt</tspan><tspan x="0" dy="1.2em" style="font-size: 60%">(LC(ZMK_HID_USAGE(HID_USAGE_KEY,</tspan>
-<tspan x="0" dy="1.2em" style="font-size: 60%">HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE)))</tspan>
+<tspan x="0" dy="-1.7999999999999998em" style="font-size: 60%">&amp;mt</tspan><tspan x="0" dy="1.2em" style="font-size: 60%">ESC</tspan>
 <tspan x="0" dy="1.2em" style="font-size: 60%">(ZMK_HID_USAGE(HID_USAGE_KEY,</tspan>
 <tspan x="0" dy="1.2em" style="font-size: 60%">HID_USAGE_KEY_KEYBOARD_Q))</tspan>
 </text>
@@ -355,7 +354,6 @@ path.combo {
 </g>
 <g transform="translate(560, 205)" class="key keypos-35">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap"><tspan style="font-size: 88%">&amp;swapper</tspan></text>
 </g>
 <g class="combo combopos-0">
 <rect rx="6" ry="6" x="98" y="18" width="28" height="26" class="combo"/>
