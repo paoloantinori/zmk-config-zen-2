@@ -36,6 +36,11 @@
     quick-tap-ms = <0>;
 };
 
+&caps_word {
+  continue-list = <UNDERSCORE MINUS>;
+};
+
+
 / {
     macros {
         zed_em_kay: zed_em_kay {
@@ -122,7 +127,17 @@
     combos {
         compatible = "zmk,combos";
 
+        caps_word {
+            bindings = <&caps_word>;
+            key-positions = <12 16>;
+            layers = <0>;
+            timeout-ms =
+            COMBO_TIMEOUT_MS;
+            require-prior-idle-ms: 2000;
+        }
+
         ///////// Left-hand combos
+
 
         esc {
             bindings = <&kp ESC>;
