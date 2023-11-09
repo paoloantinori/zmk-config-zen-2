@@ -134,7 +134,7 @@
             timeout-ms =
             COMBO_TIMEOUT_MS;
             require-prior-idle-ms = <2000>;
-        }
+        };
 
         ///////// Left-hand combos
 
