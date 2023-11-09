@@ -1,193 +1,158 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
 layers:
-  BASE:
-  - [' Q', ' W', ' E', ' R', ' T', ' Y', ' U', ' I', ' O', ' P']
-  - - {t: ' A', h: '$$mdi:monitor-dashboard$$'}
-    - {t: ' S', h: Alt}
-    - {t: ' D', h: '$$mdi:apple-keyboard-shift$$'}
-    - {t: ' F', h: Ctrl}
-    - ' G'
-    - {t: ' H', h: Ctrl}
-    - {t: ' J', h: '$$mdi:apple-keyboard-shift$$'}
-    - {t: ' K', h: AltGr}
-    - {t: ' L', h: RGUI}
-    - {t: '$$mdi:keyboard-return$$', type: enter}
-  - - {t: ' Z', h: Ctrl}
-    - ' X'
-    - ' C'
-    - ' V'
-    - ' B'
-    - ' N'
-    - ' M'
-    - ' COMMA'
-    - ' DOT'
-    - ' SLASH'
-  - - '&lm 4 LALT'
-    - {t: ' SPACE', h: NAVI}
-    - NAVI
-    - BASE
-    - {t: ' SPACE', h: SYMB}
-    - ''
-  NAVI:
-  - - ' ESCAPE CHARACTER'
-    - '&mwh SCROLL_LEFT'
-    - '&mmv MOVE_UP'
-    - '&mwh SCROLL_RIGHT'
-    - '&mwh SCROLL_UP'
-    - Pg Up
-    - Home
-    - UP
-    - End
-    - {t: '$$mdi:backspace$$', type: backspace}
-  - ['$$mdi:apple-keyboard-shift$$', '&mmv MOVE_LEFT', '&mmv MOVE_DOWN', '&mmv MOVE_RIGHT', '&mwh SCROLL_DOWN', Pg Down, LEFT, DOWN, RIGHT, '']
-  - - {t: ' GRAVE', h: ' PIPE'}
-    - Ctrl
-    - Left Click
-    - Right Click
-    - Right Click
-    - INS
-    - RC(TAB)
-    - LC(LS(TAB))
-    - Print
-    - {t: ' SINGLE QUOTE', h: ' AT SIGN'}
-  - - ''
-    - {type: held}
-    - SYMB
-    - BASE
-    - ''
-    - ''
-  SYMB:
-  - [' 1', ' 2', ' 3', ' 4', ' 5', ' 6', ' 7', ' 8', ' 9', ' 0']
-  - - {t: ' LESS THAN', h: '$$mdi:monitor-dashboard$$'}
-    - {t: ' LEFT PARENTHESIS', h: Alt}
-    - {t: ' LEFT BRACE', h: '$$mdi:apple-keyboard-shift$$'}
-    - {t: ' LEFT BRACKET', h: Ctrl}
-    - ' MINUS'
-    - {t: ' EQUAL', h: Ctrl}
-    - {t: ' EXCLAMATION', h: '$$mdi:apple-keyboard-shift$$'}
-    - {t: ' HASH', h: AltGr}
-    - {t: ' SEMICOLON', h: RGUI}
-    - ' BACKSLASH'
-  - [' GREATER THAN', ), ' RIGHT BRACE', ' RIGHT BRACKET', ' UNDERSCORE', ' PLUS', ' AT SIGN', ' DOLLAR', ' COLON', ' PIPE']
-  - - ''
-    - ' AMPERSAND'
-    - FUNC
-    - BASE
-    - {t: ' ASTERISK', type: held}
-    - ''
+  BASE: ['&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Q))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_W))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY,
+      HID_USAGE_KEY_KEYBOARD_E))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_R))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_T))',
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Y))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_U))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY,
+      HID_USAGE_KEY_KEYBOARD_I))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_O))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_P))',
+    '&hm LGUI (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_A))', '&hm LALT (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_S))', '&hm LSHIFT (ZMK_HID_USAGE(HID_USAGE_KEY,
+      HID_USAGE_KEY_KEYBOARD_D))', '&hm LCTRL (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_F))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_G))',
+    '&hm RCTRL (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_H))', '&hm RSHFT (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_J))', '&hm RALT (ZMK_HID_USAGE(HID_USAGE_KEY,
+      HID_USAGE_KEY_KEYBOARD_K))', '&hm RGUI (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_L))', ENTER, '&mt LCTRL (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_Z))',
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_X))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_C))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY,
+      HID_USAGE_KEY_KEYBOARD_V))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_B))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_N))',
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_M))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN))', '&kp ((ZMK_HID_USAGE(HID_USAGE_KEY,
+      HID_USAGE_KEY_KEYBOARD_PERIOD_AND_GREATER_THAN)))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK))', '&lm 4 LALT', '&lt
+      1 (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SPACEBAR))', NAVI, BASE, '&lt 2 (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SPACEBAR))', '']
+  NAVI: ['&kp (LC(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE)))', '&mwh SCROLL_LEFT', '&mmv MOVE_UP', '&mwh SCROLL_RIGHT', '&mwh
+      SCROLL_UP', PG UP, HOME, UP, END, BACKSPACE, LSHIFT, '&mmv MOVE_LEFT', '&mmv MOVE_DOWN', '&mmv MOVE_RIGHT', '&mwh SCROLL_DOWN', PG DN, LEFT, DOWN, RIGHT, '',
+    '&mt (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_NON_US_BACKSLASH_AND_PIPE))) (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE))',
+    LCTRL, '&mkp LCLK', '&mkp RCLK', '&mkp RCLK', INS, RC(TAB), LC(LS(TAB)), PSCRN, '&mt (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE)))
+      (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE))', '', '', SYMB, BASE, '', '']
+  SYMB: ['&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_1_AND_EXCLAMATION))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_2_AND_AT))', '&kp
+      (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_3_AND_HASH))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_4_AND_DOLLAR))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY,
+      HID_USAGE_KEY_KEYBOARD_5_AND_PERCENT))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_6_AND_CARET))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_7_AND_AMPERSAND))',
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_8_AND_ASTERISK))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_9_AND_LEFT_PARENTHESIS))',
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_0_AND_RIGHT_PARENTHESIS))', '&hm LGUI (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_COMMA_AND_LESS_THAN)))',
+    '&hm LALT (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_9_AND_LEFT_PARENTHESIS)))', '&hm LSHIFT (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE)))',
+    '&hm LCTRL (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_MINUS_AND_UNDERSCORE))',
+    '&hm RCTRL (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_EQUAL_AND_PLUS))', '&hm RSHFT (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_1_AND_EXCLAMATION)))',
+    '&hm RALT (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_BACKSLASH_AND_PIPE))', '&hm RGUI (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SEMICOLON_AND_COLON))',
+    '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_NON_US_BACKSLASH_AND_PIPE))', '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_PERIOD_AND_GREATER_THAN)))',
+    ), '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE)))', '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE))',
+    '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_MINUS_AND_UNDERSCORE)))', '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_EQUAL_AND_PLUS)))',
+    '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE)))', '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_4_AND_DOLLAR)))',
+    '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SEMICOLON_AND_COLON)))', '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_NON_US_BACKSLASH_AND_PIPE)))',
+    '', '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_7_AND_AMPERSAND)))', FUNC, BASE, '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_8_AND_ASTERISK)))',
+    '']
   FUNC:
-  - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10]
-  - - $$mdi:apple-keyboard-shift$$
-    - Ctrl
-    - Alt
-    - {t: '$$mdi:monitor-dashboard$$', h: Meta, type: info}
-    - ''
-    - ''
-    - RGUI
-    - AltGr
-    - Ctrl
-    - {t: F11, h: '$$mdi:apple-keyboard-shift$$'}
-  - - {t: '$$mdi:bluetooth-off$$', h: Clear, type: info}
-    - BT NXT
-    - BT PRV
-    - Boot
-    - Reset
-    - Reset
-    - Boot
-    - BT 1
-    - BT 2
-    - F12
-  - ['', '', MSE, BASE, '', '']
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - LSHIFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - ''
+  - RGUI
+  - RALT
+  - RCTRL
+  - {t: F11, h: RSHIFT}
+  - BT CLR
+  - BT NXT
+  - BT PRV
+  - '&bootloader'
+  - '&sys_reset'
+  - '&sys_reset'
+  - '&bootloader'
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - F12
+  - ''
+  - ''
+  - MSE
+  - BASE
+  - ''
+  - ''
   SHORTCUTS:
-  - - ' GRAVE'
-    - $$mdi:keyboard-tab$$
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-  - - $$mdi:keyboard-tab$$
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-  - - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-  - - Alt
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - ''
-  MSE:
-  - ['', '', '', '', '', MW←, MW↓, M↑, MW↑, MW→]
-  - - Ctrl
-    - {t: '$$mdi:monitor-dashboard$$', h: Meta, type: info}
-    - Alt
-    - $$mdi:apple-keyboard-shift$$
-    - ''
-    - ''
-    - M←
-    - M↓
-    - M→
-    - ''
-  - ['', '', '', '', '', '', Back Click, Middle Click, Forward Click, '']
-  - ['', '', NAVI, BASE, Left Click, Right Click]
+  - '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_GRAVE_ACCENT_AND_TILDE))'
+  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LALT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
+  MSE: ['', '', '', '', '', '&mwh SCROLL_HOR(-20)', '&mwh SCROLL_VERT(-20)', '&mmv MOVE_VERT(-1500)', '&mwh SCROLL_VERT(20)', '&mwh SCROLL_HOR(20)', LCTRL, LGUI,
+    LALT, LSHFT, '', '', '&mmv MOVE_HOR(-1500)', '&mmv MOVE_VERT(1500)', '&mmv MOVE_HOR(1500)', '', '', '', '', '', '', '', '&mkp MB4', '&mkp MCLK', '&mkp MB5', '',
+    '', '', NAVI, BASE, '&mkp LCLK', '&mkp RCLK']
 combos:
+- p: [12, 16]
+  k: '&caps_word'
+  l: [BASE]
 - p: [0, 1]
-  k: $$mdi:keyboard-esc$$
+  k: ESC
   l: [BASE]
 - p: [1, 2]
-  k: $$mdi:keyboard-tab$$
+  k: TAB
   l: [BASE]
 - p: [2, 3]
-  k: ' LEFT BRACE'
+  k: '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE)))'
   l: [BASE]
 - p: [12, 13]
-  k: ' LEFT PARENTHESIS'
+  k: '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_9_AND_LEFT_PARENTHESIS)))'
   l: [BASE]
 - p: [22, 23]
-  k: ' LEFT BRACKET'
+  k: '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_LEFT_BRACKET_AND_LEFT_BRACE))'
   l: [BASE]
 - p: [8, 9]
-  k: {t: '$$mdi:backspace$$', type: backspace}
+  k: BACKSPACE
   l: [BASE]
 - p: [17, 18]
-  k: ' MINUS'
+  k: '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_MINUS_AND_UNDERSCORE))'
   l: [BASE]
 - p: [9, 19]
-  k: $$mdi:backspace-reverse-outline$$
+  k: DELETE
   l: [BASE]
 - p: [6, 7]
-  k: ' RIGHT BRACE'
+  k: '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE)))'
   l: [BASE]
 - p: [16, 17]
-  k: ' RIGHT PARENTHESIS'
+  k: '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_0_AND_RIGHT_PARENTHESIS)))'
   l: [BASE]
 - p: [26, 27]
-  k: ' RIGHT BRACKET'
+  k: '&kp (ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_RIGHT_BRACKET_AND_RIGHT_BRACE))'
   l: [BASE]
 - p: [28, 29]
-  k: ' QUESTION'
+  k: '&kp (LS(ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_SLASH_AND_QUESTION_MARK)))'
   l: [BASE]
 - p: [19, 18]
-  k: ' APOSTROPHE'
+  k: '&kp ((ZMK_HID_USAGE(HID_USAGE_KEY, HID_USAGE_KEY_KEYBOARD_APOSTROPHE_AND_QUOTE)))'
   l: [BASE]
 - p: [30, 31]
   k: LWIN
