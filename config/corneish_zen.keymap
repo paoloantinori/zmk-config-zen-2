@@ -33,11 +33,6 @@
     tapping_term_ms = <200>;
 };
 
-// &mmv {
-//     time-to-max-speed-ms = <680>;
-//     acceleration-exponent = <2>;
-// };
-
 &lt {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
@@ -286,8 +281,8 @@
         navigation_layer {
             label = "NAVI";
             bindings = <
-&kp GB_ESCAPE_CHARACTER         &mwh SCROLL_LEFT  &mmv MOVE_UP    &mwh SCROLL_RIGHT  &mwh SCROLL_UP    &kp PG_UP  &kp HOME     &kp UP           &kp END    &kp BACKSPACE
-&kp LSHIFT      &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &mwh SCROLL_DOWN  &kp PG_DN  &kp LEFT     &kp DOWN         &kp RIGHT  &none
+&kp GB_ESCAPE_CHARACTER         &msc SCROLL_LEFT  &mmv MOVE_UP    &msc SCROLL_RIGHT  &msc SCROLL_UP    &kp PG_UP  &kp HOME     &kp UP           &kp END    &kp BACKSPACE
+&kp LSHIFT      &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &msc SCROLL_DOWN  &kp PG_DN  &kp LEFT     &kp DOWN         &kp RIGHT  &none
 &mt GB_PIPE GB_GRAVE  &kp LCTRL         &mkp LCLK       &mkp RCLK          &mkp RCLK         &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp PSCRN  &mt GB_AT_SIGN    GB_SINGLE_QUOTE
                                                   &none              &none             &to NUM    &to BASE     &none            &none
             >;
