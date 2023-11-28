@@ -52,7 +52,7 @@ draw_config:
   svg_extra_style: |
     svg.keymap {
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 10px;
+      font-size: 14px;
       font-weight: bold;
     }
         
@@ -112,75 +112,141 @@ parse_config:
     tap: $$mdi:chevron-down$$
     type: trans
   raw_binding_map:
-    # Custom behavior
-    '&caps_word': $$mdi:apple-keyboard-caps$$
-    '&smart_lshift': $$mdi:apple-keyboard-shift$$
-    '&smart_rshift': $$mdi:apple-keyboard-shift$$
-    '&tog 1':
-      tap: $$mdi:keyboard-outline$$
-      hold: Qwerty
-      type: info
-    '&symbols':
-      tap: $$mdi:symbol$$
-      hold: Symbols
-      type: info
-    '&tog 2':
-      tap: $$mdi:symbol$$
-      hold: Symbols
-      type: info
-    '&nav':
-      tap: $$num-nav$$
-      hold: Num/Nav
-      type: info
-    '&tog 3':
-      tap: $$num-nav$$
-      hold: Num/Nav
-      type: info
-    '&tog 4':
-      tap: $$mdi:controller$$
-      hold: Gaming
-      type: info
-    # Moergo behavior
-    '&magic 5 0':
-      tap: $$moergo$$
-      hold: Magic
-      type: info
-    '&bt_0':
-      type: info
-      tap: $$mdi:bluetooth$$
-      shifted: 0
-    '&bt_1':
-      type: info
-      tap: $$mdi:bluetooth$$
-      shifted: 1
-    '&bt_2':
-      type: info
-      tap: $$mdi:bluetooth$$
-      shifted: 2
-    '&bt_3':
-      type: info
-      tap: $$mdi:bluetooth$$
-      shifted: 3
+
+    '&sys_reset': 
+      tap: $$mdi:backup-restore$$
+      type: bootloader
+      
+    '&bootloader': 
+      tap: $$mdi:progress-download$$
+      type: bootloader
+      
+    '&hml LA(LCTRL) TAB': $$mdi:keyboard-tab$$
+    '&hml_repeat LS(LCTRL) 0': $$mdi:repeat$$
+    
+    '&hmr_lpar_lt LS(LCTRL) 0':
+      tap: '('
+      shifted: '<'
+    '&hmr_rpar_gt LA(LCTRL) 0':
+      tap: ')'
+      shifted: '>'
+    
+    '&lbkt_lbrc':
+      tap: '['
+      shifted: '{'
+    '&rbkt_rbrc':
+      tap: ']'
+      shifted: '}'
+    
+    '&td_sqt_dqt':
+      tap: "'"
+      shifted: '"'
+      
+    '&scw 0 RET':
+      tap: $$mdi:keyboard-return$$
+      hold: $$mdi:apple-keyboard-shift$$
+
+    '&scw LSHFT 0': $$mdi:apple-keyboard-shift$$
+
+    '&par_macro': '( )'
+    '&bkt_macro': '[]'
+    '&brc_macro': '{ }'
+    '&lgt_macro': '< >'
+
+    '&kp DE_COMMA':
+      tap: ','
+      shifted: ';'
+    
+    '&kp DE_DOT':
+      tap: '.'
+      shifted: ':'
+    
     '&bt BT_CLR':
-      type: info
+      tap: $$mdi:bluetooth$$
+      hold: $$mdi:close-thick$$
+      type: text_with_symbol
+    '&bt BT_SEL 0':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '0'
+      type: text_with_symbol
+    '&bt BT_SEL 1':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '1'
+      type: text_with_symbol
+    '&bt BT_SEL 2':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '2'
+      type: text_with_symbol
+    '&bt BT_SEL 3':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '3'
+      type: text_with_symbol
+    '&bt BT_SEL 4':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '4'
+      type: text_with_symbol
+    '&bt_0':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '0'
+      type: text_with_symbol
+    '&bt_1':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '1'
+      type: text_with_symbol
+    '&bt_2':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '2'
+      type: text_with_symbol
+    '&bt_3':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '3'
+      type: text_with_symbol
+    '&bt_4':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '4'
+      type: text_with_symbol
+    '&bt BT_DISC 0':
       tap: $$mdi:bluetooth-off$$
-      hold: Clear
-    '&bt BT_CLR_ALL':
-      type: info
+      hold: '0'
+      type: text_with_symbol
+    '&bt BT_DISC 1':
       tap: $$mdi:bluetooth-off$$
-      hold: Clr All
-    '&reset': Reset
-    '&sys_reset': Reset
-    '&bootloader': Boot
-    '&swapper': Win Next
-    '&inv_qm': ¿
-    '&out OUT_USB': Out USB
-    '&out OUT_BLE': Out BLE
-    '&bt BT_SEL 0': BT 1
-    '&bt BT_SEL 1': BT 2
-    '&bt BT_SEL 2': BT 3
-    '&bt BT_SEL 3': BT 4
-    '&bt BT_SEL 4': BT 5
+      hold: '1'
+      type: text_with_symbol
+    '&bt BT_DISC 2':
+      tap: $$mdi:bluetooth-off$$
+      hold: '2'
+      type: text_with_symbol
+    '&bt BT_DISC 3':
+      tap: $$mdi:bluetooth-off$$
+      hold: '3'
+      type: text_with_symbol
+    '&bt BT_DISC 4':
+      tap: $$mdi:bluetooth-off$$
+      hold: '4'
+      type: text_with_symbol
+    '&bt BT_PRV':
+      tap: $$mdi:bluetooth$$
+      hold: $$mdi:skip-previous$$
+      type: text_with_symbol
+    '&bt BT_NXT':
+      tap: $$mdi:bluetooth$$
+      hold: $$mdi:skip-next$$
+      type: text_with_symbol
+    
+    '&out OUT_BLE': $$mdi:bluetooth$$
+    '&out OUT_USB': $$mdi:usb$$
+    '&out OUT_TOG':
+      tap: $$mdi:toggle-switch$$
+      hold: $$mdi:bluetooth$$
+      shifted: $$mdi:usb$$
+      type: toggle
+    
+    '&mkp MB3':
+      tap: $$mdi:cursor-default-click-outline$$
+      hold: 3
+      type: text_with_symbol
+
     '&mmv M_UP': M↑
     '&mmv M_DOWN': M↓
     '&mmv M_LEFT': M←
@@ -432,3 +498,16 @@ parse_config:
       shifted: '-'
       type: info
 
+  zmk_combos:
+    combo_par:
+      align: bottom
+      offset: 1.05
+      key:
+        tap: '()'
+        shifted: '<>'
+    combo_bkt:
+      align: top
+      offset: 0.6
+    combo_ger:
+      align: top
+      offset: 0.6
