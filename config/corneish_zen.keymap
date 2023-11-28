@@ -10,7 +10,7 @@
 #include <dt-bindings/zmk/keys.h>
 
 #ifndef KEYMAP_DRAWER
-#include "keys_en_gb.h"
+#    include "keys_en_gb.h"
 #endif
 
 #define MS_ACT(key) &lt MSE key
