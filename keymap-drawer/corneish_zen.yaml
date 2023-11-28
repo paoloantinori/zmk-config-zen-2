@@ -1,215 +1,269 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
 layers:
   BASE:
-  - [Q, W, E, R, T, Y, U, I, O, P]
-  - - {t: A, h: '$$mdi:monitor-dashboard$$'}
-    - {t: S, h: Alt}
-    - {t: D, h: '$$mdi:apple-keyboard-shift$$'}
-    - {t: F, h: Ctrl}
-    - G
-    - {t: H, h: Ctrl}
-    - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
-    - {t: K, h: AltGr}
-    - {t: L, h: RGUI}
-    - {t: '$$mdi:keyboard-return$$', type: enter}
-  - - {t: Z, h: Ctrl}
-    - X
-    - C
-    - V
-    - B
-    - N
-    - M
-    - ','
-    - .
-    - /
-  - - '&lm 4 LALT'
-    - {t: '$$mdi:keyboard-space$$', h: NAVI}
-    - {t: NAVI, h: toggle}
-    - {t: BASE, h: toggle}
-    - {t: '$$mdi:keyboard-space$$', h: SYMB}
-    - ''
+  - GB Q
+  - GB W
+  - GB E
+  - GB R
+  - GB T
+  - GB Y
+  - GB U
+  - GB I
+  - GB O
+  - GB P
+  - {t: GB A, h: LGUI}
+  - {t: GB S, h: LALT}
+  - {t: GB D, h: LSHIFT}
+  - {t: GB F, h: LCTRL}
+  - GB G
+  - {t: GB H, h: RCTRL}
+  - {t: GB J, h: RSHFT}
+  - {t: GB K, h: RALT}
+  - {t: GB L, h: RGUI}
+  - ENTER
+  - {t: GB Z, h: LCTRL}
+  - GB X
+  - GB C
+  - GB V
+  - GB B
+  - GB N
+  - GB M
+  - GB COMMA
+  - GB DOT
+  - GB SLASH
+  - '&lm 4 LALT'
+  - {t: GB SPACE, h: NAVI}
+  - {t: NAVI, h: toggle}
+  - {t: BASE, h: toggle}
+  - {t: GB SPACE, h: SYMB}
+  - ''
   NAVI:
-  - - ESCAPE CHARACTER
-    - '&msc SCRL_LEFT'
-    - '&mmv MOVE_UP'
-    - '&msc SCRL_RIGHT'
-    - '&msc SCRL_UP'
-    - Pg Up
-    - Home
-    - UP
-    - End
-    - {t: '$$mdi:backspace$$', type: backspace}
-  - ['$$mdi:apple-keyboard-shift$$', '&mmv MOVE_LEFT', '&mmv MOVE_DOWN', '&mmv MOVE_RIGHT', '&msc SCRL_DOWN', Pg Down, LEFT, DOWN, RIGHT, '']
-  - - {t: '`', h: '~'}
-    - Ctrl
-    - Left Click
-    - Right Click
-    - Right Click
-    - INS
-    - RC(TAB)
-    - LC(LS(TAB))
-    - Print
-    - {t: '''', h: '"'}
-  - - ''
-    - {type: held}
-    - {t: SYMB, h: toggle}
-    - {t: BASE, h: toggle}
-    - ''
-    - ''
+  - GB ESCAPE CHARACTER
+  - '&msc SCRL_LEFT'
+  - '&mmv MOVE_UP'
+  - '&msc SCRL_RIGHT'
+  - '&msc SCRL_UP'
+  - PG UP
+  - HOME
+  - UP
+  - END
+  - BACKSPACE
+  - LSHIFT
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_RIGHT'
+  - '&msc SCRL_DOWN'
+  - PG DN
+  - LEFT
+  - DOWN
+  - RIGHT
+  - ''
+  - {t: GB GRAVE, h: GB PIPE}
+  - LCTRL
+  - '&mkp LCLK'
+  - '&mkp RCLK'
+  - '&mkp RCLK'
+  - INS
+  - RC(TAB)
+  - LC(LS(TAB))
+  - PSCRN
+  - {t: GB SINGLE QUOTE, h: GB AT SIGN}
+  - ''
+  - {type: held}
+  - {t: SYMB, h: toggle}
+  - {t: BASE, h: toggle}
+  - ''
+  - ''
   SYMB:
-  - - {t: '1', s: '!'}
-    - {t: '2', s: '"'}
-    - {t: '3', s: £}
-    - {t: '4', s: $}
-    - {t: '5', s: '%'}
-    - {t: '6', s: ^}
-    - {t: '7', s: '&'}
-    - {t: '8', s: '*'}
-    - {t: '9', s: (}
-    - {t: '0', s: )}
-  - - {t: <, h: '$$mdi:monitor-dashboard$$'}
-    - {t: (, h: Alt}
-    - {t: '{', h: '$$mdi:apple-keyboard-shift$$'}
-    - {t: '[', h: Ctrl}
-    - '-'
-    - {t: '=', h: Ctrl}
-    - {t: '!', h: '$$mdi:apple-keyboard-shift$$'}
-    - {t: £, h: AltGr}
-    - {t: ;, h: RGUI}
-    - '#'
-  - ['>', ), '}', ']', _, +, '"', $, ':', '~']
-  - - ''
-    - '&'
-    - {t: FUNC, h: toggle}
-    - {t: BASE, h: toggle}
-    - {t: '*', type: held}
-    - ''
+  - GB 1
+  - GB 2
+  - GB 3
+  - GB 4
+  - GB 5
+  - GB 6
+  - GB 7
+  - GB 8
+  - GB 9
+  - GB 0
+  - {t: GB LESS THAN, h: LGUI}
+  - {t: GB LEFT PARENTHESIS, h: LALT}
+  - {t: GB LEFT BRACE, h: LSHIFT}
+  - {t: GB LEFT BRACKET, h: LCTRL}
+  - GB MINUS
+  - {t: GB EQUAL, h: RCTRL}
+  - {t: GB EXCLAMATION, h: RSHFT}
+  - {t: GB HASH, h: RALT}
+  - {t: GB SEMICOLON, h: RGUI}
+  - GB BACKSLASH
+  - GB GREATER THAN
+  - )
+  - GB RIGHT BRACE
+  - GB RIGHT BRACKET
+  - GB UNDERSCORE
+  - GB PLUS
+  - GB AT SIGN
+  - GB DOLLAR
+  - GB COLON
+  - GB PIPE
+  - ''
+  - GB AMPERSAND
+  - {t: FUNC, h: toggle}
+  - {t: BASE, h: toggle}
+  - {t: GB ASTERISK, type: held}
+  - ''
   FUNC:
-  - [F1, F2, F3, F4, F5, F6, F7, F8, F9, F10]
-  - - $$mdi:apple-keyboard-shift$$
-    - Ctrl
-    - Alt
-    - {t: '$$mdi:monitor-dashboard$$', h: Meta, type: info}
-    - ''
-    - ''
-    - RGUI
-    - AltGr
-    - Ctrl
-    - {t: F11, h: '$$mdi:apple-keyboard-shift$$'}
-  - - {t: '$$mdi:bluetooth-off$$', h: Clear, type: info}
-    - BT NXT
-    - BT PRV
-    - Boot
-    - Reset
-    - Reset
-    - Boot
-    - BT 1
-    - BT 2
-    - F12
-  - - ''
-    - ''
-    - {t: MSE, h: toggle}
-    - {t: BASE, h: toggle}
-    - ''
-    - ''
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - LSHIFT
+  - LCTRL
+  - LALT
+  - LGUI
+  - ''
+  - ''
+  - RGUI
+  - RALT
+  - RCTRL
+  - {t: F11, h: RSHIFT}
+  - BT CLR
+  - BT NXT
+  - BT PRV
+  - '&bootloader'
+  - '&sys_reset'
+  - '&sys_reset'
+  - '&bootloader'
+  - {t: BT, h: '0'}
+  - {t: BT, h: '1'}
+  - F12
+  - ''
+  - ''
+  - {t: MSE, h: toggle}
+  - {t: BASE, h: toggle}
+  - ''
+  - ''
   SHORTCUTS:
-  - - '`'
-    - $$mdi:keyboard-tab$$
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-  - - $$mdi:keyboard-tab$$
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-  - - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-  - - Alt
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - {t: '$$mdi:chevron-down$$', type: trans}
-    - ''
+  - GB GRAVE
+  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - TAB
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LALT
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''
   MSE:
-  - ['', '', '', '', '', '&msc SCRL_LEFT', '&msc SCRL_DOWN', '&mmv MOVE_UP', '&msc SCRL_UP', '&msc SCRL_RIGHT']
-  - - Ctrl
-    - {t: '$$mdi:monitor-dashboard$$', h: Meta, type: info}
-    - Alt
-    - $$mdi:apple-keyboard-shift$$
-    - ''
-    - ''
-    - '&mmv MOVE_LEFT'
-    - '&mmv MOVE_DOWN'
-    - '&mmv MOVE_RIGHT'
-    - ''
-  - ['', '', '', '', '', '', Back Click, Middle Click, Forward Click, '']
-  - - ''
-    - ''
-    - {t: NAVI, h: toggle}
-    - {t: BASE, h: toggle}
-    - Left Click
-    - Right Click
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&msc SCRL_LEFT'
+  - '&msc SCRL_DOWN'
+  - '&mmv MOVE_UP'
+  - '&msc SCRL_UP'
+  - '&msc SCRL_RIGHT'
+  - LCTRL
+  - LGUI
+  - LALT
+  - LSHFT
+  - ''
+  - ''
+  - '&mmv MOVE_LEFT'
+  - '&mmv MOVE_DOWN'
+  - '&mmv MOVE_RIGHT'
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - '&mkp MB4'
+  - '&mkp MCLK'
+  - '&mkp MB5'
+  - ''
+  - ''
+  - ''
+  - {t: NAVI, h: toggle}
+  - {t: BASE, h: toggle}
+  - '&mkp LCLK'
+  - '&mkp RCLK'
 combos:
 - p: [12, 16]
-  k: $$mdi:apple-keyboard-caps$$
+  k: '&caps_word'
   l: [BASE]
 - p: [0, 1]
-  k: $$mdi:keyboard-esc$$
+  k: ESC
   l: [BASE]
 - p: [1, 2]
-  k: $$mdi:keyboard-tab$$
+  k: TAB
   l: [BASE]
 - p: [2, 3]
-  k: '{'
+  k: GB LEFT BRACE
   l: [BASE]
 - p: [12, 13]
-  k: (
+  k: GB LEFT PARENTHESIS
   l: [BASE]
 - p: [22, 23]
-  k: '['
+  k: GB LEFT BRACKET
   l: [BASE]
 - p: [8, 9]
-  k: {t: '$$mdi:backspace$$', type: backspace}
+  k: BACKSPACE
   l: [BASE]
 - p: [17, 18]
-  k: '-'
+  k: GB MINUS
   l: [BASE]
 - p: [9, 19]
-  k: $$mdi:backspace-reverse-outline$$
+  k: DELETE
   l: [BASE]
 - p: [6, 7]
-  k: '}'
+  k: GB RIGHT BRACE
   l: [BASE]
 - p: [16, 17]
-  k: )
+  k: GB RIGHT PARENTHESIS
   l: [BASE]
 - p: [26, 27]
-  k: ']'
+  k: GB RIGHT BRACKET
   l: [BASE]
 - p: [28, 29]
-  k: '?'
+  k: GB QUESTION
   l: [BASE]
 - p: [19, 18]
-  k: ''''
+  k: GB APOSTROPHE
   l: [BASE]
 - p: [30, 31]
   k: LWIN
