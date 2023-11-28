@@ -49,13 +49,65 @@ draw_config:
     
   use_local_cache: true
 
+  svg_extra_style: |
+    svg.keymap {
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 10px;
+      font-weight: bold;
+    }
+        
+    text.label {
+      stroke: #dfdfde;
+      stroke-width: 12;
+      stroke-linejoin: round;
+    }
+    
+    rect.combo, rect.combo-separate {
+      opacity: 0.95;
+      stroke: #c9cccf;
+      stroke-width: 0.5;
+      fill: #d7eaed;
+    }
+    path.combo {
+      stroke-dasharray: 4, 4;
+      stroke-opacity: 0.3;
+    } 
+    
+    rect.held, rect.combo.held {
+      fill: #ebdada;
+    }
+    
+    .trans.tap, .ghost.tap {
+      opacity: 0.5;
+    } 
+    
+    .shifted {
+      translate: -9px 3px;
+      opacity: 0.3;
+    }
+    
+    .toggle.shifted {
+      translate: -12px 17px;
+      opacity: 1.0;
+    }
+    .toggle.hold {
+      translate: 12px -25px;
+    } 
+    
+    .text_with_symbol.tap {
+      translate: -1px 1px;
+    } 
+    .text_with_symbol.hold {
+      translate: 6px -31px;
+      font-size: 8px;
+    } 
 
 parse_config:
   preprocess: true
   skip_binding_parsing: false
   mark_alternate_layer_activators: true
   zmk_remove_keycode_prefix: ["GB_"]
-  
+
   trans_legend:
     tap: $$mdi:chevron-down$$
     type: trans
