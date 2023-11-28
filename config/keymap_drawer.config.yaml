@@ -52,7 +52,7 @@ draw_config:
   svg_extra_style: |
     svg.keymap {
       font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-      font-size: 14px;
+      font-size: 18px;
       font-weight: bold;
     }
         
