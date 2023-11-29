@@ -283,7 +283,7 @@
 &kp GB_ESCAPE_CHARACTER         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &msc SCRL_UP    &kp PG_UP  &kp HOME     &kp UP           &kp END    &kp BACKSPACE
 &kp LSHIFT      &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &msc SCRL_DOWN  &kp PG_DN  &kp LEFT     &kp DOWN         &kp RIGHT  &none
 &mt GB_PIPE GB_GRAVE  &kp LCTRL         &mkp LCLK       &mkp RCLK          &mkp RCLK         &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp PSCRN  &mt GB_AT_SIGN    GB_SINGLE_QUOTE
-                                                  &none              &none             &to NUM    &to BASE     &mkp LCLK            &nmkp RCLK
+                                                  &none              &none             &to NUM    &to BASE     &mkp LCLK            &mkp RCLK
             >;
         };
 
