@@ -271,7 +271,7 @@
             label = "BASE";
             bindings = <
 &kp GB_Q    &kp GB_W   &kp GB_E         &kp GB_R               &kp GB_T                    &kp GB_Y           &kp GB_U        &kp GB_I          &kp GB_O       &kp GB_P
-&hm LGUI GB_A   &hm LALT GB_S  &hm LSHIFT GB_D  &hm LCTRL GB_F         &kp GB_G                    &hm RCTRL GB_H     &hm RSHFT GB_J  &hm RALT GB_K     &hm RGUI GB_L  &kp ENTER
+&kp GB_A   &hm LALT GB_S  &hm LSHIFT GB_D  &hm LCTRL GB_F         &kp GB_G                    &hm RCTRL GB_H     &hm RSHFT GB_J  &hm RALT GB_K     &kp GB_L  &kp ENTER
 &mt LCTRL GB_Z  &kp GB_X       &kp GB_C         &kp GB_V               &kp GB_B                    &kp GB_N           &kp GB_M        &kp GB_COMMA      &kp GB_DOT     &kp GB_SLASH
                                        &lm SHORTCUTS LALT  &lt NAVIGATION GB_SPACE  &to NAVIGATION  &to BASE     &lt NUM GB_SPACE  &none
             >;
@@ -283,7 +283,7 @@
 &kp GB_ESCAPE_CHARACTER         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &msc SCRL_UP    &kp PG_UP  &kp HOME     &kp UP           &kp END    &kp BACKSPACE
 &kp LSHIFT      &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &msc SCRL_DOWN  &kp PG_DN  &kp LEFT     &kp DOWN         &kp RIGHT  &none
 &mt GB_PIPE GB_GRAVE  &kp LCTRL         &mkp LCLK       &mkp RCLK          &mkp RCLK         &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp PSCRN  &mt GB_AT_SIGN    GB_SINGLE_QUOTE
-                                                  &none              &none             &to NUM    &to BASE     &none            &none
+                                                  &none              &none             &to NUM    &to BASE     &mkp LCLK            &nmkp RCLK
             >;
         };
 
