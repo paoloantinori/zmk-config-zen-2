@@ -181,6 +181,7 @@
             layers = <0>;
             timeout-ms =
             COMBO_TIMEOUT_MS;
+            require-prior-idle-ms = <1000>;
         };
 
         left_parenthesis {
@@ -189,6 +190,7 @@
             layers = <0>;
             timeout-ms =
             COMBO_TIMEOUT_MS;
+            require-prior-idle-ms = <1000>;
         };
 
         left_bracket {
@@ -197,6 +199,7 @@
             layers = <0>;
             timeout-ms =
             COMBO_TIMEOUT_MS;
+            require-prior-idle-ms = <1000>;
         };
 
         ///////// Right-hand combos
@@ -232,6 +235,7 @@
             layers = <0>;
             timeout-ms =
             COMBO_TIMEOUT_MS;
+            require-prior-idle-ms = <1000>;
         };
 
         right_parenthesis {
@@ -240,6 +244,7 @@
             layers = <0>;
             timeout-ms =
             COMBO_TIMEOUT_MS;
+            require-prior-idle-ms = <1000>;
         };
 
         right_bracket {
@@ -248,6 +253,7 @@
             layers = <0>;
             timeout-ms =
             COMBO_TIMEOUT_MS;
+            require-prior-idle-ms = <1000>;
         };
 
         question {
@@ -268,6 +274,7 @@
             bindings = <&kp LWIN>;
             key-positions = <30 31>;
             layers = <0>;
+            require-prior-idle-ms = <1000>;
         };
     };
 
