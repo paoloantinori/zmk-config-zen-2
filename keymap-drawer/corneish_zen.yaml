@@ -11,7 +11,7 @@ layers:
   - I
   - O
   - P
-  - {t: A, h: '$$mdi:monitor-dashboard$$'}
+  - A
   - {t: S, h: Alt}
   - {t: D, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: F, h: Ctrl}
@@ -19,7 +19,7 @@ layers:
   - {t: H, h: Ctrl}
   - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: K, h: AltGr}
-  - {t: L, h: RGUI}
+  - L
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - {t: Z, h: Ctrl}
   - X
@@ -60,9 +60,9 @@ layers:
   - ''
   - {t: '`', h: '~'}
   - Ctrl
-  - Left Click
-  - Right Click
-  - Right Click
+  - {t: '$$mdi:mouse$$', h: L}
+  - {t: '$$mdi:mouse$$', h: R}
+  - {t: '$$mdi:mouse$$', h: R}
   - INS
   - RC(TAB)
   - LC(LS(TAB))
@@ -72,8 +72,8 @@ layers:
   - {type: held}
   - {t: SYMB, h: toggle}
   - {t: BASE, h: toggle}
-  - ''
-  - ''
+  - {t: '$$mdi:mouse$$', h: L}
+  - {t: '$$mdi:mouse$$', h: R}
   SYMB:
   - {t: '1', s: '!'}
   - {t: '2', s: '"'}
@@ -132,15 +132,15 @@ layers:
   - AltGr
   - Ctrl
   - {t: F11, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: '$$mdi:bluetooth-off$$', h: Clear, type: info}
-  - BT NXT
-  - BT PRV
-  - Boot
-  - Reset
-  - Reset
-  - Boot
-  - BT 1
-  - BT 2
+  - {t: '$$mdi:bluetooth$$', h: '$$mdi:close-thick$$', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth$$', h: '$$mdi:skip-next$$', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth$$', h: '$$mdi:skip-previous$$', type: text_with_symbol}
+  - {t: '$$mdi:progress-download$$', type: bootloader}
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - {t: '$$mdi:progress-download$$', type: bootloader}
+  - {t: '$$mdi:bluetooth-connect$$', h: '0', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth-connect$$', h: '1', type: text_with_symbol}
   - F12
   - ''
   - ''
@@ -212,19 +212,19 @@ layers:
   - ''
   - ''
   - ''
-  - Back Click
-  - Middle Click
-  - Forward Click
+  - {t: '$$mdi:mouse$$', h: '1'}
+  - {t: '$$mdi:mouse$$', h: M}
+  - {t: '$$mdi:mouse$$', h: '2'}
   - ''
   - ''
   - ''
   - {t: NAVI, h: toggle}
   - {t: BASE, h: toggle}
-  - Left Click
-  - Right Click
+  - {t: '$$mdi:mouse$$', h: L}
+  - {t: '$$mdi:mouse$$', h: R}
 combos:
 - p: [12, 16]
-  k: $$mdi:apple-keyboard-caps$$
+  k: '&caps_word'
   l: [BASE]
 - p: [0, 1]
   k: $$mdi:keyboard-esc$$
