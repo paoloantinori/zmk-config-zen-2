@@ -3,14 +3,18 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/mouse.h>
 #include "italian.keycodes"
+
 #ifdef MOUSE_KEYS
+
 #    include "mouse.dtsi"
+
 #endif
+#ifndef KEYMAP_DRAWER
+
+#    include "keys_en_gb.h"
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#ifndef KEYMAP_DRAWER
-#    include "keys_en_gb.h"
 #endif
 
 #define MS_ACT(key) &lt MSE key
@@ -39,9 +43,8 @@
 };
 
 &caps_word {
-  continue-list = <UNDERSCORE MINUS>;
+    continue-list = <UNDERSCORE MINUS>;
 };
-
 
 / {
     macros {
@@ -126,7 +129,7 @@
         };
     };
 
-/*                KEY POSITIONS
+    /*                KEY POSITIONS
 36 keys:
 
   ╭────────────────────╮ ╭────────────────────╮
@@ -157,7 +160,6 @@
         };
 
         ///////// Left-hand combos
-
 
         esc {
             bindings = <&kp ESC>;
@@ -276,6 +278,11 @@
             layers = <0>;
             require-prior-idle-ms = <1000>;
         };
+
+        tilde {
+            bindings = <&kp GB_GRAVE>;
+            key-positions = <0 10>;
+        };
     };
 
     keymap {
@@ -291,34 +298,33 @@
         // &kp LS(A) = LEFT_SHIFT+A
         // &kp LC(RA(B)) = LEFT_CONTROL+RIGHT_ALT+B
 
-
         default_layer {
             label = "BASE";
             bindings = <
-&kp GB_Q    &kp GB_W   &kp GB_E         &kp GB_R               &kp GB_T                    &kp GB_Y           &kp GB_U        &kp GB_I          &kp GB_O       &kp GB_P
-&kp GB_A   &hm LALT GB_S  &hm LSHIFT GB_D  &hm LCTRL GB_F         &kp GB_G                    &hm RCTRL GB_H     &hm RSHFT GB_J  &hm RALT GB_K     &kp GB_L  &kp ENTER
-&mt LCTRL GB_Z  &kp GB_X       &kp GB_C         &kp GB_V               &kp GB_B                    &kp GB_N           &kp GB_M        &kp GB_COMMA      &kp GB_DOT     &kp GB_SLASH
-                                       &lm SHORTCUTS LALT  &lt NAVIGATION GB_SPACE  &to NAVIGATION  &to BASE     &lt NUM GB_SPACE  &none
+&kp GB_Q        &kp GB_W       &kp GB_E         &kp GB_R            &kp GB_T                 &kp GB_Y        &kp GB_U        &kp GB_I          &kp GB_O    &kp GB_P
+&kp GB_A        &hm LALT GB_S  &hm LSHIFT GB_D  &hm LCTRL GB_F      &kp GB_G                 &hm RCTRL GB_H  &hm RSHFT GB_J  &hm RALT GB_K     &kp GB_L    &kp ENTER
+&mt LCTRL GB_Z  &kp GB_X       &kp GB_C         &kp GB_V            &kp GB_B                 &kp GB_N        &kp GB_M        &kp GB_COMMA      &kp GB_DOT  &kp GB_SLASH
+                                                &lm SHORTCUTS LALT  &lt NAVIGATION GB_SPACE  &to NAVIGATION  &to BASE        &lt NUM GB_SPACE  &none
             >;
         };
 
         navigation_layer {
             label = "NAVI";
             bindings = <
-&kp GB_ESCAPE_CHARACTER         &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &msc SCRL_UP    &kp PG_UP  &kp HOME     &kp UP           &kp END    &kp BACKSPACE
-&kp LSHIFT      &mmv MOVE_LEFT    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &msc SCRL_DOWN  &kp PG_DN  &kp LEFT     &kp DOWN         &kp RIGHT  &none
-&mt GB_PIPE GB_GRAVE  &kp LCTRL         &mkp LCLK       &mkp RCLK          &mkp RCLK         &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp PSCRN  &mt GB_AT_SIGN    GB_SINGLE_QUOTE
-                                                  &none              &none             &to NUM    &to BASE     &mkp LCLK            &mkp RCLK
+&kp GB_ESCAPE_CHARACTER  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &msc SCRL_UP    &kp PG_UP  &kp HOME     &kp UP           &kp END    &kp BACKSPACE
+&kp LSHIFT               &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN  &kp PG_DN  &kp LEFT     &kp DOWN         &kp RIGHT  &none
+&mt GB_PIPE GB_GRAVE     &kp LCTRL       &mkp LCLK       &mkp RCLK        &mkp RCLK       &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp PSCRN  &mt GB_AT_SIGN GB_SINGLE_QUOTE
+                                                         &none            &none           &to NUM    &to BASE     &mkp LCLK        &mkp RCLK
             >;
         };
 
         numsymbol_layer {
             label = "SYMB";
             bindings = <
-&kp GB_N1   &kp GB_N2    &kp GB_N3   &kp GB_N4   &kp GB_N5    &kp GB_N6   &kp GB_N7          &kp GB_N8   &kp GB_N9         &kp GB_N0
-&kp GB_LESS_THAN  &hm LALT GB_LEFT_PARENTHESIS  &hm LSHIFT GB_LEFT_BRACE  &hm LCTRL GB_LEFT_BRACKET  &kp GB_MINUS       &hm RCTRL GB_EQUAL      &hm RSHFT GB_EXCLAMATION  &hm RALT GB_HASH  &kp GB_SEMICOLON  &kp GB_BACKSLASH
-&kp GB_GREATER_THAN         &kp RPAR        &kp GB_RIGHT_BRACE       &kp GB_RIGHT_BRACKET       &kp GB_UNDERSCORE  &kp GB_PLUS       &kp GB_AT_SIGN           &kp GB_DOLLAR     &kp GB_COLON            &kp GB_PIPE
-                                              &none          &kp GB_AMPERSAND   &to FUNCTIONS  &to BASE              &kp GB_ASTERISK   &none
+&kp GB_N1            &kp GB_N2                     &kp GB_N3                 &kp GB_N4                  &kp GB_N5          &kp GB_N6           &kp GB_N7                 &kp GB_N8         &kp GB_N9         &kp GB_N0
+&kp GB_LESS_THAN     &hm LALT GB_LEFT_PARENTHESIS  &hm LSHIFT GB_LEFT_BRACE  &hm LCTRL GB_LEFT_BRACKET  &kp GB_MINUS       &hm RCTRL GB_EQUAL  &hm RSHFT GB_EXCLAMATION  &hm RALT GB_HASH  &kp GB_SEMICOLON  &kp GB_BACKSLASH
+&kp GB_GREATER_THAN  &kp RPAR                      &kp GB_RIGHT_BRACE        &kp GB_RIGHT_BRACKET       &kp GB_UNDERSCORE  &kp GB_PLUS         &kp GB_AT_SIGN            &kp GB_DOLLAR     &kp GB_COLON      &kp GB_PIPE
+                                                                             &none                      &kp GB_AMPERSAND   &to FUNCTIONS       &to BASE                  &kp GB_ASTERISK   &none
             >;
         };
 
@@ -335,9 +341,9 @@
         shortcuts_layer {
             bindings = <
 &kp GB_GRAVE  &kp TAB  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&kp TAB    &trans   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans     &trans   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                            &kp LALT  &trans  &trans  &trans  &trans  &none
+&kp TAB       &trans   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans        &trans   &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                               &kp LALT  &trans  &trans  &trans  &trans  &none
             >;
 
             label = "SHORTCUTS";
@@ -346,10 +352,10 @@
         mouse_layer {
             label = "MSE";
             bindings = <
-&none      &none     &none     &none      &none  &msc SCRL_LEFT     &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &msc SCRL_RIGHT
+&none      &none     &none     &none      &none  &msc SCRL_LEFT  &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &msc SCRL_RIGHT
 &kp LCTRL  &kp LGUI  &kp LALT  &kp LSHFT  &none  &none           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
-&none      &none     &none     &none      &none  &none           &mkp MB4     &mkp MCLK    &mkp MB5      &none
-                               &none      &none  &to NAVIGATION  &to BASE     &mkp LCLK    &mkp RCLK
+&none      &none     &none     &none      &none  &none           &mkp MB4        &mkp MCLK       &mkp MB5         &none
+                               &none      &none  &to NAVIGATION  &to BASE        &mkp LCLK       &mkp RCLK
             >;
         };
     };
