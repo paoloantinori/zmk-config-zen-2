@@ -279,9 +279,10 @@
             require-prior-idle-ms = <1000>;
         };
 
-        tilde {
+        backtick {
             bindings = <&kp GB_GRAVE>;
             key-positions = <0 10>;
+            layers = <0>;
         };
     };
 
