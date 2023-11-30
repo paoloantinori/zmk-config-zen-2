@@ -6,12 +6,14 @@
 
 #ifdef MOUSE_KEYS
 
-#    include "mouse.dtsi"
+#include "mouse.dtsi"
 
 #endif
+
+
 #ifndef KEYMAP_DRAWER
 
-#    include "keys_en_gb.h"
+#include "keys_en_gb.h"
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
@@ -161,6 +163,12 @@
 
         ///////// Left-hand combos
 
+        backtick {
+            bindings = <&kp GB_GRAVE>;
+            key-positions = <0 10>;
+            layers = <0>;
+        };
+
         esc {
             bindings = <&kp ESC>;
             key-positions = <0 1>;
@@ -279,11 +287,6 @@
             require-prior-idle-ms = <1000>;
         };
 
-        backtick {
-            bindings = <&kp GB_GRAVE>;
-            key-positions = <0 10>;
-            layers = <0>;
-        };
     };
 
     keymap {

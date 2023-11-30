@@ -246,14 +246,14 @@ parse_config:
     # Mouse
 
 
-    '&mmv M_UP': M↑
-    '&mmv M_DOWN': M↓
-    '&mmv M_LEFT': M←
-    '&mmv M_RIGHT': M→
-    '&mwh S_UP': MW↑
-    '&mwh S_DOWN': MW↓
-    '&mwh S_LEFT': MW←
-    '&mwh S_RIGHT': MW→
+    '&mmv MOVE_UP': M↑
+    '&mmv MOVE_DOWN': M↓
+    '&mmv MOVE_LEFT': M←
+    '&mmv MOVE_RIGHT': M→
+    '&msc SCRL_UP': MW↑
+    '&msc SCRL_DOWN': MW↓
+    '&msc SCRL_LEFT': MW←
+    '&msc SCRL_RIGHT': MW→
 
     "&mkp LCLK":
       tap: $$mdi:mouse$$
@@ -330,10 +330,10 @@ parse_config:
     
     EXCLAMATION: '!'
     EXCL: '!'
-    AT_SIGN: '"' # UK layout
-    AT: '"' # UK layout
-    HASH: '£' # UK layout
-    POUND: '£' # UK layout
+    AT_SIGN: '@' # UK layout
+    AT: '@' # UK layout
+    HASH: '#' # UK layout
+    POUND: '#' # UK layout
     DOLLAR: $
     DLLR: $
     PERCENT: '%'
@@ -357,9 +357,9 @@ parse_config:
     FSLH: /
     QUESTION: '?'
     QMARK: '?'
-    BACKSLASH: '#' # UK layout
-    BSLH: '#' # UK layout
-    PIPE: '~' # UK layout
+    BACKSLASH: '\' # UK layout
+    BSLH: '\' # UK layout
+    PIPE: '|' # UK layout
     NON_US_BSLH: '\'
     NON_US_BACKSLASH: '\'
     PIPE2: '|'
@@ -370,8 +370,8 @@ parse_config:
     SQT: "'"
     APOSTROPHE: "'"
     APOS: "'"
-    DOUBLE_QUOTES: '@' # UK layout
-    DQT: '@' # UK layout
+    DOUBLE_QUOTES: '"' # UK layout
+    DQT: '"' # UK layout
     COMMA: ','
     LESS_THAN: <
     LT: <
@@ -388,7 +388,7 @@ parse_config:
     RIGHT_BRACE: '}'
     RBRC: '}'
     GRAVE: '`'
-    TILDE: '¬' # UK layout
+    TILDE: '~' # UK layout
     NON_US_HASH: '#'
     NUHS: '#'
     TILDE2: '~'
