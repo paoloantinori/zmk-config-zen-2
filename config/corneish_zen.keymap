@@ -1,7 +1,5 @@
 #define MOUSE_KEYS
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/mouse.h>
 #include "italian.keycodes"
 
 #ifdef MOUSE_KEYS
@@ -14,10 +12,12 @@
 #ifndef KEYMAP_DRAWER
 
 #include "keys_en_gb.h"
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/keys.h>
 
 #endif
+
+
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 
 #define MS_ACT(key) &lt MSE key
 
