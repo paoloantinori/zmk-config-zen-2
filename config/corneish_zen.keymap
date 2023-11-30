@@ -1,5 +1,6 @@
 #define MOUSE_KEYS
 
+#include <behaviors.dtsi>
 #include <dt-bindings/zmk/mouse.h>
 #include "italian.keycodes"
 
