@@ -5,19 +5,15 @@
 #include "italian.keycodes"
 
 #ifdef MOUSE_KEYS
-
-#include "mouse.dtsi"
-
+#   include "mouse.dtsi"
 #endif
-
 
 #ifndef KEYMAP_DRAWER
+#   include "keys_en_gb.h"
+#endif
 
-#include "keys_en_gb.h"
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-
-#endif
 
 #define MS_ACT(key) &lt MSE key
 
