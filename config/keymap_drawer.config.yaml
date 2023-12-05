@@ -537,11 +537,11 @@ parse_config:
 
   zmk_combos:
     caps_word:
-      align: bottom
+      # align: bottom
       offset: 1.05
       key:
-        tap: 'TAB'
-        shifted: '<>'
+        tap: 'CAPS WORD'
+        shifted: ''
     combo_bkt:
       align: top
       offset: 0.6
