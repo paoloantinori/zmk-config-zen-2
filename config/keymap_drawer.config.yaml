@@ -83,7 +83,7 @@ draw_config:
     
     .shifted {
       translate: -9px 3px;
-      opacity: 0.3;
+      opacity: 1;
     }
     
     .toggle.shifted {
