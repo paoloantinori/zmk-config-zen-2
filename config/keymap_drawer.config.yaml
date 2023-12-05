@@ -547,7 +547,7 @@ parse_config:
       align: bottom
       offset: 1.05
       key:
-        tap: 'tab'
+        tap: $$mdi:keyboard-tab$$
         shifted: ''
     combo_bkt:
       align: top
