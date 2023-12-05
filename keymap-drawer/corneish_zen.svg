@@ -189,7 +189,7 @@ rect.held, rect.combo.held {
 
 .shifted {
   translate: -9px 3px;
-  opacity: 1;
+  opacity: 0.7;
 }
 
 .toggle.shifted {
@@ -208,8 +208,8 @@ rect.held, rect.combo.held {
   font-size: 8px;
 } 
 </style>
-<g transform="translate(0, 0)" class="layer-BASE">
-<text x="0" y="0" class="label">BASE</text>
+<g transform="translate(0, 0)" class="layer-default">
+<text x="0" y="0" class="label">default</text>
 <g transform="translate(0, 0)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -329,14 +329,17 @@ rect.held, rect.combo.held {
 <g transform="translate(840, 200)" class="key keypos-27">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <text x="0" y="0" class="key tap">,</text>
+<text x="0" y="-34" class="key shifted">&lt;</text>
 </g>
 <g transform="translate(920, 210)" class="key keypos-28">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <text x="0" y="0" class="key tap">.</text>
+<text x="0" y="-34" class="key shifted">&gt;</text>
 </g>
 <g transform="translate(1000, 230)" class="key keypos-29">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <text x="0" y="0" class="key tap">/</text>
+<text x="0" y="-34" class="key shifted">?</text>
 </g>
 <g transform="translate(240, 293)" class="key keypos-30">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -348,31 +351,32 @@ rect.held, rect.combo.held {
 <g transform="translate(328, 304) rotate(15.0)" class="key keypos-31">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:keyboard-space"/>
-<text x="0" y="34" class="key hold">NAVI</text>
+<text x="0" y="34" class="key hold"><tspan style="font-size: 60%">navigation</tspan></text>
 </g>
 <g transform="translate(422, 320) rotate(30.0)" class="key keypos-32">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<text x="0" y="0" class="key tap">NAVI</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 60%">navigation</tspan></text>
 <text x="0" y="54" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(618, 320) rotate(-30.0)" class="key keypos-33">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<text x="0" y="0" class="key tap">BASE</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 71%">default</tspan></text>
 <text x="0" y="54" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(712, 304) rotate(-15.0)" class="key keypos-34">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:keyboard-space" xlink:href="#mdi:keyboard-space" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:keyboard-space"/>
-<text x="0" y="34" class="key hold">SYMB</text>
+<text x="0" y="34" class="key hold"><tspan style="font-size: 60%">numsymbol</tspan></text>
 </g>
 <g transform="translate(800, 293)" class="key keypos-35">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 </g>
 <g class="combo combopos-0">
-<path d="M480,125 l-253,-5" class="combo"/>
-<path d="M480,125 l253,5" class="combo"/>
-<rect rx="4" ry="4" x="462" y="107" width="36" height="36" class="combo"/>
-<text x="480" y="125" class="combo tap"><tspan style="font-size: 60%">&amp;caps_word</tspan></text>
+<path d="M480,255 h-274 a6.0,6.0 0 0 1 -6.0,-6.0 v-102" class="combo"/>
+<path d="M480,255 h274 a6.0,6.0 0 0 0 6.0,-6.0 v-92" class="combo"/>
+<rect rx="4" ry="4" x="462" y="237" width="36" height="36" class="combo"/>
+<text x="480" y="255" class="combo tap">TAB</text>
+<text x="480" y="241" class="combo shifted">&lt;&gt;</text>
 </g>
 <g class="combo combopos-1">
 <path d="M200,130 l-53,0" class="combo"/>
@@ -442,8 +446,8 @@ rect.held, rect.combo.held {
 </g>
 </g>
 </g>
-<g transform="translate(0, 392)" class="layer-NAVI">
-<text x="0" y="0" class="label">NAVI</text>
+<g transform="translate(0, 392)" class="layer-navigation">
+<text x="0" y="0" class="label">navigation</text>
 <g transform="translate(0, 0)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -534,6 +538,7 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <text x="0" y="0" class="key tap">`</text>
 <text x="0" y="34" class="key hold">|</text>
+<text x="0" y="-34" class="key shifted">¬</text>
 </g>
 <g transform="translate(120, 210)" class="key keypos-21">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -583,12 +588,12 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(422, 320) rotate(30.0)" class="key keypos-32">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<text x="0" y="0" class="key tap">SYMB</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 60%">numsymbol</tspan></text>
 <text x="0" y="54" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(618, 320) rotate(-30.0)" class="key keypos-33">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<text x="0" y="0" class="key tap">BASE</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 71%">default</tspan></text>
 <text x="0" y="54" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(712, 304) rotate(-15.0)" class="key keypos-34">
@@ -603,8 +608,8 @@ rect.held, rect.combo.held {
 </g>
 </g>
 </g>
-<g transform="translate(0, 785)" class="layer-SYMB">
-<text x="0" y="0" class="label">SYMB</text>
+<g transform="translate(0, 785)" class="layer-numsymbol">
+<text x="0" y="0" class="label">numsymbol</text>
 <g transform="translate(0, 0)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -678,6 +683,7 @@ rect.held, rect.combo.held {
 <g transform="translate(360, 140)" class="key keypos-14">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <text x="0" y="0" class="key tap">-</text>
+<text x="0" y="-34" class="key shifted">_</text>
 </g>
 <g transform="translate(680, 140)" class="key keypos-15">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -751,12 +757,12 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(422, 320) rotate(30.0)" class="key keypos-32">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<text x="0" y="0" class="key tap">FUNC</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 60%">functions</tspan></text>
 <text x="0" y="54" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(618, 320) rotate(-30.0)" class="key keypos-33">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<text x="0" y="0" class="key tap">BASE</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 71%">default</tspan></text>
 <text x="0" y="54" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(712, 304) rotate(-15.0)" class="key held keypos-34">
@@ -768,8 +774,8 @@ rect.held, rect.combo.held {
 </g>
 </g>
 </g>
-<g transform="translate(0, 1177)" class="layer-FUNC">
-<text x="0" y="0" class="label">FUNC</text>
+<g transform="translate(0, 1177)" class="layer-functions">
+<text x="0" y="0" class="label">functions</text>
 <g transform="translate(0, 0)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -904,12 +910,12 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(422, 320) rotate(30.0)" class="key keypos-32">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<text x="0" y="0" class="key tap">MSE</text>
+<text x="0" y="0" class="key tap">mouse</text>
 <text x="0" y="54" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(618, 320) rotate(-30.0)" class="key keypos-33">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<text x="0" y="0" class="key tap">BASE</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 71%">default</tspan></text>
 <text x="0" y="54" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(712, 304) rotate(-15.0)" class="key keypos-34">
@@ -922,12 +928,13 @@ rect.held, rect.combo.held {
 </g>
 </g>
 </g>
-<g transform="translate(0, 1569)" class="layer-SHORTCUTS">
-<text x="0" y="0" class="label">SHORTCUTS</text>
+<g transform="translate(0, 1569)" class="layer-shortcuts">
+<text x="0" y="0" class="label">shortcuts</text>
 <g transform="translate(0, 0)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <text x="0" y="0" class="key tap">`</text>
+<text x="0" y="-34" class="key shifted">¬</text>
 </g>
 <g transform="translate(120, 50)" class="key keypos-1">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1070,8 +1077,8 @@ rect.held, rect.combo.held {
 </g>
 </g>
 </g>
-<g transform="translate(0, 1962)" class="layer-MSE">
-<text x="0" y="0" class="label">MSE</text>
+<g transform="translate(0, 1962)" class="layer-mouse">
+<text x="0" y="0" class="label">mouse</text>
 <g transform="translate(0, 0)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -1190,12 +1197,12 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(422, 320) rotate(30.0)" class="key keypos-32">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<text x="0" y="0" class="key tap">NAVI</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 60%">navigation</tspan></text>
 <text x="0" y="54" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(618, 320) rotate(-30.0)" class="key keypos-33">
 <rect rx="4" ry="4" x="-38" y="-58" width="77" height="117" class="key"/>
-<text x="0" y="0" class="key tap">BASE</text>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 71%">default</tspan></text>
 <text x="0" y="54" class="key hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
 <g transform="translate(712, 304) rotate(-15.0)" class="key keypos-34">

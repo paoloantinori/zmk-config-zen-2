@@ -1,6 +1,6 @@
 layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
 layers:
-  BASE:
+  default:
   - Q
   - W
   - E
@@ -28,16 +28,16 @@ layers:
   - B
   - N
   - M
-  - ','
-  - .
-  - /
+  - {t: ',', s: <}
+  - {t: ., s: '>'}
+  - {t: /, s: '?'}
   - '&lm 4 LALT'
-  - {t: '$$mdi:keyboard-space$$', h: NAVI}
-  - {t: NAVI, h: toggle}
-  - {t: BASE, h: toggle}
-  - {t: '$$mdi:keyboard-space$$', h: SYMB}
+  - {t: '$$mdi:keyboard-space$$', h: navigation}
+  - {t: navigation, h: toggle}
+  - {t: default, h: toggle}
+  - {t: '$$mdi:keyboard-space$$', h: numsymbol}
   - ''
-  NAVI:
+  navigation:
   - ESCAPE CHARACTER
   - MW←
   - M↑
@@ -58,7 +58,7 @@ layers:
   - DOWN
   - RIGHT
   - ''
-  - {t: '`', h: '|'}
+  - {t: '`', h: '|', s: ¬}
   - Ctrl
   - {t: '$$mdi:mouse$$', h: L}
   - {t: '$$mdi:mouse$$', h: R}
@@ -70,11 +70,11 @@ layers:
   - {t: '''', h: '@'}
   - ''
   - {type: held}
-  - {t: SYMB, h: toggle}
-  - {t: BASE, h: toggle}
+  - {t: numsymbol, h: toggle}
+  - {t: default, h: toggle}
   - {t: '$$mdi:mouse$$', h: L}
   - {t: '$$mdi:mouse$$', h: R}
-  SYMB:
+  numsymbol:
   - {t: '1', s: '!'}
   - {t: '2', s: '"'}
   - {t: '3', s: £}
@@ -89,7 +89,7 @@ layers:
   - {t: (, h: Alt}
   - {t: '{', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '[', h: Ctrl}
-  - '-'
+  - {t: '-', s: _}
   - {t: '=', h: Ctrl}
   - {t: '!', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '#', h: AltGr}
@@ -107,11 +107,11 @@ layers:
   - '|'
   - ''
   - '&'
-  - {t: FUNC, h: toggle}
-  - {t: BASE, h: toggle}
+  - {t: functions, h: toggle}
+  - {t: default, h: toggle}
   - {t: '*', type: held}
   - ''
-  FUNC:
+  functions:
   - F1
   - F2
   - F3
@@ -144,12 +144,12 @@ layers:
   - F12
   - ''
   - ''
-  - {t: MSE, h: toggle}
-  - {t: BASE, h: toggle}
+  - {t: mouse, h: toggle}
+  - {t: default, h: toggle}
   - $$mdi:usb$$
   - $$mdi:bluetooth$$
-  SHORTCUTS:
-  - '`'
+  shortcuts:
+  - {t: '`', s: ¬}
   - $$mdi:keyboard-tab$$
   - {t: '$$mdi:chevron-down$$', type: trans}
   - {t: '$$mdi:chevron-down$$', type: trans}
@@ -185,7 +185,7 @@ layers:
   - {t: '$$mdi:chevron-down$$', type: trans}
   - {t: '$$mdi:chevron-down$$', type: trans}
   - ''
-  MSE:
+  mouse:
   - ''
   - ''
   - ''
@@ -218,59 +218,61 @@ layers:
   - ''
   - ''
   - ''
-  - {t: NAVI, h: toggle}
-  - {t: BASE, h: toggle}
+  - {t: navigation, h: toggle}
+  - {t: default, h: toggle}
   - {t: '$$mdi:mouse$$', h: L}
   - {t: '$$mdi:mouse$$', h: R}
 combos:
 - p: [12, 16]
-  k: '&caps_word'
-  l: [BASE]
+  k: {t: TAB, s: <>}
+  l: [default]
+  a: bottom
+  o: 1.05
 - p: [11, 13]
   k: $$mdi:keyboard-tab$$
-  l: [BASE]
+  l: [default]
 - p: [0, 10]
   k: '`'
-  l: [BASE]
+  l: [default]
 - p: [0, 1]
   k: $$mdi:keyboard-esc$$
-  l: [BASE]
+  l: [default]
 - p: [1, 2]
   k: $$mdi:keyboard-tab$$
-  l: [BASE]
+  l: [default]
 - p: [2, 3]
   k: '{'
-  l: [BASE]
+  l: [default]
 - p: [12, 13]
   k: (
-  l: [BASE]
+  l: [default]
 - p: [22, 23]
   k: '['
-  l: [BASE]
+  l: [default]
 - p: [8, 9]
   k: {t: '$$mdi:backspace$$', type: backspace}
-  l: [BASE]
+  l: [default]
 - p: [17, 18]
   k: '-'
-  l: [BASE]
+  l: [default]
 - p: [9, 19]
   k: $$mdi:backspace-reverse-outline$$
-  l: [BASE]
+  l: [default]
 - p: [6, 7]
   k: '}'
-  l: [BASE]
+  l: [default]
 - p: [16, 17]
   k: )
-  l: [BASE]
+  l: [default]
 - p: [26, 27]
   k: ']'
-  l: [BASE]
+  l: [default]
 - p: [28, 29]
   k: '?'
-  l: [BASE]
+  l: [default]
 - p: [19, 18]
   k: ''''
-  l: [BASE]
+  l: [default]
 - p: [30, 31]
   k: LWIN
-  l: [BASE]
+  l: [default]
