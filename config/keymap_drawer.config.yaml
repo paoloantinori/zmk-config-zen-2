@@ -542,6 +542,12 @@ parse_config:
       key:
         tap: 'CAPS WORD'
         shifted: ''
+    tab_1:
+      align: bottom
+      offset: 1.05
+      key:
+        tap: 'tab'
+        shifted: ''
     combo_bkt:
       align: top
       offset: 0.6
