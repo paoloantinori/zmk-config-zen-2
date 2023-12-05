@@ -274,6 +274,13 @@ parse_config:
     "&mkp MB5":
       tap: $$mdi:mouse$$
       hold: 2
+  
+  
+  
+  
+  
+  
+  
   zmk_keycode_map:
     RET:
       type: enter
@@ -350,7 +357,9 @@ parse_config:
     RPAR: )
     EQUAL: '='
     PLUS: +
-    MINUS: '-'
+    MINUS: 
+      tap: '-'
+      shifted: '_'
     UNDERSCORE: _
     UNDER: _
     SLASH:
@@ -399,7 +408,9 @@ parse_config:
     RBKT: ']'
     RIGHT_BRACE: '}'
     RBRC: '}'
-    GRAVE: '`'
+    GRAVE: 
+      tap: '`'
+      shifted: '¬'
     TILDE: '~' # UK layout
     NON_US_HASH: '#'
     NUHS: '#'
@@ -525,11 +536,11 @@ parse_config:
       type: info
 
   zmk_combos:
-    combo_par:
+    caps_word:
       align: bottom
       offset: 1.05
       key:
-        tap: '()'
+        tap: 'TAB'
         shifted: '<>'
     combo_bkt:
       align: top
