@@ -538,7 +538,7 @@ parse_config:
   zmk_combos:
     caps_word:
       # align: bottom
-      offset: 1.05
+      # offset: 1.05
       key:
         tap: 'CAPS WORD'
         shifted: ''
