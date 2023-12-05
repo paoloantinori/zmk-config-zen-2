@@ -292,6 +292,7 @@ parse_config:
       type: enter
       tap: $$mdi:keyboard-return$$
     ESC: $$mdi:keyboard-esc$$
+    ESCAPE_CHARACTER: $$mdi:keyboard-esc$$
     ESCAPE: $$mdi:keyboard-esc$$
     TAB: $$mdi:keyboard-tab$$
     LS(TAB): $$mdi:keyboard-tab-reverse$$
