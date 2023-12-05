@@ -353,8 +353,13 @@ parse_config:
     MINUS: '-'
     UNDERSCORE: _
     UNDER: _
-    SLASH: /
-    FSLH: /
+    SLASH:
+      tap: /
+      shifted: '?'
+
+    FSLH:
+      tap: /
+      shifted: '?'
     QUESTION: '?'
     QMARK: '?'
     BACKSLASH: '\' # UK layout
@@ -372,11 +377,18 @@ parse_config:
     APOS: "'"
     DOUBLE_QUOTES: '"' # UK layout
     DQT: '"' # UK layout
-    COMMA: ','
+    COMMA:
+      tap: ','
+      shifted: '<'
+ 
     LESS_THAN: <
     LT: <
-    PERIOD: .
-    DOT: .
+    PERIOD:
+      tap: .
+      shifted: '>'
+    DOT:
+      tap: .
+      shifted: '>'
     GREATER_THAN: '>'
     GT: '>'
     LEFT_BRACKET: '['
