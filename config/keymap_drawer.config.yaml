@@ -544,8 +544,8 @@ parse_config:
         tap: 'CAPS WORD'
         shifted: ''
     tab_1:
-      align: bottom
-      offset: 1.05
+      align: top
+      offset: 0.15
       key:
         tap: $$mdi:keyboard-tab$$
         shifted: ''
