@@ -38,7 +38,7 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: numsymbol}
   - ''
   navigation:
-  - ESCAPE CHARACTER
+  - $$mdi:keyboard-esc$$
   - MW←
   - M↑
   - MW→
@@ -224,13 +224,13 @@ layers:
   - {t: '$$mdi:mouse$$', h: R}
 combos:
 - p: [12, 16]
-  k: {t: TAB, s: <>}
+  k: CAPS WORD
   l: [default]
-  a: bottom
-  o: 1.05
 - p: [11, 13]
   k: $$mdi:keyboard-tab$$
   l: [default]
+  a: top
+  o: 0.15
 - p: [0, 10]
   k: '`'
   l: [default]

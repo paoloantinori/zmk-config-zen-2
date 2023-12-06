@@ -372,17 +372,18 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 </g>
 <g class="combo combopos-0">
-<path d="M480,255 h-274 a6.0,6.0 0 0 1 -6.0,-6.0 v-102" class="combo"/>
-<path d="M480,255 h274 a6.0,6.0 0 0 0 6.0,-6.0 v-92" class="combo"/>
-<rect rx="4" ry="4" x="462" y="237" width="36" height="36" class="combo"/>
-<text x="480" y="255" class="combo tap">TAB</text>
-<text x="480" y="241" class="combo shifted">&lt;&gt;</text>
+<path d="M480,125 l-253,-5" class="combo"/>
+<path d="M480,125 l253,5" class="combo"/>
+<rect rx="4" ry="4" x="462" y="107" width="36" height="36" class="combo"/>
+<text x="480" y="125" class="combo tap">
+<tspan x="480" dy="-0.5em">CAPS</tspan><tspan x="480" dy="1.0em">WORD</tspan>
+</text>
 </g>
 <g class="combo combopos-1">
-<path d="M200,130 l-53,0" class="combo"/>
-<path d="M200,130 l53,0" class="combo"/>
-<rect rx="4" ry="4" x="182" y="112" width="36" height="36" class="combo"/>
-<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="187" y="117" height="26" width="26.0" class="combo tap glyph mdi:keyboard-tab"/>
+<path d="M200,77 h-74 a6.0,6.0 0 0 0 -6.0,6.0 v20" class="combo"/>
+<path d="M200,77 h74 a6.0,6.0 0 0 1 6.0,6.0 v20" class="combo"/>
+<rect rx="4" ry="4" x="182" y="59" width="36" height="36" class="combo"/>
+<use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="187" y="64" height="26" width="26.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
 <g class="combo combopos-2">
 <rect rx="4" ry="4" x="22" y="92" width="36" height="36" class="combo"/>
@@ -451,9 +452,7 @@ rect.held, rect.combo.held {
 <g transform="translate(0, 0)">
 <g transform="translate(40, 70)" class="key keypos-0">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-0.5em" style="font-size: 60%">ESCAPE</tspan><tspan x="0" dy="1.0em" style="font-size: 60%">CHARACTER</tspan>
-</text>
+<use href="#mdi:keyboard-esc" xlink:href="#mdi:keyboard-esc" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:keyboard-esc"/>
 </g>
 <g transform="translate(120, 50)" class="key keypos-1">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
