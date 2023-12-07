@@ -40,7 +40,7 @@ layers:
   navigation:
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:mouse$$', h: scroll left}
-  - {t: '$$mdi:arrow-up-bold$$', h: '$$mdi:mouse$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
   - {t: '$$mdi:mouse$$', h: scroll right}
   - {t: '$$mdi:mouse$$', h: scroll up}
   - Pg Up
@@ -49,9 +49,9 @@ layers:
   - End
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:arrow-left-bold$$', h: '$$mdi:mouse$$'}
-  - {t: '$$mdi:arrow-down-bold$$', h: '$$mdi:mouse$$'}
-  - {t: '$$mdi:arrow-right-bold$$', h: '$$mdi:mouse$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
   - {t: '$$mdi:mouse$$', h: scroll down}
   - Pg Down
   - $$mdi:arrow-left-bold$$
@@ -193,7 +193,7 @@ layers:
   - ''
   - {t: '$$mdi:mouse$$', h: scroll left}
   - {t: '$$mdi:mouse$$', h: scroll down}
-  - {t: '$$mdi:arrow-up-bold$$', h: '$$mdi:mouse$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
   - {t: '$$mdi:mouse$$', h: scroll up}
   - {t: '$$mdi:mouse$$', h: scroll right}
   - Ctrl
@@ -202,9 +202,9 @@ layers:
   - $$mdi:apple-keyboard-shift$$
   - ''
   - ''
-  - {t: '$$mdi:arrow-left-bold$$', h: '$$mdi:mouse$$'}
-  - {t: '$$mdi:arrow-down-bold$$', h: '$$mdi:mouse$$'}
-  - {t: '$$mdi:arrow-right-bold$$', h: '$$mdi:mouse$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
   - ''
   - ''
   - ''
