@@ -342,14 +342,30 @@ parse_config:
     # Mouse
 
 
-    '&mmv MOVE_UP': M↑
-    '&mmv MOVE_DOWN': M↓
-    '&mmv MOVE_LEFT': M←
-    '&mmv MOVE_RIGHT': M→
-    '&msc SCRL_UP': MW↑
-    '&msc SCRL_DOWN': MW↓
-    '&msc SCRL_LEFT': MW←
-    '&msc SCRL_RIGHT': MW→
+    '&mmv MOVE_UP':
+      tap: $$mdi:arrow-up-bold$$
+      hold: $$mdi:mouse$$
+    '&mmv MOVE_DOWN':
+      tap: $$mdi:arrow-down-bold$$
+      hold: $$mdi:mouse$$
+    '&mmv MOVE_LEFT': 
+      tap: $$mdi:arrow-left-bold$$
+      hold: $$mdi:mouse$$
+    '&mmv MOVE_RIGHT': 
+      tap: $$mdi:arrow-right-bold$$
+      hold: $$mdi:mouse$$
+    '&msc SCRL_UP':
+      tap: $$mdi:mouse$$
+      hold: scroll up
+    '&msc SCRL_DOWN':
+      tap: $$mdi:mouse$$
+      hold: scroll down
+    '&msc SCRL_LEFT': 
+      tap: $$mdi:mouse$$
+      hold: scroll left
+    '&msc SCRL_RIGHT':
+      tap: $$mdi:mouse$$
+      hold: scroll right
 
     "&mkp LCLK":
       tap: $$mdi:mouse$$
