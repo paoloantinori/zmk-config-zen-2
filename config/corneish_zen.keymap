@@ -368,7 +368,7 @@
             //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
                  &kp LSHIFT   &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN       &kp PG_DN       &kp LEFT      &kp DOWN      &kp RIGHT         XXXXX
             //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-        &mt GB_PIPE GB_GRAVE    &kp LCTRL      &mkp LCLK       &mkp RCLK     &mkp RCLK             &kp INS      &kp RC(TAB)   &kp LC(LS(TAB))  &kp PSCRN      &mt GB_AT_SIGN GB_SINGLE_QUOTE
+        &mt GB_PIPE GB_GRAVE    &kp LCTRL      &mkp LCLK       &mkp RCLK     &mkp MCLK             &kp INS      &kp RC(TAB)   &kp LC(LS(TAB))  &kp PSCRN      &mt GB_AT_SIGN GB_SINGLE_QUOTE
             //╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
                                                 XXXXX           XXXXX         &to NUM              &to BASE     &mkp LCLK        &mkp RCLK
             //                              ╰──────────────┴──────────────┴──────────────╯     ╰──────────────┴──────────────┴──────────────╯
