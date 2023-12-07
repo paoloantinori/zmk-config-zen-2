@@ -200,7 +200,6 @@
         lock_keyboard {
             bindings = <&tog LOCK>;
             key-positions = <0 9 32 33>;
-            layers = <BASE>;
             timeout-ms = <40>;
             require-prior-idle-ms = <1000>;
         };
@@ -346,49 +345,74 @@
         default_layer {
             label = "BASE";
             bindings = <
-&kp GB_Q        &kp GB_W       &kp GB_E         &kp GB_R            &kp GB_T                 &kp GB_Y        &kp GB_U        &kp GB_I          &kp GB_O    &kp GB_P
-&kp GB_A        &hml LALT GB_S  &hml LSHIFT GB_D  &hml LCTRL GB_F      &kp GB_G                 &hmr RCTRL GB_H  &hmr RSHFT GB_J  &hmr RALT GB_K     &kp GB_L    &kp ENTER
-&mt LCTRL GB_Z  &kp GB_X       &kp GB_C         &kp GB_V            &kp GB_B                 &kp GB_N        &kp GB_M        &kp GB_COMMA      &kp GB_DOT  &kp GB_SLASH
-                                                &lm SHORTCUTS LALT  &lt NAVIGATION GB_SPACE  &to NAVIGATION  &to BASE        &lt NUM GB_SPACE  XXXXX
+            //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+                  &kp GB_Q       &kp GB_W       &kp GB_E       &kp GB_R       &kp GB_T             &kp GB_Y       &kp GB_U       &kp GB_I       &kp GB_O       &kp GB_P
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                  &kp GB_A    &hml LALT GB_S &hml LSHIFT GB_D  &hml LCTRL GB_F  &kp GB_G                 &hmr RCTRL GB_H  &hmr RSHFT GB_J  &hmr RALT GB_K     &kp GB_L    &kp ENTER
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                  &mt LCTRL GB_Z  &kp GB_X      &kp GB_C        &kp GB_V      &kp GB_B             &kp GB_N       &kp GB_M     &kp GB_COMMA    &kp GB_DOT    &kp GB_SLASH
+            //╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                         &lm SHORTCUTS LALT  &lt NAVIGATION GB_SPACE &to NAVIGATION  &to BASE  &lt NUM GB_SPACE   XXXXX
+            //                              ╰──────────────┴──────────────┴──────────────╯     ╰──────────────┴──────────────┴──────────────╯
             >;
         };
 
         navigation_layer {
             label = "NAVI";
             bindings = <
-&kp GB_ESCAPE_CHARACTER  &msc SCRL_LEFT  &mmv MOVE_UP    &msc SCRL_RIGHT  &msc SCRL_UP    &kp PG_UP  &kp HOME     &kp UP           &kp END    &kp BACKSPACE
-&kp LSHIFT               &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN  &kp PG_DN  &kp LEFT     &kp DOWN         &kp RIGHT  XXXXX
-&mt GB_PIPE GB_GRAVE     &kp LCTRL       &mkp LCLK       &mkp RCLK        &mkp RCLK       &kp INS    &kp RC(TAB)  &kp LC(LS(TAB))  &kp PSCRN  &mt GB_AT_SIGN GB_SINGLE_QUOTE
-                                                         XXXXX            XXXXX           &to NUM    &to BASE     &mkp LCLK        &mkp RCLK
+            //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+               &kp GB_ESCAPE_CHARACTER &msc SCRL_LEFT &mmv MOVE_UP &msc SCRL_RIGHT &msc SCRL_UP    &kp PG_UP      &kp HOME        &kp UP         &kp END     &kp BACKSPACE
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                 &kp LSHIFT   &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &msc SCRL_DOWN       &kp PG_DN       &kp LEFT      &kp DOWN      &kp RIGHT         XXXXX
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+        &mt GB_PIPE GB_GRAVE    &kp LCTRL      &mkp LCLK       &mkp RCLK     &mkp RCLK             &kp INS      &kp RC(TAB)   &kp LC(LS(TAB))  &kp PSCRN      &mt GB_AT_SIGN GB_SINGLE_QUOTE
+            //╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                                XXXXX           XXXXX         &to NUM              &to BASE     &mkp LCLK        &mkp RCLK
+            //                              ╰──────────────┴──────────────┴──────────────╯     ╰──────────────┴──────────────┴──────────────╯
             >;
         };
 
         numsymbol_layer {
             label = "SYMB";
             bindings = <
-&kp GB_N1            &kp GB_N2                     &kp GB_N3                 &kp GB_N4                  &kp GB_N5          &kp GB_N6           &kp GB_N7                 &kp GB_N8         &kp GB_N9         &kp GB_N0
-&kp GB_LESS_THAN     &hm LALT GB_LEFT_PARENTHESIS  &hml LSHIFT GB_LEFT_BRACE  &hml LCTRL GB_LEFT_BRACKET  &kp GB_MINUS       &hmr RCTRL GB_EQUAL  &hmr RSHFT GB_EXCLAMATION  &hmr RALT GB_HASH  &kp GB_SEMICOLON  &kp GB_BACKSLASH
-&kp GB_GREATER_THAN  &kp RPAR                      &kp GB_RIGHT_BRACE        &kp GB_RIGHT_BRACKET       &kp GB_UNDERSCORE  &kp GB_PLUS         &kp GB_AT_SIGN            &kp GB_DOLLAR     &kp GB_COLON      &kp GB_PIPE
-                                                                             XXXXX                      &kp GB_AMPERSAND   &to FUNCTIONS       &to BASE                  &kp GB_ASTERISK   XXXXX
+            //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+                 &kp GB_N1       &kp GB_N2     &kp GB_N3     &kp GB_N4         &kp GB_N5          &kp GB_N6       &kp GB_N7     &kp GB_N8      &kp GB_N9      &kp GB_N0
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+           &kp GB_LESS_THAN   &hm LALT GB_LEFT_PARENTHESIS  &hml LSHIFT GB_LEFT_BRACE  &hml LCTRL GB_LEFT_BRACKET  &kp GB_MINUS       &hmr RCTRL GB_EQUAL  &hmr RSHFT GB_EXCLAMATION  &hmr RALT GB_HASH  &kp GB_SEMICOLON  &kp GB_BACKSLASH
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+              &kp GB_GREATER_THAN  &kp RPAR &kp GB_RIGHT_BRACE &kp GB_RIGHT_BRACKET  &kp GB_UNDERSCORE  &kp GB_PLUS         &kp GB_AT_SIGN            &kp GB_DOLLAR     &kp GB_COLON      &kp GB_PIPE
+            //╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                                 XXXXX      &kp GB_AMPERSAND &to FUNCTIONS         &to BASE    &kp GB_ASTERISK   XXXXX
+            //                              ╰──────────────┴──────────────┴──────────────╯     ╰──────────────┴──────────────┴──────────────╯
             >;
         };
 
         functions_layer {
             label = "FUNC";
             bindings = <
-&kp F1      &kp F2      &kp F3      &kp F4       &kp F5      &kp F6      &kp F7       &kp F8        &kp F9        &kp F10
-&kp LSHIFT  &kp LCTRL   &kp LALT    &kp LGUI     XXXXX       XXXXX       &kp RGUI     &kp RALT      &kp RCTRL     &mt RSHIFT F11
-&bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &bootloader  &sys_reset  &sys_reset  &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &kp F12
-                                    XXXXX        XXXXX       &to MOUSE   &to BASE     &out OUT_USB         &out OUT_BLE
+            //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+                   &kp F1        &kp F2          &kp F3         &kp F4        &kp F5              &kp F6          &kp F7         &kp F8         &kp F9         &kp F10
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                 &kp LSHIFT     &kp LCTRL       &kp LALT        &kp LGUI        XXXXX               XXXXX         &kp RGUI       &kp RALT      &kp RCTRL     &mt RSHIFT F11
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                 &bt BT_CLR  &bt BT_NXT  &bt BT_PRV  &bootloader  &sys_reset  &sys_reset  &bootloader  &bt BT_SEL 0  &bt BT_SEL 1  &kp F12
+            //╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                                 XXXXX          XXXXX         &to MOUSE            &to BASE     &out OUT_USB    &out OUT_BLE
+            //                              ╰──────────────┴──────────────┴──────────────╯     ╰──────────────┴──────────────┴──────────────╯
             >;
         };
 
         shortcuts_layer {
             bindings = <
-&kp GB_GRAVE  &kp TAB  ___  ___          ___  ___  ___  ___  ___  ___
-&kp TAB       ___      ___  ___          ___  ___  ___  ___  ___  ___
-___           ___      ___  ___          ___  ___  ___  ___  ___  ___
-             &kp LALT  ___  ___          ___  ___  XXXXX
+            //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+                &kp GB_GRAVE     &kp TAB            ___          ___            ___                   ___           ___            ___            ___            ___
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                 &kp TAB            ___             ___          ___            ___                   ___           ___            ___            ___            ___
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                     ___            ___             ___          ___            ___                   ___           ___            ___            ___            ___
+            //╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                                &kp LALT         ___            ___                   ___           ___           XXXXX
+            //                              ╰──────────────┴──────────────┴──────────────╯     ╰──────────────┴──────────────┴──────────────╯
             >;
 
             label = "SHORTCUTS";
@@ -397,25 +421,30 @@ ___           ___      ___  ___          ___  ___  ___  ___  ___  ___
         mouse_layer {
             label = "MSE";
             bindings = <
-XXXXX      XXXXX     XXXXX     XXXXX      XXXXX  &msc SCRL_LEFT  &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &msc SCRL_RIGHT
-&kp LCTRL  &kp LGUI  &kp LALT  &kp LSHFT  XXXXX  XXXXX           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  XXXXX
-XXXXX      XXXXX     XXXXX     XXXXX      XXXXX  XXXXX           &mkp MB4        &mkp MCLK       &mkp MB5         XXXXX
-                               XXXXX      XXXXX  &to NAVIGATION  &to BASE        &mkp LCLK       &mkp RCLK
+            //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+                    XXXXX          XXXXX         XXXXX          XXXXX           XXXXX           &msc SCRL_LEFT &msc SCRL_DOWN  &mmv MOVE_UP   &msc SCRL_UP  &msc SCRL_RIGHT
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                   &kp LCTRL      &kp LGUI       &kp LALT      &kp LSHFT        XXXXX               XXXXX      &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT   XXXXX
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                    XXXXX          XXXXX         XXXXX          XXXXX           XXXXX               XXXXX         &mkp MB4       &mkp MCLK      &mkp MB5        XXXXX
+            //╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                                 XXXXX          XXXXX      &to NAVIGATION          &to BASE       &mkp LCLK      &mkp RCLK
+            //                              ╰──────────────┴──────────────┴──────────────╯     ╰──────────────┴──────────────┴──────────────╯
             >;
         };
 
         lock_layer {
             label = "LOCK";
             bindings = <
-             //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
-                XXXXX            XXXXX            XXXXX            XXXXX            XXXXX                  XXXXX            XXXXX            XXXXX            XXXXX            XXXXX
-             //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-                XXXXX            XXXXX            XXXXX            XXXXX            XXXXX                  XXXXX            XXXXX            XXXXX            XXXXX            XXXXX
-             //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-                XXXXX            XXXXX            XXXXX            XXXXX            XXXXX                  XXXXX            XXXXX            XXXXX            XXXXX            XXXXX
-             //╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
-                                              XXXXX            XXXXX            XXXXX                  XXXXX            XXXXX            XXXXX
-             //                              ╰──────────────┴──────────────┴──────────────╯     ╰──────────────┴──────────────┴──────────────╯
+            //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+                   XXXXX          XXXXX          XXXXX          XXXXX          XXXXX                XXXXX          XXXXX          XXXXX          XXXXX          XXXXX
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                   XXXXX          XXXXX          XXXXX          XXXXX          XXXXX                XXXXX          XXXXX          XXXXX          XXXXX          XXXXX
+            //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                   XXXXX          XXXXX          XXXXX          XXXXX          XXXXX                XXXXX          XXXXX          XXXXX          XXXXX          XXXXX
+            //╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                                 XXXXX          XXXXX          XXXXX                XXXXX          XXXXX          XXXXX
+            //                              ╰──────────────┴──────────────┴──────────────╯     ╰──────────────┴──────────────┴──────────────╯
             >;
         };
     };
