@@ -886,20 +886,20 @@ rect.held, rect.combo.held {
 <text x="0" y="0" class="key tap">F11</text>
 <use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-9" y="17" height="18" width="18.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
-<g transform="translate(40, 230)" class="key text_with_symbol keypos-20">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key text_with_symbol"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="35" class="key text_with_symbol hold">1</text>
+<g transform="translate(40, 230)" class="key keypos-20">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:bluetooth-connect"/>
+<text x="0" y="35" class="key hold">1</text>
 </g>
-<g transform="translate(120, 210)" class="key text_with_symbol keypos-21">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key text_with_symbol"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="35" class="key text_with_symbol hold">2</text>
+<g transform="translate(120, 210)" class="key keypos-21">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:bluetooth-connect"/>
+<text x="0" y="35" class="key hold">2</text>
 </g>
-<g transform="translate(200, 200)" class="key text_with_symbol keypos-22">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key text_with_symbol"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="35" class="key text_with_symbol hold">3</text>
+<g transform="translate(200, 200)" class="key keypos-22">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:bluetooth-connect"/>
+<text x="0" y="35" class="key hold">3</text>
 </g>
 <g transform="translate(280, 210)" class="key keypos-23">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>

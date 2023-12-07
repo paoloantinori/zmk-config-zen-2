@@ -132,9 +132,9 @@ layers:
   - AltGr
   - RGUI
   - {t: F11, h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: '$$mdi:bluetooth-connect$$', h: '1', type: text_with_symbol}
-  - {t: '$$mdi:bluetooth-connect$$', h: '2', type: text_with_symbol}
-  - {t: '$$mdi:bluetooth-connect$$', h: '3', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
   - {t: '$$mdi:bluetooth$$', h: clear}
   - {t: '$$mdi:progress-download$$', type: bootloader}
   - {t: '$$mdi:progress-download$$', type: bootloader}
