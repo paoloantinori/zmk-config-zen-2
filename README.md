@@ -12,6 +12,11 @@ And, I'm also using https://nickcoutsos.github.io/keymap-editor/ as an editor to
 
 Oh, and including country keys from here: https://github.com/joelspadin/zmk-locale-generator/releases
 
+Inspirations:
+
+- https://github.com/maxpetretta/keymap/tree/master for my first encounter with Combos and Capsword
+- https://github.com/nickfaraco/zmk-config for a reverse engineered Urob's timeless HRMs and the idea of a LOCK layer
+
 
 Below representation was generated with [`keymap-drawer`](https://github.com/caksoylar/keymap-drawer) -- check out the automatically generated layouts using the [automated Github workflow](https://github.com/caksoylar/keymap-drawer/tree/main#setting-up-an-automated-drawing-workflow) for each keyboard in the [`keymap-drawer` folder](keymap-drawer/), which is always up to date with the config.
 
