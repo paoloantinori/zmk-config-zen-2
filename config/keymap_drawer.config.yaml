@@ -161,75 +161,77 @@ parse_config:
       tap: '.'
       shifted: ':'
     
-    '&bt BT_CLR':
-      tap: $$mdi:bluetooth$$
-      hold: $$mdi:close-thick$$
-      type: text_with_symbol
-    '&bt BT_SEL 0':
-      tap: $$mdi:bluetooth-connect$$
-      hold: '0'
-      type: text_with_symbol
-    '&bt BT_SEL 1':
-      tap: $$mdi:bluetooth-connect$$
-      hold: '1'
-      type: text_with_symbol
-    '&bt BT_SEL 2':
-      tap: $$mdi:bluetooth-connect$$
-      hold: '2'
-      type: text_with_symbol
-    '&bt BT_SEL 3':
-      tap: $$mdi:bluetooth-connect$$
-      hold: '3'
-      type: text_with_symbol
-    '&bt BT_SEL 4':
-      tap: $$mdi:bluetooth-connect$$
-      hold: '4'
-      type: text_with_symbol
-    '&bt_0':
-      tap: $$mdi:bluetooth-connect$$
-      hold: '0'
-      type: text_with_symbol
-    '&bt_1':
-      tap: $$mdi:bluetooth-connect$$
-      hold: '1'
-      type: text_with_symbol
-    '&bt_2':
-      tap: $$mdi:bluetooth-connect$$
-      hold: '2'
-      type: text_with_symbol
-    '&bt_3':
-      tap: $$mdi:bluetooth-connect$$
-      hold: '3'
-      type: text_with_symbol
-    '&bt_4':
-      tap: $$mdi:bluetooth-connect$$
-      hold: '4'
-      type: text_with_symbol
-    '&bt BT_DISC 0':
-      tap: $$mdi:bluetooth-off$$
-      hold: '0'
-      type: text_with_symbol
-    '&bt BT_DISC 1':
-      tap: $$mdi:bluetooth-off$$
-      hold: '1'
-      type: text_with_symbol
-    '&bt BT_DISC 2':
-      tap: $$mdi:bluetooth-off$$
-      hold: '2'
-      type: text_with_symbol
-    '&bt BT_DISC 3':
-      tap: $$mdi:bluetooth-off$$
-      hold: '3'
-      type: text_with_symbol
-    '&bt BT_DISC 4':
-      tap: $$mdi:bluetooth-off$$
-      hold: '4'
-      type: text_with_symbol
+    # '&bt BT_CLR':
+    #   tap: $$mdi:bluetooth$$
+    #   hold: $$mdi:close-thick$$
+    #   type: text_with_symbol
+    # '&bt BT_SEL 0':
+    #   tap: $$mdi:bluetooth-connect$$
+    #   hold: '0'
+    #   type: text_with_symbol
+    # '&bt BT_SEL 1':
+    #   tap: $$mdi:bluetooth-connect$$
+    #   hold: '1'
+    #   type: text_with_symbol
+    # '&bt BT_SEL 2':
+    #   tap: $$mdi:bluetooth-connect$$
+    #   hold: '2'
+    #   type: text_with_symbol
+    # '&bt BT_SEL 3':
+    #   tap: $$mdi:bluetooth-connect$$
+    #   hold: '3'
+    #   type: text_with_symbol
+    # '&bt BT_SEL 4':
+    #   tap: $$mdi:bluetooth-connect$$
+    #   hold: '4'
+    #   type: text_with_symbol
+    # '&bt_0':
+    #   tap: $$mdi:bluetooth-connect$$
+    #   hold: '0'
+    #   type: text_with_symbol
+    # '&bt_1':
+    #   tap: $$mdi:bluetooth-connect$$
+    #   hold: '1'
+    #   type: text_with_symbol
+    # '&bt_2':
+    #   tap: $$mdi:bluetooth-connect$$
+    #   hold: '2'
+    #   type: text_with_symbol
+    # '&bt_3':
+    #   tap: $$mdi:bluetooth-connect$$
+    #   hold: '3'
+    #   type: text_with_symbol
+    # '&bt_4':
+    #   tap: $$mdi:bluetooth-connect$$
+    #   hold: '4'
+    #   type: text_with_symbol
+    # '&bt BT_DISC 0':
+    #   tap: $$mdi:bluetooth-off$$
+    #   hold: '0'
+    #   type: text_with_symbol
+    # '&bt BT_DISC 1':
+    #   tap: $$mdi:bluetooth-off$$
+    #   hold: '1'
+    #   type: text_with_symbol
+    # '&bt BT_DISC 2':
+    #   tap: $$mdi:bluetooth-off$$
+    #   hold: '2'
+    #   type: text_with_symbol
+    # '&bt BT_DISC 3':
+    #   tap: $$mdi:bluetooth-off$$
+    #   hold: '3'
+    #   type: text_with_symbol
+    # '&bt BT_DISC 4':
+    #   tap: $$mdi:bluetooth-off$$
+    #   hold: '4'
+    #   type: text_with_symbol
     '&bt BT_PRV':
+      shifted: ""
       tap: $$mdi:bluetooth$$
       hold: $$mdi:skip-previous$$
       type: text_with_symbol
     '&bt BT_NXT':
+      shifted: ""
       tap: $$mdi:bluetooth$$
       hold: $$mdi:skip-next$$
       type: text_with_symbol
@@ -323,6 +325,10 @@ parse_config:
       tap: $$mdi:monitor-dashboard$$
       hold: Meta
       type: info
+    LWIN:
+      shifted: ""
+      tap: $$mdi:microsoft-windows$$
+      hold: 2
     LEFT_GUI:
       tap: $$mdi:monitor-dashboard$$
       hold: Meta
@@ -535,6 +541,12 @@ parse_config:
       hold: Speed
       shifted: '-'
       type: info
+
+    # Bluetooth
+    BT_CLR: 
+      tap: $$mdi:bluetooth$$
+      hold: "clear"
+    BT_SEL: $$mdi:bluetooth-connect$$
 
   zmk_combos:
     caps_word:
