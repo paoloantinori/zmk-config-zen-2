@@ -11,8 +11,12 @@ draw_config:
   line_spacing: 1
 
   # combo box dimensions
-  combo_w: 46
-  combo_h: 46
+  combo_w: 42
+  combo_h: 42
+
+  n_columns: 1
+  separate_combo_diagrams: false
+  combo_diagrams_scale: 3
 
   # padding from the edge of cap to top and bottom legends
   small_pad: 4
@@ -469,9 +473,13 @@ parse_config:
     KP_N0: 0
     'LC(LEFT)': $$mdi:chevron-double-left$$
     'LC(RIGHT)': $$mdi:chevron-double-right$$
+    LEFT: $$mdi:arrow-left-bold$$
     LEFT_ARROW: $$mdi:arrow-left-bold$$
+    RIGHT: $$mdi:arrow-right-bold$$
     RIGHT_ARROW: $$mdi:arrow-right-bold$$
+    UP: $$mdi:arrow-up-bold$$
     UP_ARROW: $$mdi:arrow-up-bold$$
+    DOWN: $$mdi:arrow-down-bold$$
     DOWN_ARROW: $$mdi:arrow-down-bold$$
     PAGE_UP: 'Pg Up'
     PG_UP: 'Pg Up'
