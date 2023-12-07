@@ -343,17 +343,17 @@ parse_config:
 
 
     '&mmv MOVE_UP':
-      tap: $$mdi:arrow-up-bold$$
-      hold: $$mdi:mouse$$
+      tap: $$mdi:mouse$$
+      hold: $$mdi:arrow-up-bold$$
     '&mmv MOVE_DOWN':
-      tap: $$mdi:arrow-down-bold$$
-      hold: $$mdi:mouse$$
+      tap: $$mdi:mouse$$
+      hold: $$mdi:arrow-up-bold$$
     '&mmv MOVE_LEFT': 
-      tap: $$mdi:arrow-left-bold$$
-      hold: $$mdi:mouse$$
+      tap: $$mdi:mouse$$
+      hold: $$mdi:arrow-up-bold$$
     '&mmv MOVE_RIGHT': 
-      tap: $$mdi:arrow-right-bold$$
-      hold: $$mdi:mouse$$
+      tap: $$mdi:mouse$$
+      hold: $$mdi:arrow-up-bold$$
     '&msc SCRL_UP':
       tap: $$mdi:mouse$$
       hold: scroll up
