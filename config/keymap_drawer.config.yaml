@@ -165,18 +165,18 @@ parse_config:
     #   tap: $$mdi:bluetooth$$
     #   hold: $$mdi:close-thick$$
     #   type: text_with_symbol
-    # '&bt BT_SEL 0':
-    #   tap: $$mdi:bluetooth-connect$$
-    #   hold: '0'
-    #   type: text_with_symbol
-    # '&bt BT_SEL 1':
-    #   tap: $$mdi:bluetooth-connect$$
-    #   hold: '1'
-    #   type: text_with_symbol
-    # '&bt BT_SEL 2':
-    #   tap: $$mdi:bluetooth-connect$$
-    #   hold: '2'
-    #   type: text_with_symbol
+    '&bt BT_SEL 0':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '1'
+      type: text_with_symbol
+    '&bt BT_SEL 1':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '2'
+      type: text_with_symbol
+    '&bt BT_SEL 2':
+      tap: $$mdi:bluetooth-connect$$
+      hold: '3'
+      type: text_with_symbol
     # '&bt BT_SEL 3':
     #   tap: $$mdi:bluetooth-connect$$
     #   hold: '3'
@@ -225,16 +225,7 @@ parse_config:
     #   tap: $$mdi:bluetooth-off$$
     #   hold: '4'
     #   type: text_with_symbol
-    '&bt BT_PRV':
-      shifted: ""
-      tap: $$mdi:bluetooth$$
-      hold: $$mdi:skip-previous$$
-      type: text_with_symbol
-    '&bt BT_NXT':
-      shifted: ""
-      tap: $$mdi:bluetooth$$
-      hold: $$mdi:skip-next$$
-      type: text_with_symbol
+
     
     '&out OUT_BLE': $$mdi:bluetooth$$
     '&out OUT_USB': $$mdi:usb$$
@@ -328,7 +319,7 @@ parse_config:
     LWIN:
       shifted: ""
       tap: $$mdi:microsoft-windows$$
-      hold: 2
+      hold: ""
     LEFT_GUI:
       tap: $$mdi:monitor-dashboard$$
       hold: Meta
@@ -547,6 +538,16 @@ parse_config:
       tap: $$mdi:bluetooth$$
       hold: "clear"
     BT_SEL: $$mdi:bluetooth-connect$$
+    'BT_PRV':
+      shifted: ""
+      tap: $$mdi:bluetooth$$
+      hold: $$mdi:skip-previous$$
+      type: text_with_symbol
+    'BT_NXT':
+      shifted: ""
+      tap: $$mdi:bluetooth$$
+      hold: $$mdi:skip-next$$
+      type: text_with_symbol
 
   zmk_combos:
     caps_word:
