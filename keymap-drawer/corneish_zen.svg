@@ -165,57 +165,57 @@ path.combo {
 }
 /* End Tabler Icons Cleanup */
 
-svg.keymap {
-  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 18px;
-  font-weight: bold;
-}
+# svg.keymap {
+#   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+#   font-size: 18px;
+#   font-weight: bold;
+# }
     
-text.label {
-  stroke: #dfdfde;
-  stroke-width: 12;
-  stroke-linejoin: round;
-}
+# text.label {
+#   stroke: #dfdfde;
+#   stroke-width: 12;
+#   stroke-linejoin: round;
+# }
 
-rect.combo, rect.combo-separate {
-  opacity: 0.95;
-  stroke: #c9cccf;
-  stroke-width: 0.5;
-  fill: #d7eaed;
-}
-path.combo {
-  stroke-dasharray: 4, 4;
-  stroke-opacity: 0.3;
-} 
+# rect.combo, rect.combo-separate {
+#   opacity: 0.95;
+#   stroke: #c9cccf;
+#   stroke-width: 0.5;
+#   fill: #d7eaed;
+# }
+# path.combo {
+#   stroke-dasharray: 4, 4;
+#   stroke-opacity: 0.3;
+# } 
 
-rect.held, rect.combo.held {
-  fill: #ebdada;
-}
+# rect.held, rect.combo.held {
+#   fill: #ebdada;
+# }
 
-.trans.tap, .ghost.tap {
-  opacity: 0.5;
-} 
+# .trans.tap, .ghost.tap {
+#   opacity: 0.5;
+# } 
 
-.shifted {
-  translate: -9px 3px;
-  opacity: 0.7;
-}
+# .shifted {
+#   translate: -9px 3px;
+#   opacity: 0.7;
+# }
 
-.toggle.shifted {
-  translate: -12px 17px;
-  opacity: 1.0;
-}
-.toggle.hold {
-  translate: 12px -25px;
-} 
+# .toggle.shifted {
+#   translate: -12px 17px;
+#   opacity: 1.0;
+# }
+# .toggle.hold {
+#   translate: 12px -25px;
+# } 
 
-.text_with_symbol.tap {
-  translate: -1px 1px;
-} 
-.text_with_symbol.hold {
-  translate: 6px -31px;
-  font-size: 8px;
-} 
+# .text_with_symbol.tap {
+#   translate: -1px 1px;
+# } 
+# .text_with_symbol.hold {
+#   translate: 6px -31px;
+#   font-size: 8px;
+# } 
 </style>
 <g transform="translate(0, 0)" class="layer-default">
 <text x="0" y="0" class="label">default</text>
