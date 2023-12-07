@@ -26,7 +26,7 @@
 #define SHORTCUTS 4
 #define MOUSE 5
 
-#define LOCKL 99
+#define LOCK 6
 #define COMBO_TIMEOUT_MS 80
 
 #define XXXXX &none
@@ -198,7 +198,7 @@
         };
 
         lock_keyboard {
-            bindings = <&tog LOCKL>;
+            bindings = <&tog LOCK>;
             key-positions = <0 9 32 33>;
             layers = <BASE>;
             timeout-ms = <40>;
