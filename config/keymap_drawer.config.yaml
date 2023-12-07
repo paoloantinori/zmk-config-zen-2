@@ -54,103 +54,57 @@ draw_config:
   use_local_cache: true
 
   svg_extra_style: |
-    /* inherit to force styles through use tags*/
-    svg path {
-        fill: inherit;
-    }
-    /* font and background color specifications */
     svg.keymap {
-        font-family: Ubuntu Mono,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-        font-size: 13px;
-        font-kerning: normal;
-        text-rendering: optimizeLegibility;
-        fill: #fff;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 18px;
+      font-weight: bold;
     }
-
-    /* default key styling */
-    rect.key {
-        fill: #212121;
-        stroke: #212121;
-        stroke-width: 1;
-    }
-
-    /* color accent for combo boxes */
-    rect.combo {
-        fill: #424242;
-    }
-
-    /* color accent for held keys */
-    rect.held, rect.combo.held {
-        fill: #424242;
-    }
-
-    /* color accent for ghost (optional) keys */
-    rect.ghost, rect.combo.ghost {
-        fill: #ddd;
-    }
-
-    rect.trans {
-      fill: rgba(33, 33, 33, 0.2)
-    }
-
-    text {
-        text-anchor: middle;
-        dominant-baseline: middle;
-    }
-
-    /* styling for layer labels */
+        
     text.label {
-        font-weight: bold;
-        text-anchor: start;
-        stroke: white;
-        fill: #212121;
-        stroke-width: 2;
-        paint-order: stroke;
+      stroke: #dfdfde;
+      stroke-width: 12;
+      stroke-linejoin: round;
     }
-
-    /* styling for combo tap, and key hold/shifted label text */
-    text.combo, text.hold, text.shifted {
-        font-size: 11px;
+    
+    rect.combo, rect.combo-separate {
+      opacity: 0.95;
+      stroke: #c9cccf;
+      stroke-width: 0.5;
+      fill: #d7eaed;
     }
-
-    text.hold {
-        text-anchor: middle;
-        dominant-baseline: auto;
-    }
-
-    text.shifted {
-        text-anchor: middle;
-        dominant-baseline: hanging;
-    }
-
-    /* styling for hold/shifted label text in combo box */
-    text.combo.hold, text.combo.shifted {
-        font-size: 8px;
-    }
-
-    /* lighter symbol for transparent keys */
-    text.trans {
-        fill: transparent;
-    }
-
-    /* styling for combo dendrons */
     path.combo {
-        stroke-width: 1;
-        stroke: gray;
-        fill: none;
+      stroke-dasharray: 4, 4;
+      stroke-opacity: 0.3;
+    } 
+    
+    rect.held, rect.combo.held {
+      fill: #ebdada;
     }
-
-    /* Start Tabler Icons Cleanup */
-    /* cannot use height/width with glyphs */
-    .icon-tabler > path {
-        fill: inherit;
-        stroke: inherit;
+    
+    .trans.tap, .ghost.tap {
+      opacity: 0.5;
+    } 
+    
+    .shifted {
+      translate: -9px 3px;
+      opacity: 0.7;
     }
-    /* hide tabler's default box */
-    .icon-tabler > path[stroke="none"][fill="none"] {
-        visibility: collapse;
+    
+    .toggle.shifted {
+      translate: -12px 17px;
+      opacity: 1.0;
     }
-    /* End Tabler Icons Cleanup */
+    .toggle.hold {
+      translate: 12px -25px;
+    } 
+    
+    .text_with_symbol.tap {
+      translate: -1px 1px;
+    } 
+    .text_with_symbol.hold {
+      translate: 6px -31px;
+      font-size: 8px;
+    } 
 
 parse_config:
   preprocess: true
@@ -317,6 +271,8 @@ parse_config:
       hold: 2
     "&lm 4 LALT":
       tap: ALT
+ 
+  
   
   
   
