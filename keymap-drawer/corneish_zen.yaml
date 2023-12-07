@@ -45,7 +45,7 @@ layers:
   - MW↑
   - Pg Up
   - Home
-  - UP
+  - $$mdi:arrow-up-bold$$
   - End
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-shift$$
@@ -54,9 +54,9 @@ layers:
   - M→
   - MW↓
   - Pg Down
-  - LEFT
-  - DOWN
-  - RIGHT
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-right-bold$$
   - ''
   - {t: '`', h: '|', s: ¬}
   - Ctrl
@@ -124,7 +124,7 @@ layers:
   - F10
   - ''
   - {t: '$$mdi:keyboard-space$$', h: Alt}
-  - {t: D, h: '$$mdi:keyboard-space$$'}
+  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:keyboard-space$$', h: Ctrl}
   - {t: '$$mdi:keyboard-space$$', h: '$$mdi:monitor-dashboard$$'}
   - {t: '$$mdi:keyboard-space$$', h: Ctrl}
