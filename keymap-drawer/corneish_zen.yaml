@@ -31,7 +31,7 @@ layers:
   - {t: ',', s: <}
   - {t: ., s: '>'}
   - {t: /, s: '?'}
-  - '&lm 4 LALT'
+  - ALT
   - {t: '$$mdi:keyboard-space$$', h: navigation}
   - {t: navigation, h: toggle}
   - {t: default, h: toggle}
@@ -62,7 +62,7 @@ layers:
   - Ctrl
   - {t: '$$mdi:mouse$$', h: L}
   - {t: '$$mdi:mouse$$', h: R}
-  - {t: '$$mdi:mouse$$', h: R}
+  - {t: '$$mdi:mouse$$', h: M}
   - INS
   - RC(TAB)
   - LC(LS(TAB))

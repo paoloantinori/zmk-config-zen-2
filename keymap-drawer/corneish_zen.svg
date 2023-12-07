@@ -352,10 +352,7 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(240, 293)" class="key keypos-30">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
-<text x="0" y="0" class="key tap">
-<tspan x="0" dy="-1.0em">&amp;lm</tspan><tspan x="0" dy="1.0em">4</tspan>
-<tspan x="0" dy="1.0em">LALT</tspan>
-</text>
+<text x="0" y="0" class="key tap">ALT</text>
 </g>
 <g transform="translate(328, 304) rotate(15.0)" class="key keypos-31">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
@@ -574,7 +571,7 @@ rect.held, rect.combo.held {
 <g transform="translate(360, 220)" class="key keypos-24">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
 <use href="#mdi:mouse" xlink:href="#mdi:mouse" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse"/>
-<text x="0" y="35" class="key hold">R</text>
+<text x="0" y="35" class="key hold">M</text>
 </g>
 <g transform="translate(680, 220)" class="key keypos-25">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
