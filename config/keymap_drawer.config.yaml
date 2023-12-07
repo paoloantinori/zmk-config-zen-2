@@ -18,8 +18,8 @@ draw_config:
   small_pad: 4
 
   # Padding between keys
-  inner_pad_w: 1.5
-  inner_pad_h: 1.5
+  inner_pad_w: 1.0
+  inner_pad_h: 1.0
 
   # padding between layers
   outer_pad_w: 0
@@ -112,6 +112,12 @@ parse_config:
     tap: $$mdi:chevron-down$$
     type: trans
   raw_binding_map:
+
+    "&tog LOCK": 
+      tap: $$mdi:lock-open-outline$$
+      align: top
+      offset: 10
+      hold: "Toggle"
 
     '&sys_reset': 
       tap: $$mdi:backup-restore$$
