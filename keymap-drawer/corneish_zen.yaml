@@ -123,29 +123,22 @@ layers:
   - F9
   - F10
   - ''
-  - '&hml LALT'
-  - ''
-  - '&hml'
-  - ''
-  - '&hml LCTRL'
-  - ''
-  - '&hml LGUI'
-  - ''
-  - '&hmr RCTRL'
-  - ''
-  - '&hmr RSHFT'
-  - ''
-  - '&hmr RALT'
-  - ''
+  - {t: '$$mdi:keyboard-space$$', h: Alt}
+  - {t: D, h: '$$mdi:keyboard-space$$'}
+  - {t: '$$mdi:keyboard-space$$', h: Ctrl}
+  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:monitor-dashboard$$'}
+  - {t: '$$mdi:keyboard-space$$', h: Ctrl}
+  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '$$mdi:keyboard-space$$', h: AltGr}
   - ''
   - F11
   - {t: '$$mdi:bluetooth-connect$$', h: '1'}
   - {t: '$$mdi:bluetooth-connect$$', h: '2'}
   - {t: '$$mdi:bluetooth-connect$$', h: '3'}
+  - {t: '$$mdi:progress-download$$', type: bootloader}
   - {t: '$$mdi:bluetooth$$', h: clear}
-  - {t: '$$mdi:progress-download$$', type: bootloader}
-  - {t: '$$mdi:progress-download$$', type: bootloader}
   - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - {t: '$$mdi:progress-download$$', type: bootloader}
   - {t: '$$mdi:bluetooth$$', h: prev}
   - {t: '$$mdi:bluetooth$$', h: next}
   - F12
