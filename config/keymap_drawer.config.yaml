@@ -547,12 +547,12 @@ parse_config:
     'BT_PRV':
       shifted: ""
       tap: $$mdi:bluetooth$$
-      hold: $$mdi:skip-previous$$
+      hold: "prev"
       type: text_with_symbol
     'BT_NXT':
       shifted: ""
       tap: $$mdi:bluetooth$$
-      hold: $$mdi:skip-next$$
+      hold: "next"
       type: text_with_symbol
 
   zmk_combos:
