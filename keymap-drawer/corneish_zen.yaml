@@ -139,8 +139,8 @@ layers:
   - {t: '$$mdi:progress-download$$', type: bootloader}
   - {t: '$$mdi:progress-download$$', type: bootloader}
   - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - {t: '$$mdi:bluetooth$$', h: '$$mdi:skip-previous$$', type: text_with_symbol}
-  - {t: '$$mdi:bluetooth$$', h: '$$mdi:skip-next$$', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth$$', h: prev, type: text_with_symbol}
+  - {t: '$$mdi:bluetooth$$', h: next, type: text_with_symbol}
   - F12
   - ''
   - ''
