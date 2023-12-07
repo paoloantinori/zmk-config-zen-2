@@ -21,9 +21,6 @@
 <svg id="mdi:chevron-down">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-chevron-down" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
 </svg>
-<svg id="mdi:close-thick">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-close-thick" viewBox="0 0 24 24"><path d="M20 6.91L17.09 4L12 9.09L6.91 4L4 6.91L9.09 12L4 17.09L6.91 20L12 14.91L17.09 20L20 17.09L14.91 12L20 6.91Z" /></svg>
-</svg>
 <svg id="mdi:keyboard-esc">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-esc" viewBox="0 0 24 24"><path d="M1 7H7V9H3V11H7V13H3V15H7V17H1V7M11 7H15V9H11V11H13C14.11 11 15 11.9 15 13V15C15 16.11 14.11 17 13 17H9V15H13V13H11C9.9 13 9 12.11 9 11V9C9 7.9 9.9 7 11 7M19 7H21C22.11 7 23 7.9 23 9V10H21V9H19V15H21V14H23V15C23 16.11 22.11 17 21 17H19C17.9 17 17 16.11 17 15V9C17 7.9 17.9 7 19 7Z" /></svg>
 </svg>
@@ -35,6 +32,9 @@
 </svg>
 <svg id="mdi:keyboard-tab">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-keyboard-tab" viewBox="0 0 24 24"><path d="M20,18H22V6H20M11.59,7.41L15.17,11H1V13H15.17L11.59,16.58L13,18L19,12L13,6L11.59,7.41Z" /></svg>
+</svg>
+<svg id="mdi:microsoft-windows">
+<svg xmlns="http://www.w3.org/2000/svg" id="mdi-microsoft-windows" viewBox="0 0 24 24"><path d="M3,12V6.75L9,5.43V11.91L3,12M20,3V11.75L10,11.9V5.21L20,3M3,13L9,13.09V19.9L3,18.75V13M20,13.25V22L10,20.09V13.1L20,13.25Z" /></svg>
 </svg>
 <svg id="mdi:monitor-dashboard">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-monitor-dashboard" viewBox="0 0 24 24"><path d="M21,16V4H3V16H21M21,2A2,2 0 0,1 23,4V16A2,2 0 0,1 21,18H14V20H16V22H8V20H10V18H3C1.89,18 1,17.1 1,16V4C1,2.89 1.89,2 3,2H21M5,6H14V11H5V6M15,6H19V8H15V6M19,9V14H15V9H19M5,12H9V14H5V12M10,12H14V14H10V12Z" /></svg>
@@ -452,7 +452,8 @@ rect.held, rect.combo.held {
 </g>
 <g class="combo combopos-17">
 <rect rx="4" ry="4" x="266" y="281" width="36" height="36" class="combo"/>
-<text x="284" y="299" class="combo tap">LWIN</text>
+<use href="#mdi:microsoft-windows" xlink:href="#mdi:microsoft-windows" x="271" y="286" height="26" width="26.0" class="combo tap glyph mdi:microsoft-windows"/>
+<text x="284" y="313" class="combo hold">2</text>
 </g>
 </g>
 </g>
@@ -883,10 +884,10 @@ rect.held, rect.combo.held {
 <text x="0" y="0" class="key tap">F11</text>
 <use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-9" y="16" height="18" width="18.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
-<g transform="translate(40, 230)" class="key text_with_symbol keypos-20">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key text_with_symbol"/>
-<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth"/>
-<use href="#mdi:close-thick" xlink:href="#mdi:close-thick" x="-9" y="16" height="18" width="18.0" class="key text_with_symbol hold glyph mdi:close-thick"/>
+<g transform="translate(40, 230)" class="key keypos-20">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:bluetooth"/>
+<text x="0" y="34" class="key hold">clear</text>
 </g>
 <g transform="translate(120, 210)" class="key text_with_symbol keypos-21">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key text_with_symbol"/>
@@ -914,15 +915,15 @@ rect.held, rect.combo.held {
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key bootloader"/>
 <use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-13" y="-13" height="26" width="26.0" class="key bootloader tap glyph mdi:progress-download"/>
 </g>
-<g transform="translate(840, 200)" class="key text_with_symbol keypos-27">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key text_with_symbol"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="34" class="key text_with_symbol hold">0</text>
+<g transform="translate(840, 200)" class="key keypos-27">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:bluetooth-connect"/>
+<text x="0" y="34" class="key hold">0</text>
 </g>
-<g transform="translate(920, 210)" class="key text_with_symbol keypos-28">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key text_with_symbol"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="34" class="key text_with_symbol hold">1</text>
+<g transform="translate(920, 210)" class="key keypos-28">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:bluetooth-connect"/>
+<text x="0" y="34" class="key hold">1</text>
 </g>
 <g transform="translate(1000, 230)" class="key keypos-29">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
