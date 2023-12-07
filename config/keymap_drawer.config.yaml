@@ -347,25 +347,25 @@ parse_config:
       hold: $$mdi:arrow-up-bold$$
     '&mmv MOVE_DOWN':
       tap: $$mdi:mouse$$
-      hold: $$mdi:arrow-up-bold$$
+      hold: $$mdi:arrow-down-bold$$
     '&mmv MOVE_LEFT': 
       tap: $$mdi:mouse$$
-      hold: $$mdi:arrow-up-bold$$
+      hold: $$mdi:arrow-left-bold$$
     '&mmv MOVE_RIGHT': 
       tap: $$mdi:mouse$$
-      hold: $$mdi:arrow-up-bold$$
+      hold: $$mdi:arrow-right-bold$$
     '&msc SCRL_UP':
-      tap: $$mdi:mouse$$
-      hold: scroll up
+      tap: $$mdi:mouse-move-up$$
+      # hold: scroll up
     '&msc SCRL_DOWN':
-      tap: $$mdi:mouse$$
-      hold: scroll down
+      tap: $$mdi:mouse-move-down$$
+      # hold: scroll down
     '&msc SCRL_LEFT': 
-      tap: $$mdi:mouse$$
-      hold: scroll left
+      tap: $$mdi:mouse-move-left$$
+      # hold: scroll left
     '&msc SCRL_RIGHT':
-      tap: $$mdi:mouse$$
-      hold: scroll right
+      tap: $$mdi:mouse-move-right$$
+      # hold: scroll right
 
     "&mkp LCLK":
       tap: $$mdi:mouse$$
@@ -590,10 +590,10 @@ parse_config:
     UP_ARROW: $$mdi:arrow-up-bold$$
     DOWN: $$mdi:arrow-down-bold$$
     DOWN_ARROW: $$mdi:arrow-down-bold$$
-    PAGE_UP: 'Pg Up'
-    PG_UP: 'Pg Up'
-    PAGE_DOWN: 'Pg Down'
-    PG_DN: 'Pg Down'
+    PAGE_UP: 'Page Up'
+    PG_UP: 'Page Up'
+    PAGE_DOWN: 'Page Down'
+    PG_DN: 'Page Down'
     HOME: 'Home'
     END: 'End'
     PSCRN: 'Print'
