@@ -11,8 +11,8 @@ draw_config:
   line_spacing: 1
 
   # combo box dimensions
-  combo_w: 60
-  combo_h: 60
+  combo_w: 46
+  combo_h: 46
 
   # padding from the edge of cap to top and bottom legends
   small_pad: 4
