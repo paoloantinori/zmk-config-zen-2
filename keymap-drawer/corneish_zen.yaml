@@ -222,10 +222,13 @@ layers:
   - {t: default, h: toggle}
   - {t: '$$mdi:mouse$$', h: L}
   - {t: '$$mdi:mouse$$', h: R}
+  lock: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
 combos:
 - p: [12, 16]
   k: CAPS WORD
   l: [default]
+- p: [0, 9, 32, 33]
+  k: {t: lock, h: toggle}
 - p: [11, 13]
   k: $$mdi:keyboard-tab$$
   l: [default]
