@@ -453,7 +453,6 @@ rect.held, rect.combo.held {
 <g class="combo combopos-17">
 <rect rx="4" ry="4" x="266" y="281" width="36" height="36" class="combo"/>
 <use href="#mdi:microsoft-windows" xlink:href="#mdi:microsoft-windows" x="271" y="286" height="26" width="26.0" class="combo tap glyph mdi:microsoft-windows"/>
-<text x="284" y="313" class="combo hold">2</text>
 </g>
 </g>
 </g>
@@ -846,30 +845,30 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(40, 150)" class="key keypos-10">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:apple-keyboard-shift"/>
 </g>
 <g transform="translate(120, 130)" class="key keypos-11">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">Ctrl</text>
+<text x="0" y="0" class="key tap">Alt</text>
 </g>
 <g transform="translate(200, 120)" class="key keypos-12">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">Alt</text>
+<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:apple-keyboard-shift"/>
 </g>
-<g transform="translate(280, 130)" class="key info keypos-13">
+<g transform="translate(280, 130)" class="key keypos-13">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
+<text x="0" y="0" class="key tap">Ctrl</text>
+</g>
+<g transform="translate(360, 140)" class="key info keypos-14">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key info"/>
 <use href="#mdi:monitor-dashboard" xlink:href="#mdi:monitor-dashboard" x="-13" y="-13" height="26" width="26.0" class="key info tap glyph mdi:monitor-dashboard"/>
 <text x="0" y="34" class="key info hold">Meta</text>
-</g>
-<g transform="translate(360, 140)" class="key keypos-14">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 </g>
 <g transform="translate(680, 140)" class="key keypos-15">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 </g>
 <g transform="translate(760, 130)" class="key keypos-16">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">RGUI</text>
+<text x="0" y="0" class="key tap">Ctrl</text>
 </g>
 <g transform="translate(840, 120)" class="key keypos-17">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
@@ -877,53 +876,54 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(920, 130)" class="key keypos-18">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<text x="0" y="0" class="key tap">Ctrl</text>
+<text x="0" y="0" class="key tap">RGUI</text>
 </g>
 <g transform="translate(1000, 150)" class="key keypos-19">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <text x="0" y="0" class="key tap">F11</text>
 <use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-9" y="16" height="18" width="18.0" class="key hold glyph mdi:apple-keyboard-shift"/>
 </g>
-<g transform="translate(40, 230)" class="key keypos-20">
+<g transform="translate(40, 230)" class="key text_with_symbol keypos-20">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key text_with_symbol"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth-connect"/>
+<text x="0" y="34" class="key text_with_symbol hold">1</text>
+</g>
+<g transform="translate(120, 210)" class="key text_with_symbol keypos-21">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key text_with_symbol"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth-connect"/>
+<text x="0" y="34" class="key text_with_symbol hold">2</text>
+</g>
+<g transform="translate(200, 200)" class="key text_with_symbol keypos-22">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key text_with_symbol"/>
+<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth-connect"/>
+<text x="0" y="34" class="key text_with_symbol hold">3</text>
+</g>
+<g transform="translate(280, 210)" class="key keypos-23">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
 <use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:bluetooth"/>
 <text x="0" y="34" class="key hold">clear</text>
 </g>
-<g transform="translate(120, 210)" class="key text_with_symbol keypos-21">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key text_with_symbol"/>
-<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth"/>
-<use href="#mdi:skip-next" xlink:href="#mdi:skip-next" x="-9" y="16" height="18" width="18.0" class="key text_with_symbol hold glyph mdi:skip-next"/>
+<g transform="translate(360, 220)" class="key bootloader keypos-24">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key bootloader"/>
+<use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-13" y="-13" height="26" width="26.0" class="key bootloader tap glyph mdi:progress-download"/>
 </g>
-<g transform="translate(200, 200)" class="key text_with_symbol keypos-22">
+<g transform="translate(680, 220)" class="key bootloader keypos-25">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key bootloader"/>
+<use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-13" y="-13" height="26" width="26.0" class="key bootloader tap glyph mdi:progress-download"/>
+</g>
+<g transform="translate(760, 210)" class="key bootloader keypos-26">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key bootloader"/>
+<use href="#mdi:backup-restore" xlink:href="#mdi:backup-restore" x="-13" y="-13" height="26" width="26.0" class="key bootloader tap glyph mdi:backup-restore"/>
+</g>
+<g transform="translate(840, 200)" class="key text_with_symbol keypos-27">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key text_with_symbol"/>
 <use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth"/>
 <use href="#mdi:skip-previous" xlink:href="#mdi:skip-previous" x="-9" y="16" height="18" width="18.0" class="key text_with_symbol hold glyph mdi:skip-previous"/>
 </g>
-<g transform="translate(280, 210)" class="key bootloader keypos-23">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key bootloader"/>
-<use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-13" y="-13" height="26" width="26.0" class="key bootloader tap glyph mdi:progress-download"/>
-</g>
-<g transform="translate(360, 220)" class="key bootloader keypos-24">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key bootloader"/>
-<use href="#mdi:backup-restore" xlink:href="#mdi:backup-restore" x="-13" y="-13" height="26" width="26.0" class="key bootloader tap glyph mdi:backup-restore"/>
-</g>
-<g transform="translate(680, 220)" class="key bootloader keypos-25">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key bootloader"/>
-<use href="#mdi:backup-restore" xlink:href="#mdi:backup-restore" x="-13" y="-13" height="26" width="26.0" class="key bootloader tap glyph mdi:backup-restore"/>
-</g>
-<g transform="translate(760, 210)" class="key bootloader keypos-26">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key bootloader"/>
-<use href="#mdi:progress-download" xlink:href="#mdi:progress-download" x="-13" y="-13" height="26" width="26.0" class="key bootloader tap glyph mdi:progress-download"/>
-</g>
-<g transform="translate(840, 200)" class="key keypos-27">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="34" class="key hold">0</text>
-</g>
-<g transform="translate(920, 210)" class="key keypos-28">
-<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>
-<use href="#mdi:bluetooth-connect" xlink:href="#mdi:bluetooth-connect" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:bluetooth-connect"/>
-<text x="0" y="34" class="key hold">1</text>
+<g transform="translate(920, 210)" class="key text_with_symbol keypos-28">
+<rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key text_with_symbol"/>
+<use href="#mdi:bluetooth" xlink:href="#mdi:bluetooth" x="-13" y="-13" height="26" width="26.0" class="key text_with_symbol tap glyph mdi:bluetooth"/>
+<use href="#mdi:skip-next" xlink:href="#mdi:skip-next" x="-9" y="16" height="18" width="18.0" class="key text_with_symbol hold glyph mdi:skip-next"/>
 </g>
 <g transform="translate(1000, 230)" class="key keypos-29">
 <rect rx="4" ry="4" x="-38" y="-38" width="77" height="77" class="key"/>

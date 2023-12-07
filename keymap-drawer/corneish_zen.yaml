@@ -122,25 +122,25 @@ layers:
   - F8
   - F9
   - F10
+  - ''
+  - Alt
   - $$mdi:apple-keyboard-shift$$
   - Ctrl
-  - Alt
   - {t: '$$mdi:monitor-dashboard$$', h: Meta, type: info}
   - ''
-  - ''
-  - RGUI
-  - AltGr
   - Ctrl
+  - AltGr
+  - RGUI
   - {t: F11, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '1', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth-connect$$', h: '2', type: text_with_symbol}
+  - {t: '$$mdi:bluetooth-connect$$', h: '3', type: text_with_symbol}
   - {t: '$$mdi:bluetooth$$', h: clear}
-  - {t: '$$mdi:bluetooth$$', h: '$$mdi:skip-next$$', type: text_with_symbol}
+  - {t: '$$mdi:progress-download$$', type: bootloader}
+  - {t: '$$mdi:progress-download$$', type: bootloader}
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:bluetooth$$', h: '$$mdi:skip-previous$$', type: text_with_symbol}
-  - {t: '$$mdi:progress-download$$', type: bootloader}
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
-  - {t: '$$mdi:progress-download$$', type: bootloader}
-  - {t: '$$mdi:bluetooth-connect$$', h: '0'}
-  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
+  - {t: '$$mdi:bluetooth$$', h: '$$mdi:skip-next$$', type: text_with_symbol}
   - F12
   - ''
   - ''
@@ -277,5 +277,5 @@ combos:
   k: ''''
   l: [default]
 - p: [30, 31]
-  k: {t: '$$mdi:microsoft-windows$$', h: '2'}
+  k: $$mdi:microsoft-windows$$
   l: [default]
