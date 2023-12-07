@@ -55,7 +55,7 @@
 };
 
 &caps_word {
-    continue-list = <UNDERSCORE MINUS>;
+    continue-list = <UNDERSCORE MINUS BSPC N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>;
 };
 
 / {
@@ -74,6 +74,9 @@
                 <&macro_release>,
                 <&kp LSHFT>;
         };
+
+
+
 
         /**
 		* Temporarily switches to a layer (`&mo`) while a modifier is held.
@@ -138,13 +141,13 @@
         hml: left_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_POSITIONAL_HOLD_TAP";
-            #binding-cells = <2>;
+            #binding-cells = <2>;                              // Must be <2> for "hold-tap" as per documentation
             flavor = "balanced";
-            tapping-term-ms = <TAP_TERM_MS>;
-            quick-tap-ms = <QUICK_TAP_MS>;       // double-tap + hold repeats tap-key
-            require-prior-idle-ms = <150>;       // do not activate HOLD during typing flow
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <RIGHT_KEYS THUMBS>;
+            tapping-term-ms = <TAP_TERM_MS>;                   // How long in milliseconds the key must be held to trigger a hold
+            quick-tap-ms = <QUICK_TAP_MS>;                     // double-tap + hold repeats tap-key
+            require-prior-idle-ms = <150>;                     // do not activate HOLD during typing flow
+            bindings = <&kp>, <&kp>;                           // A list of two behaviors (without parameters): one for hold and one for tap
+            hold-trigger-key-positions = <RIGHT_KEYS THUMBS>;  // If set, pressing the hold-tap and then any key position not in the list triggers a tap.
             hold-trigger-on-release;
         };
 
@@ -393,9 +396,9 @@
             //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
                    &kp F1        &kp F2          &kp F3         &kp F4        &kp F5              &kp F6          &kp F7         &kp F8         &kp F9         &kp F10
             //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-                    XXXXX  &hml LALT XXXXX  &hml XXXXX GB_D &hml LCTRL XXXXX  &hml LGUI XXXXX  &hmr RCTRL XXXXX  &hmr RSHFT XXXXX  &hmr RALT XXXXX   XXXXX    &kp F11
+                    XXXXX  &hml LALT GB_SPACE  &hml GB_SPACE GB_D &hml LCTRL GB_SPACE  &hml LGUI GB_SPACE  &hmr RCTRL GB_SPACE  &hmr RSHFT GB_SPACE  &hmr RALT GB_SPACE   XXXXX    &kp F11
             //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
-                 &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_CLR     &bootloader           &bootloader    &sys_reset     &bt BT_PRV    &bt BT_NXT       &kp F12
+                 &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2   &bootloader     &bt BT_CLR          &sys_reset     &bootloader     &bt BT_PRV     &bt BT_NXT      &kp F12
             //╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
                                                  XXXXX          XXXXX         &to MOUSE            &to BASE     &out OUT_USB    &out OUT_BLE
             //                              ╰──────────────┴──────────────┴──────────────╯     ╰──────────────┴──────────────┴──────────────╯
