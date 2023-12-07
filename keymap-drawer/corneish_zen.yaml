@@ -39,9 +39,9 @@ layers:
   - ''
   navigation:
   - $$mdi:keyboard-esc$$
-  - $$mdi:mouse-move-left$$
+  - {t: '$$mdi:mouse$$', h: scroll left}
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
-  - $$mdi:mouse-move-right$$
+  - {t: '$$mdi:mouse$$', h: scroll right}
   - $$mdi:mouse-move-up$$
   - Page Up
   - Home
@@ -191,11 +191,11 @@ layers:
   - ''
   - ''
   - ''
-  - $$mdi:mouse-move-left$$
+  - {t: '$$mdi:mouse$$', h: scroll left}
   - $$mdi:mouse-move-down$$
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
   - $$mdi:mouse-move-up$$
-  - $$mdi:mouse-move-right$$
+  - {t: '$$mdi:mouse$$', h: scroll right}
   - Ctrl
   - {t: '$$mdi:monitor-dashboard$$', h: Meta, type: info}
   - Alt
