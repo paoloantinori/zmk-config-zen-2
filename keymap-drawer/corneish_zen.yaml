@@ -39,21 +39,21 @@ layers:
   - ''
   navigation:
   - $$mdi:keyboard-esc$$
-  - {t: '$$mdi:mouse$$', h: scroll left}
+  - $$mdi:mouse-move-left$$
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
-  - {t: '$$mdi:mouse$$', h: scroll right}
-  - {t: '$$mdi:mouse$$', h: scroll up}
-  - Pg Up
+  - $$mdi:mouse-move-right$$
+  - $$mdi:mouse-move-up$$
+  - Page Up
   - Home
   - $$mdi:arrow-up-bold$$
   - End
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
-  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
-  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
-  - {t: '$$mdi:mouse$$', h: scroll down}
-  - Pg Down
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-left-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-down-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-right-bold$$'}
+  - $$mdi:mouse-move-down$$
+  - Page Down
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
@@ -191,20 +191,20 @@ layers:
   - ''
   - ''
   - ''
-  - {t: '$$mdi:mouse$$', h: scroll left}
-  - {t: '$$mdi:mouse$$', h: scroll down}
+  - $$mdi:mouse-move-left$$
+  - $$mdi:mouse-move-down$$
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
-  - {t: '$$mdi:mouse$$', h: scroll up}
-  - {t: '$$mdi:mouse$$', h: scroll right}
+  - $$mdi:mouse-move-up$$
+  - $$mdi:mouse-move-right$$
   - Ctrl
   - {t: '$$mdi:monitor-dashboard$$', h: Meta, type: info}
   - Alt
   - $$mdi:apple-keyboard-shift$$
   - ''
   - ''
-  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
-  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
-  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-left-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-down-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-right-bold$$'}
   - ''
   - ''
   - ''
