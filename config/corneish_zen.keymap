@@ -25,6 +25,8 @@
 #define FUNCTIONS 3
 #define SHORTCUTS 4
 #define MOUSE 5
+
+#define LOCKL 99
 #define COMBO_TIMEOUT_MS <80>
 
 #define XXXXX &none
@@ -58,6 +60,8 @@
 
 / {
     macros {
+        /omit-if-no-ref/
+
         zed_em_kay: zed_em_kay {
             label = "ZM_zed_em_kay";
             compatible = "zmk,behavior-macro";
@@ -117,6 +121,8 @@
 
 / {
     behaviors {
+        /omit-if-no-ref/
+
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -127,6 +133,7 @@
             bindings = <&kp>, <&kp>;
         };
 
+        /omit-if-no-ref/
         // HOME ROW MODS
         hml: left_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -141,6 +148,7 @@
             hold-trigger-on-release;
         };
 
+        /omit-if-no-ref/
         hmr: right_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             label = "RIGHT_POSITIONAL_HOLD_TAP";
@@ -155,6 +163,8 @@
         };
 
         // Swapper for smart alt+tab
+
+        /omit-if-no-ref/
 
         swapper: swapper {
             compatible = "zmk,behavior-tri-state";
@@ -183,10 +193,21 @@
         caps_word {
             bindings = <&caps_word>;
             key-positions = <12 16>;
-            layers = <0>;
+            layers = <BASE>;
             timeout-ms = <40>;
             require-prior-idle-ms = <1000>;
         };
+
+        lock_keyboard {
+            bindings = <&tog LOCKL>;
+            key-positions = <0 9 32 33>;
+            layers = <BASE>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <1000>;
+        };
+
+
+        ///////// Left-hand combos
 
         tab_1 {
             bindings = <&kp TAB>;
@@ -195,8 +216,6 @@
             timeout-ms = <40>;
             require-prior-idle-ms = <150>;
         };
-
-        ///////// Left-hand combos
 
         backtick {
             bindings = <&kp GB_GRAVE>;
@@ -395,6 +414,21 @@ XXXXX      XXXXX     XXXXX     XXXXX      XXXXX  &msc SCRL_LEFT  &msc SCRL_DOWN 
 &kp LCTRL  &kp LGUI  &kp LALT  &kp LSHFT  XXXXX  XXXXX           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  XXXXX
 XXXXX      XXXXX     XXXXX     XXXXX      XXXXX  XXXXX           &mkp MB4        &mkp MCLK       &mkp MB5         XXXXX
                                XXXXX      XXXXX  &to NAVIGATION  &to BASE        &mkp LCLK       &mkp RCLK
+            >;
+        };
+
+        lock_layer {
+            label = "LOCK";
+            bindings = <
+             //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
+                XXXXX            XXXXX            XXXXX            XXXXX            XXXXX                  XXXXX            XXXXX            XXXXX            XXXXX            XXXXX
+             //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                XXXXX            XXXXX            XXXXX            XXXXX            XXXXX                  XXXXX            XXXXX            XXXXX            XXXXX            XXXXX
+             //├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┼──────────────┤
+                XXXXX            XXXXX            XXXXX            XXXXX            XXXXX                  XXXXX            XXXXX            XXXXX            XXXXX            XXXXX
+             //╰──────────────┴──────────────┼──────────────┼──────────────┼──────────────┤     ├──────────────┼──────────────┼──────────────┼──────────────┴──────────────╯
+                                              XXXXX            XXXXX            XXXXX                  XXXXX            XXXXX            XXXXX
+             //                              ╰──────────────┴──────────────┴──────────────╯     ╰──────────────┴──────────────┴──────────────╯
             >;
         };
     };
