@@ -548,12 +548,10 @@ parse_config:
       shifted: ""
       tap: $$mdi:bluetooth$$
       hold: "prev"
-      type: text_with_symbol
     'BT_NXT':
       shifted: ""
       tap: $$mdi:bluetooth$$
       hold: "next"
-      type: text_with_symbol
 
   zmk_combos:
     caps_word:
