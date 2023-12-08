@@ -93,7 +93,7 @@ layers:
   - {t: '=', h: Ctrl}
   - {t: '~', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '#', h: AltGr}
-  - ;
+  - ''''
   - \
   - '>'
   - )
