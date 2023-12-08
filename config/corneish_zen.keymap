@@ -335,7 +335,7 @@
 //╭───────────────┬────────────────┬────────────────┬────────────────┬───────────────╮     ╭───────────────┬────────────────┬────────────────┬────────────────┬───────────────╮
        &kp GB_N1      &kp GB_N2         &kp GB_N3        &kp GB_N4       &kp GB_N5             &kp GB_N6       &kp GB_N7        &kp GB_N8         &kp GB_N9       &kp GB_N0
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
- &kp GB_LESS_THAN   &hm LALT GB_LEFT_PARENTHESIS  &hml LSHIFT GB_LEFT_BRACE  &hml LCTRL GB_LEFT_BRACKET  &kp GB_MINUS       &hmr RCTRL GB_EQUAL  &hmr RSHFT GB_TILDE  &hmr RALT GB_HASH  &kp GB_SEMICOLON  &kp GB_BACKSLASH
+ &kp GB_LESS_THAN   &hm LALT GB_LEFT_PARENTHESIS  &hml LSHIFT GB_LEFT_BRACE  &hml LCTRL GB_LEFT_BRACKET  &kp GB_MINUS       &hmr RCTRL GB_EQUAL  &hmr RSHFT GB_TILDE  &hmr RALT GB_HASH  &kp GB_SINGLE_QUOTE  &kp GB_BACKSLASH
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
 &kp GB_GREATER_THAN    &kp RPAR    &kp GB_RIGHT_BRACE &kp GB_RIGHT_BRACKET &kp GB_UNDERSCORE  &kp GB_PLUS    &kp GB_AT_SIGN  &kp GB_SEMICOLON    &kp GB_COLON    &kp GB_PIPE
 //╰───────────────┴────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┴───────────────╯
