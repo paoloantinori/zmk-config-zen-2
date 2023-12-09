@@ -122,10 +122,10 @@ layers:
   - F8
   - F9
   - F10
-  - MUTE
+  - $$mdi:volume-off$$
   - $$mdi:volume-low$$
   - $$mdi:volume-high$$
-  - BRI DOWN
+  - $$tabler:brightness-down$$
   - $$tabler:brightness-up$$
   - {t: '$$mdi:keyboard-space$$', h: Ctrl}
   - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
