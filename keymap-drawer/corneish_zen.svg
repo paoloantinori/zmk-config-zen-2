@@ -233,12 +233,13 @@ text.combo, text.hold, text.shifted {
 text.hold {
     text-anchor: middle;
     dominant-baseline: auto;
+    font-size: 13px;
 }
 
 text.shifted {
     text-anchor: middle;
     dominant-baseline: hanging;
-    font-size: 18px;
+    font-size: 13px;
 }
 
 /* styling for hold/shifted label text in combo box */
