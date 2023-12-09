@@ -45,8 +45,8 @@ draw_config:
   glyph_shifted_size: 18
 
   glyphs: {}
-  # glyph_urls:
-  #   tabler: https://tabler-icons.io/static/tabler-icons/icons/{}.svg
+  glyph_urls:
+    tabler: https://unpkg.com/tabler-icons/icons/{}.svg
   #   mdi: https://raw.githubusercontent.com/Templarian/MaterialDesign-SVG/master/svg/{}.svg
   #   mdil: https://raw.githubusercontent.com/Pictogrammers/MaterialDesignLight/master/svg/{}.svg
   #   material: https://fonts.gstatic.com/s/i/short-term/release/materialsymbolsoutlined/{}/default/48px.svg
