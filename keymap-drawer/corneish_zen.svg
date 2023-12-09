@@ -238,6 +238,7 @@ text.hold {
 text.shifted {
     text-anchor: middle;
     dominant-baseline: hanging;
+    font-size: 18px;
 }
 
 /* styling for hold/shifted label text in combo box */
