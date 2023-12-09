@@ -122,10 +122,10 @@ layers:
   - F8
   - F9
   - F10
-  - ''
-  - {t: '$$mdi:keyboard-space$$', h: Alt}
-  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: '$$mdi:keyboard-space$$', h: Ctrl}
+  - MUTE
+  - {t: '$$mdi:volume-low$$', h: Alt}
+  - {t: BRIGHTNESS DEC, h: '$$mdi:volume-high$$'}
+  - {t: BRIGHTNESS INC, h: Ctrl}
   - {t: '$$mdi:keyboard-space$$', h: '$$mdi:monitor-dashboard$$'}
   - {t: '$$mdi:keyboard-space$$', h: Ctrl}
   - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
