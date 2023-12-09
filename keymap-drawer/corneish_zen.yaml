@@ -123,10 +123,10 @@ layers:
   - F9
   - F10
   - MUTE
-  - {t: '$$mdi:volume-low$$', h: Alt}
-  - {t: '$$mdi:volume-high$$', h: '$$mdi:apple-keyboard-shift$$'}
-  - {t: BRI DOWN, h: Ctrl}
-  - {t: '$$tabler:brightness-up$$', h: '$$mdi:monitor-dashboard$$'}
+  - $$mdi:volume-low$$
+  - $$mdi:volume-high$$
+  - BRI DOWN
+  - $$tabler:brightness-up$$
   - {t: '$$mdi:keyboard-space$$', h: Ctrl}
   - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:keyboard-space$$', h: AltGr}
