@@ -178,7 +178,7 @@ svg path {
 /* font and background color specifications */
 svg.keymap {
     font-family: Ubuntu Mono,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-    font-size: 26px;
+    font-size: 18px;
     font-kerning: normal;
     text-rendering: optimizeLegibility;
     fill: #fff;
