@@ -62,7 +62,7 @@ draw_config:
     /* font and background color specifications */
     svg.keymap {
         font-family: Ubuntu Mono,SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
-        font-size: 13px;
+        font-size: 16px;
         font-kerning: normal;
         text-rendering: optimizeLegibility;
         fill: #fff;
@@ -126,7 +126,7 @@ draw_config:
 
     /* styling for hold/shifted label text in combo box */
     text.combo.hold, text.combo.shifted {
-        font-size: 8px;
+        font-size: 10px;
     }
 
     /* lighter symbol for transparent keys */
