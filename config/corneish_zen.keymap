@@ -58,6 +58,12 @@
     continue-list = <UNDERSCORE MINUS BSPC N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>;
 };
 
+// tune sticky key
+&sk {
+    release-after-ms = <1000>;
+    quick-release;
+};
+
 / {
     macros {
         /omit-if-no-ref/
@@ -76,6 +82,14 @@
         };
 
 
+        dot_spc: dot_spc{
+            label = "ZM_DOT_SPACE";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            tap-ms = <5>;
+            bindings = <&kp DOT &kp SPACE &sk LSHFT>;
+        };
 
 
         /**
@@ -111,6 +125,7 @@
                 <&macro_release>,
                 <&mo MACRO_PLACEHOLDER>;
         };
+
     };
 };
 
@@ -177,9 +192,38 @@
 
             //ignored-key-positions = <SWP_POS>;
         };
+
+/*
+        // tap: space | shft + tap: dot -> space -> sticky shift | hold: activate layer
+        spc_morph: spc_morph {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SPC_MORPH";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&dot_spc>;
+        };
+        lt_spc: lt_spc {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LT_SPC";
+            #binding-cells = <2>;
+            tapping-term-ms = <TAP_TERM_MS>;
+            quick-tap-ms = <QUICK_TAP_MS>;
+            flavor = "balanced";
+            bindings = <&mo>, <&spc_morph>;
+        };
+*/
+
+        // TAP Dances
+        cap_after_period: cap_after_period {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_cap_after_period";
+            #binding-cells = <0>;
+            tapping-term-ms = <TAP_TERM_MS>;
+            bindings = <&kp GB_DOT>, <&dot_spc>;
+        };
+
     };
 
-    /*                KEY POSITIONS
+/*                KEY POSITIONS
 36 keys:
 
   ╭────────────────────╮ ╭────────────────────╮
@@ -307,7 +351,7 @@
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
         &kp GB_A    &hml LALT GB_S  &hml LSHIFT GB_D  &hml LCTRL GB_F    &kp GB_G           &hmr RCTRL GB_H  &hmr RSHFT GB_J  &hmr RALT GB_K       &kp GB_L       &kp ENTER
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
-    &mt LCTRL GB_Z      &kp GB_X        &kp GB_C         &kp GB_V        &kp GB_B               &kp GB_N       &kp GB_M        &kp GB_COMMA      &kp GB_DOT      &kp GB_SLASH
+    &mt LCTRL GB_Z      &kp GB_X        &kp GB_C         &kp GB_V        &kp GB_B               &kp GB_N       &kp GB_M        &kp GB_COMMA  &cap_after_period      &kp GB_SLASH
 //╰───────────────┴────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┴───────────────╯
                                 &lm QUICK LALT  &lt NAVI GB_SPACE &to NAVI  &to BASE        &lt NUM GB_SPACE   XXXXX
 //                                 ╰────────────────┴────────────────┴───────────────╯     ╰───────────────┴────────────────┴────────────────╯
