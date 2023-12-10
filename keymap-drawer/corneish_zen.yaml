@@ -29,7 +29,7 @@ layers:
   - N
   - M
   - {t: ',', s: <}
-  - {t: ., h: Smart on Double}
+  - {t: ., h: Smart on Double, s: '>'}
   - {t: /, s: '?'}
   - ALT
   - {t: '$$mdi:keyboard-space$$', h: NAVI}
