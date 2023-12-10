@@ -343,6 +343,8 @@ parse_config:
     '&cap_after_period':
       tap: .
       hold: "Smart on Double"
+      shifted: ">"
+    
 
     # Mouse
 
