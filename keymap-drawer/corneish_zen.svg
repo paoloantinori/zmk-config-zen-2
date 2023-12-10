@@ -472,7 +472,8 @@ path.combo {
 </g>
 <g transform="translate(800, 293)" class="key keypos-35">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
-<text x="0" y="0" class="key tap">&amp;td0</text>
+<text x="0" y="0" class="key tap">.</text>
+<text x="0" y="-35" class="key shifted"><tspan style="font-size: 62%">&amp;dot_spc</tspan></text>
 </g>
 <g class="combo combopos-0">
 <path d="M480,125 l-253,-5" class="combo"/>
