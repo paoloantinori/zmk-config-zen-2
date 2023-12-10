@@ -29,7 +29,7 @@ layers:
   - N
   - M
   - {t: ',', s: <}
-  - {t: ., s: '>'}
+  - '&cap_after_period'
   - {t: /, s: '?'}
   - ALT
   - {t: '$$mdi:keyboard-space$$', h: NAVI}
