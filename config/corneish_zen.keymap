@@ -216,7 +216,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_cap_after_period";
             #binding-cells = <0>;
-            tapping-term-ms = <600>;
+            tapping-term-ms = <300>;
             bindings = <&kp GB_DOT>, <&dot_spc>;
         };
     };
