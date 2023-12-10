@@ -29,14 +29,14 @@ layers:
   - N
   - M
   - {t: ',', s: <}
-  - '&cap_after_period'
+  - {t: ., h: Smart on Double}
   - {t: /, s: '?'}
   - ALT
   - {t: '$$mdi:keyboard-space$$', h: NAVI}
   - {t: NAVI, h: toggle}
   - {t: BASE, h: toggle}
   - {t: '$$mdi:keyboard-space$$', h: SYMB}
-  - {t: ., s: '&dot_spc'}
+  - ''
   NAVI:
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:mouse$$', h: scroll left}
