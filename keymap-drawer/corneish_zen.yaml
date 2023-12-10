@@ -37,6 +37,7 @@ layers:
   - {t: BASE, h: toggle}
   - {t: '$$mdi:keyboard-space$$', h: SYMB}
   - ''
+  - '&td0'
   NAVI:
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:mouse$$', h: scroll left}
