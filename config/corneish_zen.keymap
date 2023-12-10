@@ -216,7 +216,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_cap_after_period";
             #binding-cells = <0>;
-            tapping-term-ms = <TAP_TERM_MS>;
+            tapping-term-ms = <600>;
             bindings = <&kp GB_DOT>, <&dot_spc>;
         };
         td0: tap_dance_0 {
@@ -225,6 +225,7 @@
             tapping-term-ms = <600>;
             bindings = <&dot_spc>, <&kp N1>, <&kp N2>;
         };
+
     };
 
 /*                KEY POSITIONS
