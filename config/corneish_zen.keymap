@@ -222,7 +222,7 @@
         td0: tap_dance_0 {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <600>;
             bindings = <&dot_spc>, <&kp N1>, <&kp N2>;
         };
     };
