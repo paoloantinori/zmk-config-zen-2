@@ -280,6 +280,20 @@
             timeout-ms = <COMBO_TIMEOUT_MS>;
         };
 
+        windows {
+            bindings = <&kp LWIN>;
+            key-positions = <30 31>;
+            layers = <BASE>;
+            require-prior-idle-ms = <1000>;
+        };
+
+        reset_BT{
+            bindings = <&bt BT_CLR>;
+            key-positions = <12 13 24>;
+            layers = <FUNC>;
+            require-prior-idle-ms = <1000>;
+        };
+
 
         ///////// Right-hand combos
         // this are supposed to be double quotes
@@ -319,12 +333,13 @@
             layers = <BASE>;
         };
 
-        windows {
-            bindings = <&kp LWIN>;
-            key-positions = <30 31>;
+        symb {
+            bindings = <&mo NAVI>;
+            key-positions = <33 34>;
             layers = <BASE>;
             require-prior-idle-ms = <1000>;
         };
+
 
     };
 
@@ -351,7 +366,7 @@
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
     &mt LCTRL GB_Z      &kp GB_X        &kp GB_C         &kp GB_V        &kp GB_B               &kp GB_N       &kp GB_M        &kp GB_COMMA  &cap_after_period      &kp GB_SLASH
 //╰───────────────┴────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┴───────────────╯
-                                     &lm QUICK LALT  &lt NAVI GB_SPACE   &to NAVI              &to BASE      &lt NUM GB_SPACE       XXXXX           
+                                     &lm QUICK LALT  &lt NAVI GB_SPACE   &to NAVI              &to BASE      &lt NUM GB_SPACE   &mo FUNC           
 //                                 ╰────────────────┴────────────────┴───────────────╯     ╰───────────────┴────────────────┴────────────────╯
             >;
         };
@@ -394,7 +409,7 @@
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
      &kp C_MUTE     &kp C_VOL_DN      &kp C_VOL_UP    &kp C_BRI_DN     &kp C_BRI_UP      &hmr RCTRL GB_SPACE  &hmr RSHFT GB_SPACE  &hmr RALT GB_SPACE   XXXXX    &hmr ENTER F11
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
-    &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2      &bootloader     &bt BT_CLR            &sys_reset      &bootloader       &bt BT_PRV       &bt BT_NXT        &kp F12
+    &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2      &bootloader          XXXXX            &sys_reset      &bootloader       &bt BT_PRV       &bt BT_NXT        &kp F12
 //╰───────────────┴────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┴───────────────╯
                                           XXXXX            XXXXX         &to MOUSE              &to BASE      &out OUT_USB     &out OUT_BLE
 //                                 ╰────────────────┴────────────────┴───────────────╯     ╰───────────────┴────────────────┴────────────────╯
