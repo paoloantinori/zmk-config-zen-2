@@ -36,7 +36,7 @@ layers:
   - {t: NAVI, h: toggle}
   - {t: BASE, h: toggle}
   - {t: '$$mdi:keyboard-space$$', h: SYMB}
-  - ''
+  - FUNC
   NAVI:
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:mouse$$', h: scroll left}
@@ -71,8 +71,8 @@ layers:
   - ''
   - {type: held}
   - {t: SYMB, h: toggle}
-  - {t: BASE, h: toggle}
-  - {t: '$$mdi:mouse$$', h: L}
+  - {t: BASE, h: toggle, type: held}
+  - {t: '$$mdi:mouse$$', h: L, type: held}
   - {t: '$$mdi:mouse$$', h: R}
   SYMB:
   - {t: '1', s: '!'}
@@ -136,7 +136,7 @@ layers:
   - {t: '$$mdi:bluetooth-connect$$', h: '2'}
   - {t: '$$mdi:bluetooth-connect$$', h: '3'}
   - {t: '$$mdi:progress-download$$', type: bootloader}
-  - {t: '$$mdi:bluetooth$$', h: clear}
+  - ''
   - {t: '$$mdi:backup-restore$$', type: bootloader}
   - {t: '$$mdi:progress-download$$', type: bootloader}
   - {t: '$$mdi:bluetooth$$', h: prev}
@@ -147,7 +147,7 @@ layers:
   - {t: MOUSE, h: toggle}
   - {t: BASE, h: toggle}
   - $$mdi:usb$$
-  - $$mdi:bluetooth$$
+  - {t: '$$mdi:bluetooth$$', type: held}
   QUICK:
   - {t: '`', s: ¬}
   - $$mdi:keyboard-tab$$
@@ -243,6 +243,12 @@ combos:
 - p: [1, 2]
   k: $$mdi:keyboard-tab$$
   l: [BASE]
+- p: [30, 31]
+  k: $$mdi:microsoft-windows$$
+  l: [BASE]
+- p: [12, 13, 24]
+  k: {t: '$$mdi:bluetooth$$', h: clear}
+  l: [FUNC]
 - p: [8, 9]
   k: {t: '$$mdi:backspace$$', type: backspace}
   l: [BASE]
@@ -258,6 +264,6 @@ combos:
 - p: [19, 18]
   k: ''''
   l: [BASE]
-- p: [30, 31]
-  k: $$mdi:microsoft-windows$$
+- p: [33, 34]
+  k: NAVI
   l: [BASE]
