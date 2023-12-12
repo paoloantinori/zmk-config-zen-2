@@ -1,0 +1,272 @@
+layout: {qmk_keyboard: corne_rotated, qmk_layout: LAYOUT_split_3x5_3}
+layers:
+  BASE:
+  - Q
+  - W
+  - E
+  - R
+  - T
+  - Y
+  - U
+  - I
+  - O
+  - P
+  - A
+  - {t: S, h: Alt}
+  - {t: D, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: F, h: Ctrl}
+  - G
+  - {t: H, h: Ctrl}
+  - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: K, h: AltGr}
+  - L
+  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: Z, h: Ctrl}
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - {t: ',', s: <}
+  - {t: ., h: Smart on Double, s: '>'}
+  - {t: /, s: '?'}
+  - ALT
+  - {t: '$$mdi:keyboard-space$$', h: NAVI}
+  - {t: NAVI, h: toggle}
+  - {t: BASE, h: toggle}
+  - {t: '$$mdi:keyboard-space$$', h: SYMB}
+  - FUNC
+  NAVI:
+  - $$mdi:keyboard-esc$$
+  - {t: '$$mdi:mouse$$', h: scroll left}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
+  - {t: '$$mdi:mouse$$', h: scroll right}
+  - $$mdi:mouse-move-up$$
+  - Page Up
+  - Home
+  - $$mdi:arrow-up-bold$$
+  - End
+  - {t: '$$mdi:backspace$$', type: backspace}
+  - $$mdi:apple-keyboard-shift$$
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-left-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-down-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-right-bold$$'}
+  - $$mdi:mouse-move-down$$
+  - Page Down
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-right-bold$$
+  - $$mdi:backspace-reverse-outline$$
+  - {t: '`', h: '|', s: ¬}
+  - Ctrl
+  - {t: '$$mdi:mouse$$', h: L}
+  - {t: '$$mdi:mouse$$', h: R}
+  - {t: '$$mdi:mouse$$', h: M}
+  - INS
+  - RC(TAB)
+  - LC(LS(TAB))
+  - Print
+  - {t: '''', h: '@', s: '@'}
+  - ''
+  - {type: held}
+  - {t: SYMB, h: toggle}
+  - {t: BASE, h: toggle, type: held}
+  - {t: '$$mdi:mouse$$', h: L, type: held}
+  - {t: '$$mdi:mouse$$', h: R}
+  SYMB:
+  - {t: '1', s: '!'}
+  - {t: '2', s: '"'}
+  - {t: '3', s: £}
+  - {t: '4', s: $}
+  - {t: '5', s: '%'}
+  - {t: '6', s: ^}
+  - {t: '7', s: '&'}
+  - {t: '8', s: '*'}
+  - {t: '9', s: (}
+  - {t: '0', s: )}
+  - <
+  - {t: (, h: Alt}
+  - {t: '{', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '[', h: Ctrl}
+  - {t: '-', s: _}
+  - {t: '=', h: Ctrl}
+  - {t: '~', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '#', h: AltGr}
+  - {t: '''', s: '@'}
+  - \
+  - '>'
+  - )
+  - '}'
+  - ']'
+  - _
+  - +
+  - '@'
+  - {t: ;, s: ':'}
+  - ':'
+  - '|'
+  - ''
+  - '&'
+  - {t: FUNC, h: toggle}
+  - {t: BASE, h: toggle}
+  - {t: '*', type: held}
+  - ''
+  FUNC:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - $$mdi:volume-off$$
+  - $$mdi:volume-low$$
+  - $$mdi:volume-high$$
+  - $$tabler:brightness-down$$
+  - $$tabler:brightness-up$$
+  - {t: '$$mdi:keyboard-space$$', h: Ctrl}
+  - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: '$$mdi:keyboard-space$$', h: AltGr}
+  - ''
+  - {t: F11, h: '$$mdi:keyboard-return$$'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '1'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '2'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
+  - {t: '$$mdi:progress-download$$', type: bootloader}
+  - ''
+  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - {t: '$$mdi:progress-download$$', type: bootloader}
+  - {t: '$$mdi:bluetooth$$', h: prev}
+  - {t: '$$mdi:bluetooth$$', h: next}
+  - F12
+  - ''
+  - ''
+  - {t: MOUSE, h: toggle}
+  - {t: BASE, h: toggle}
+  - $$mdi:usb$$
+  - {t: '$$mdi:bluetooth$$', type: held}
+  QUICK:
+  - {t: '`', s: ¬}
+  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - $$mdi:keyboard-tab$$
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - Alt
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - ''
+  MOUSE:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:mouse$$', h: scroll left}
+  - $$mdi:mouse-move-down$$
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
+  - $$mdi:mouse-move-up$$
+  - {t: '$$mdi:mouse$$', h: scroll right}
+  - Ctrl
+  - {t: '$$mdi:monitor-dashboard$$', h: Meta, type: info}
+  - Alt
+  - $$mdi:apple-keyboard-shift$$
+  - ''
+  - ''
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-left-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-down-bold$$'}
+  - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-right-bold$$'}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:mouse$$', h: '1'}
+  - {t: '$$mdi:mouse$$', h: M}
+  - {t: '$$mdi:mouse$$', h: '2'}
+  - ''
+  - ''
+  - ''
+  - {t: NAVI, h: toggle}
+  - {t: BASE, h: toggle}
+  - {t: '$$mdi:mouse$$', h: L}
+  - {t: '$$mdi:mouse$$', h: R}
+  LOCK: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+combos:
+- p: [12, 16]
+  k: CAPS WORD
+  l: [BASE]
+- p: [0, 9, 32, 33]
+  k: {t: '$$mdi:lock-open-outline$$', h: Toggle}
+- p: [12, 13]
+  k: $$mdi:keyboard-tab$$
+  l: [BASE]
+  a: top
+  o: 0.15
+- p: [0, 10]
+  k: '`'
+  l: [BASE]
+- p: [0, 1]
+  k: $$mdi:keyboard-esc$$
+  l: [BASE]
+- p: [1, 2]
+  k: $$mdi:keyboard-tab$$
+  l: [BASE]
+- p: [30, 31]
+  k: $$mdi:microsoft-windows$$
+  l: [BASE]
+- p: [12, 13, 24]
+  k: {t: '$$mdi:bluetooth$$', h: clear}
+  l: [FUNC]
+- p: [8, 9]
+  k: {t: '$$mdi:backspace$$', type: backspace}
+  l: [BASE]
+- p: [17, 18]
+  k: '-'
+  l: [BASE]
+- p: [9, 19]
+  k: $$mdi:backspace-reverse-outline$$
+  l: [BASE]
+- p: [28, 29]
+  k: '?'
+  l: [BASE]
+- p: [19, 18]
+  k: ''''
+  l: [BASE]
+- p: [16, 17]
+  k: ''''
+  l: [BASE]
+- p: [33, 34]
+  k: NAVI
+  l: [BASE]
