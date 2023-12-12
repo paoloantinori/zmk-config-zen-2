@@ -230,7 +230,7 @@
             tapping-term-ms = <5000>;
             bindings = <&kp GB_DOT>, <&dot_spc>, <&three_dots_macro>;
         };
-    }
+    };
 /*                KEY POSITIONS
 36 keys:
 
