@@ -102,7 +102,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
-            bindings = <&kp GB_DOT &kp GB_DOT &kp GB_DOT>;
+            bindings = <&kp GB_DOT &kp GB_DOT &kp GB_DOT &kp SPACE>;
         };
 
 
@@ -227,7 +227,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_cap_after_period";
             #binding-cells = <0>;
-            tapping-term-ms = <5000>;
+            tapping-term-ms = <300>;
             bindings = <&kp GB_DOT>, <&dot_spc>, <&three_dots_macro>;
         };
     };
