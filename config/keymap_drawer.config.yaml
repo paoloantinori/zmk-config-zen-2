@@ -496,18 +496,32 @@ parse_config:
     QUESTION: '?'
     QMARK: '?'
     BACKSLASH: '\' # UK layout
-    BSLH: '\' # UK layout
+    BSLH:  # UK layout
+      tap: '\'
+      shifted: '|'
     PIPE: '|' # UK layout
+    PIPE2: '|'
     NON_US_BSLH: '\'
     NON_US_BACKSLASH: '\'
-    PIPE2: '|'
-    SEMICOLON: ;
-    SEMI: ;
+    SEMICOLON:
+      tap: ;
+      shifted: ':'
+    SEMI:
+      tap: ;
+      shifted: ':'
     COLON: ':'
-    SINGLE_QUOTE: "'"
-    SQT: "'"
-    APOSTROPHE: "'"
-    APOS: "'"
+    SINGLE_QUOTE:
+      tap: "'"
+      shifted: "@"
+    SQT:
+      tap: "'"
+      shifted: "@"
+    APOSTROPHE:
+      tap: "'"
+      shifted: "@"
+    APOS: 
+      tap: "'"
+      shifted: "@"
     DOUBLE_QUOTES: '"' # UK layout
     DQT: '"' # UK layout
     COMMA:
