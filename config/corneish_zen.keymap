@@ -65,6 +65,13 @@
 };
 
 / {
+    chosen {
+        zmk,matrix_transform = &five_column_transform;
+    };
+};
+
+///// MACROS ///////////////
+/ {
     macros {
         // sample macro used just for tests
         /omit-if-no-ref/
@@ -136,14 +143,10 @@
     };
 };
 
-/ {
-    chosen {
-        zmk,matrix_transform = &five_column_transform;
-    };
-};
 
-//KEYMAP
 
+
+///// BEHAVIORS ///////////////
 / {
     behaviors {
         /omit-if-no-ref/
@@ -227,7 +230,7 @@
             tapping-term-ms = <5000>;
             bindings = <&kp GB_DOT>, <&dot_spc>, <&three_dots_macro>;
         };
-
+    }
 /*                KEY POSITIONS
 36 keys:
 
@@ -239,6 +242,7 @@
           ╰────────────╯ ╰────────────╯
 */
 
+///// COMBOS ///////////////
     combos {
         compatible = "zmk,combos";
 
@@ -357,6 +361,7 @@
 
     };
 
+///// KEYMAP ///////////////
     keymap {
         compatible = "zmk,keymap";
 
