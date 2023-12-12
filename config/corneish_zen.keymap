@@ -66,8 +66,8 @@
 
 / {
     macros {
+        // sample macro used just for tests
         /omit-if-no-ref/
-
         zed_em_kay: zed_em_kay {
             label = "ZM_zed_em_kay";
             compatible = "zmk,behavior-macro";
@@ -88,6 +88,14 @@
             #binding-cells = <0>;
             wait-ms = <0>;
             bindings = <&kp GB_DOT &kp SPACE &sk LSHFT>;
+        };
+
+        three_dots_macro: three_dots_macro{
+            label = "THREE_DOTS";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <0>;
+            bindings = <&kp GB_DOT &kp GB_DOT &kp GB_DOT>;
         };
 
 
@@ -216,8 +224,10 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TAP_DANCE_cap_after_period";
             #binding-cells = <0>;
-            tapping-term-ms = <280>;
-            bindings = <&kp GB_DOT>, <&dot_spc>;
+            tapping-term-ms = <5000>;
+
+        three_dots: three_dots{
+            bindings = <&kp GB_DOT>, <&dot_spc>, <&three_dots_macro>;
         };
     };
 
@@ -333,12 +343,19 @@
             layers = <BASE>;
         };
 
-        symb {
+        apostrophe_2 {
+            bindings = <&kp GB_APOSTROPHE>;
+            key-positions = <16 17>;
+            layers = <BASE>;
+        };
+
+        symb_layer {
             bindings = <&mo NAVI>;
             key-positions = <33 34>;
             layers = <BASE>;
             require-prior-idle-ms = <1000>;
         };
+
 
 
     };
