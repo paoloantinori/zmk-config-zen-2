@@ -33,8 +33,8 @@ layers:
   - {t: /, s: '?'}
   - ALT
   - {t: '$$mdi:keyboard-space$$', h: NAVI}
-  - {t: NAVI, h: toggle}
-  - {t: BASE, h: toggle}
+  - ''
+  - NAVI
   - {t: '$$mdi:keyboard-space$$', h: SYMB}
   - FUNC
   NAVI:
@@ -43,21 +43,21 @@ layers:
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
   - {t: '$$mdi:mouse$$', h: scroll right}
   - $$mdi:mouse-move-up$$
-  - Page Up
   - Home
+  - Page Up
   - $$mdi:arrow-up-bold$$
-  - End
+  - Page Down
   - {t: '$$mdi:backspace$$', type: backspace}
   - $$mdi:apple-keyboard-shift$$
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-left-bold$$'}
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-down-bold$$'}
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-right-bold$$'}
   - $$mdi:mouse-move-down$$
-  - Page Down
+  - End
   - $$mdi:arrow-left-bold$$
   - $$mdi:arrow-down-bold$$
   - $$mdi:arrow-right-bold$$
-  - $$mdi:backspace-reverse-outline$$
+  - ''
   - {t: '`', h: '|', s: ¬}
   - Ctrl
   - {t: '$$mdi:mouse$$', h: L}
@@ -70,8 +70,8 @@ layers:
   - {t: '''', h: '@', s: '@'}
   - ''
   - {type: held}
-  - {t: SYMB, h: toggle}
-  - {t: BASE, h: toggle, type: held}
+  - ''
+  - {type: held}
   - {t: '$$mdi:mouse$$', h: L, type: held}
   - {t: '$$mdi:mouse$$', h: R}
   SYMB:
@@ -107,8 +107,8 @@ layers:
   - '|'
   - ''
   - '&'
-  - {t: FUNC, h: toggle}
-  - {t: BASE, h: toggle}
+  - ''
+  - ''
   - {t: '*', type: held}
   - ''
   FUNC:
@@ -137,15 +137,15 @@ layers:
   - {t: '$$mdi:bluetooth-connect$$', h: '3'}
   - {t: '$$mdi:progress-download$$', type: bootloader}
   - ''
-  - {t: '$$mdi:backup-restore$$', type: bootloader}
+  - ''
   - {t: '$$mdi:progress-download$$', type: bootloader}
   - {t: '$$mdi:bluetooth$$', h: prev}
   - {t: '$$mdi:bluetooth$$', h: next}
   - F12
   - ''
   - ''
-  - {t: MOUSE, h: toggle}
-  - {t: BASE, h: toggle}
+  - ''
+  - ''
   - $$mdi:usb$$
   - {t: '$$mdi:bluetooth$$', type: held}
   QUICK:
@@ -181,8 +181,8 @@ layers:
   - {t: '$$mdi:chevron-down$$', type: trans}
   - Alt
   - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
+  - ''
+  - ''
   - {t: '$$mdi:chevron-down$$', type: trans}
   - ''
   MOUSE:
@@ -218,8 +218,8 @@ layers:
   - ''
   - ''
   - ''
-  - {t: NAVI, h: toggle}
-  - {t: BASE, h: toggle}
+  - ''
+  - ''
   - {t: '$$mdi:mouse$$', h: L}
   - {t: '$$mdi:mouse$$', h: R}
   LOCK: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
