@@ -1,11 +1,7 @@
-#define MOUSE_KEYS
-
 #include <behaviors.dtsi>
 #include "italian.keycodes"
 
-#ifdef MOUSE_KEYS
-#   include "mouse.dtsi"
-#endif
+#include "includes/mouse.dtsi"
 
 #ifndef KEYMAP_DRAWER
 #   include "keys_en_gb.h"
