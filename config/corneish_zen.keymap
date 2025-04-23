@@ -305,6 +305,13 @@
             require-prior-idle-ms = <1000>;
         };
 
+        activate_bootloader{
+            bindings = <&bootloader>;
+            key-positions = <24 25>;
+            layers = <FUNC>;
+            require-prior-idle-ms = <1000>;
+        };
+
 
         ///////// Right-hand combos
         // this are supposed to be double quotes
@@ -429,7 +436,7 @@
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
      &kp C_MUTE     &kp C_VOL_DN      &kp C_VOL_UP    &kp C_BRI_DN     &kp C_BRI_UP    &hmr RCTRL GB_SPACE  &hmr RSHFT GB_SPACE  &hmr RALT GB_SPACE   XXXXX    &hmr ENTER F11
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
-    &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2      &bootloader          XXXXX                XXXXX      &bootloader       &bt BT_PRV       &bt BT_NXT        &kp F12
+    &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4            &bootloader       XXXXX          &bt BT_PRV       &bt BT_NXT        &kp F12
 //╰───────────────┴────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┴───────────────╯
                                           XXXXX            XXXXX          XXXXX                   XXXXX      &out OUT_USB     &out OUT_BLE
 //                                 ╰────────────────┴────────────────┴───────────────╯     ╰───────────────┴────────────────┴────────────────╯
