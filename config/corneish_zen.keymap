@@ -1,7 +1,7 @@
 #include <behaviors.dtsi>
 #include "italian.keycodes"
 
-#winclude "includes/mouse.dtsi"
+#include "includes/mouse.dtsi"
 
 #ifndef KEYMAP_DRAWER
 #   include "keys_en_gb.h"
