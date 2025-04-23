@@ -1,7 +1,6 @@
 #include <behaviors.dtsi>
 #include "italian.keycodes"
 
-#include "includes/mouse.dtsi"
 
 #ifndef KEYMAP_DRAWER
 #   include "keys_en_gb.h"
@@ -23,6 +22,8 @@
 #define FUNC 3
 #define QUICK 4
 #define MOUSE 5
+
+#include "includes/mouse.dtsi" # this one needs to stay here, after the previous constants definitions
 
 #define LOCK 6
 #define COMBO_TIMEOUT_MS 80
