@@ -32,12 +32,12 @@ layers:
   - {t: ., h: Smart on Double, s: '>'}
   - {t: /, s: '?'}
   - ALT
-  - {t: '$$mdi:keyboard-space$$', h: NAVI}
+  - {t: '$$mdi:keyboard-space$$', h: NAV}
   - ''
-  - NAVI
+  - NAV
   - {t: '$$mdi:keyboard-space$$', h: SYMB}
   - FUNC
-  NAVI:
+  NAV:
   - $$mdi:keyboard-esc$$
   - {t: '$$mdi:mouse$$', h: scroll left}
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
@@ -64,15 +64,15 @@ layers:
   - {t: '$$mdi:mouse$$', h: R}
   - {t: '$$mdi:mouse$$', h: M}
   - INS
-  - RC(TAB)
-  - LC(LS(TAB))
+  - Ctl+$$mdi:keyboard-tab$$
+  - Ctl+Sft+$$mdi:keyboard-tab$$
   - Print
   - {t: '''', h: '@', s: '@'}
   - ''
   - {type: held}
   - ''
-  - {type: held}
-  - {t: '$$mdi:mouse$$', h: L, type: held}
+  - {type: held alternate}
+  - {t: '$$mdi:mouse$$', h: L, type: held alternate}
   - {t: '$$mdi:mouse$$', h: R}
   SYMB:
   - {t: '1', s: '!'}
@@ -135,10 +135,10 @@ layers:
   - {t: '$$mdi:bluetooth-connect$$', h: '1'}
   - {t: '$$mdi:bluetooth-connect$$', h: '2'}
   - {t: '$$mdi:bluetooth-connect$$', h: '3'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '3'}
+  - {t: '$$mdi:bluetooth-connect$$', h: '4'}
   - {t: '$$mdi:progress-download$$', type: bootloader}
   - ''
-  - ''
-  - {t: '$$mdi:progress-download$$', type: bootloader}
   - {t: '$$mdi:bluetooth$$', h: prev}
   - {t: '$$mdi:bluetooth$$', h: next}
   - F12
@@ -249,6 +249,9 @@ combos:
 - p: [12, 13, 24]
   k: {t: '$$mdi:bluetooth$$', h: clear}
   l: [FUNC]
+- p: [24, 25]
+  k: {t: '$$mdi:progress-download$$', type: bootloader}
+  l: [FUNC]
 - p: [8, 9]
   k: {t: '$$mdi:backspace$$', type: backspace}
   l: [BASE]
@@ -268,5 +271,5 @@ combos:
   k: ''''
   l: [BASE]
 - p: [33, 34]
-  k: NAVI
+  k: NAV
   l: [BASE]
