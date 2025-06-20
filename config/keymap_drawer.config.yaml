@@ -222,8 +222,8 @@ parse_config:
 
     "&tog LOCK": 
       tap: $$mdi:lock-open-outline$$
-      align: top
-      offset: 10
+      # align: top
+      # offset: 10
       hold: "Toggle"
 
     '&sys_reset': 
