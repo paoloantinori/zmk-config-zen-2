@@ -15,6 +15,22 @@ Inspirations:
 - https://github.com/maxpetretta/keymap/tree/master for my first encounter with Combos and Capsword
 - https://github.com/nickfaraco/zmk-config for a reverse engineered Urob's timeless HRMs and the idea of a LOCK layer
 
+## ZMK Fork Patches
+
+The custom fork ([`paoloantinori/zmk` branch `zen-v1+v2-rebased`](https://github.com/paoloantinori/zmk/tree/zen-v1+v2-rebased)) carries these patches from [@caksoylar's `zen-v1+v2` branch](https://github.com/caksoylar/zmk/tree/zen-v1+v2), rebased on top of upstream ZMK main. None of these have been merged upstream:
+
+1. **IL0323 display invert** — `CONFIG_IL0323_INVERT` — Option to invert the e-ink display (white-on-black) by accepting `MONO01` pixel format
+2. **IL0323 alternative partial refresh** — `CONFIG_IL0323_ALTERNATIVE_REFRESH` — Different partial refresh approach for the display driver
+3. **Periodic full display refresh** — `CONFIG_ZMK_DISPLAY_FULL_REFRESH_PERIOD` — Timer that periodically invalidates the full screen to clear e-ink ghosting artifacts
+4. **Momentary layer tracking** — `CONFIG_ZMK_TRACK_MOMENTARY_LAYERS` — Tracks whether layers were activated via `&mo`/`&lt` (upstream only tracks `&tog`), using a separate `zmk_keymap_layer_mark_momentary()` function
+5. **Hide momentary layers in widget** — `CONFIG_ZMK_DISPLAY_HIDE_MOMENTARY_LAYERS` — Layer status widget skips updates for momentary layers, reducing e-ink flicker
+6. **Battery widget optimization** — Only updates LVGL when battery level or USB state actually changes; adjusted level thresholds (87/62/37/12/5)
+7. **Custom status screen layout** — Rearranged widget layout for Zen's display with optional heading strip hiding (`CONFIG_CUSTOM_WIDGET_LAYER_STATUS_HIDE_HEADING`)
+8. **Selectable logo images** — `CONFIG_CUSTOM_WIDGET_LOGO_IMAGE_ZEN/LPKB/ZMK/MIRYOKU` — Choice of logo on the right-half status screen (Zen, LPKB, ZMK, Miryoku)
+9. **Conditional layer momentary propagation** — Propagates momentary state through conditional layer chains so the layer widget correctly reflects auto-activated layers
+
+The patches were adapted for upstream API changes: `zmk_keymap_layer_activate()` gained a `bool locking` parameter (momentary tracking uses a separate function), and LVGL renamed `lv_img_*` to `lv_image_*`.
+
 ## Flashing Firmware
 
 Firmware is built via GitHub Actions and the UF2 artifacts are attached to each build run. To flash:
