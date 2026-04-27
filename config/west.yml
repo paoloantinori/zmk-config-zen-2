@@ -4,16 +4,13 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: caksoylar
       url-base: https://github.com/caksoylar
+    - name: paoloantinori
+      url-base: https://github.com/paoloantinori
   projects:
     - name: zmk
-      remote: caksoylar
- #     revision: caksoylar/zen-8bit
-      revision: caksoylar/zen-v1+v2
+      remote: paoloantinori
+      revision: zen-v1+v2-rebased
       import: app/west.yml
-    # - name: zmk
-    #   remote: zmkfirmware
-    #   revision: main
-    #   import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: main
