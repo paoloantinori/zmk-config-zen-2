@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-ZMK firmware configuration for a **Corne-ish Zen v2** split keyboard with a 36-key layout. The keyboard uses caksoylar's fork of ZMK (not upstream) with additional modules for RGB LED widget and smart toggle.
+ZMK firmware configuration for a **Corne-ish Zen v2** split keyboard with a 36-key layout. Uses a custom ZMK fork (`paoloantinori/zmk` branch `zen-v1+v2-rebased`) that carries Zen display patches on top of upstream ZMK main (Zephyr 4.1), plus modules for RGB LED widget and smart toggle.
 
 ## Build System
 
@@ -24,7 +24,7 @@ Firmware is built exclusively via **GitHub Actions** — there is no local build
 | `config/includes/mouse.dtsi` | Mouse/pointing device configuration (move/scroll acceleration) |
 | `config/italian.keycodes` | Custom keycode defines for Italian keyboard layout input |
 | `config/keys_en_gb.h` | GB keycodes header (used at compile time, not for keymap-drawer) |
-| `build.yaml` | Declares board halves for ZMK build (`corneish_zen_v2_left` / `corneish_zen_v2_right`) |
+| `build.yaml` | Declares board halves for ZMK build (`corneish_zen_left@2//zmk` / `corneish_zen_right@2//zmk`) |
 
 ## Inspiration and Lineage
 
@@ -47,20 +47,22 @@ Key differences from caksoylar's config:
 
 ### ZMK Fork vs Upstream
 
-This repo uses `caksoylar/zmk` branch `zen-v1+v2`, which is **10 commits ahead of upstream ZMK `main`** but ~150 commits behind. The fork adds Corne-ish Zen-specific display and hardware patches that haven't been upstreamed:
+This repo uses `paoloantinori/zmk` branch `zen-v1+v2-rebased`, which carries all Corne-ish Zen patches from caksoylar's fork rebased on top of upstream ZMK main (Zephyr 4.1). The patches that haven't been upstreamed:
 
 | Area | Changes | Config options used here |
 |------|---------|--------------------------|
+| **IL0323 invert** | Option to invert IL0323 epaper display (white-on-black) | `CONFIG_IL0323_INVERT` (disabled) |
+| **IL0323 alt refresh** | Alternative partial refresh mode for display driver | `CONFIG_IL0323_ALTERNATIVE_REFRESH` (not enabled) |
 | **Display refresh** | Periodic full refresh to clear e-ink ghosting | `CONFIG_ZMK_DISPLAY_FULL_REFRESH_PERIOD=300` |
-| **Display invert** | Option to invert IL0323 epaper (white-on-black) | `CONFIG_IL0323_INVERT` (disabled) |
-| **IL0323 partial refresh** | Alternative partial refresh mode for the display driver | (not enabled) |
 | **Momentary layer tracking** | Tracks which layers were activated via `&mo`/`&lt` (upstream only tracks `&tog`) | `CONFIG_ZMK_TRACK_MOMENTARY_LAYERS=y` |
 | **Hide momentary layers in widget** | Zen's layer status widget can hide momentary layers to reduce display flicker | `CONFIG_ZMK_DISPLAY_HIDE_MOMENTARY_LAYERS=y` |
 | **Battery widget tweaks** | Skip updates when unchanged; adjusted level thresholds | (always active in Zen board code) |
-| **Custom status screen layout** | Rearranged widget layout for Zen's OLED; selectable logo images (ZMK, Miryoku, LPKB) | `CONFIG_CUSTOM_WIDGET_LOGO_IMAGE_*` (not enabled) |
-| **8-bit status screen** | A pixel-art status screen (in the older `zen-8bit` branch only) | `CONFIG_ZEN_STATUS_SCREEN_8BIT` (disabled) |
+| **Custom status screen layout** | Rearranged widget layout for Zen's OLED; selectable logo images (ZMK, Miryoku, LPKB, Zen) | `CONFIG_CUSTOM_WIDGET_LOGO_IMAGE_ZEN=y` |
+| **Conditional layer momentary** | Propagates momentary state through conditional layer chains | (always active) |
 
-The previously used `zen-8bit` branch includes all of the above plus an additional 8-bit style status screen with card images. It's older and more diverged from upstream.
+The rebased fork adapts these patches for upstream API changes (e.g., `zmk_keymap_layer_activate(layer, bool locking)` uses a separate `mark_momentary()` function; LVGL uses `lv_image_*` not `lv_img_*`).
+
+**Flashing**: Double-click the reset button on the half to enter UF2 bootloader mode. Artifacts: `corneish_zen_left@2_zmk.uf2` / `corneish_zen_right@2_zmk.uf2`. Single press only reboots — must double-click.
 
 #### Additional Modules (not in ZMK fork)
 - **`zmk-rgbled-widget`** (`caksoylar/zmk-rgbled-widget`) — RGB LED indicator for battery level (color-coded blinks), BLE connection status, and active layer. Used via `#include <behaviors/rgbled_widget.dtsi>` in the keymap.
@@ -93,7 +95,7 @@ The `#ifndef KEYMAP_DRAWER` guard in the keymap file excludes `keys_en_gb.h` dur
   - [Keymaps](https://zmk.dev/docs/keymaps/) — layer definitions, devicetree structure, keycode references
   - [Pointing](https://zmk.dev/docs/pointing) — mouse keys, move/scroll behaviors, input processors
   - [Config/Kconfig](https://zmk.dev/docs/config/) — `.conf` file options (BLE, display, sleep, logging)
-- **ZMK source**: https://github.com/zmkfirmware/zmk — the ZMK firmware codebase. Needed when the docs are insufficient — behavior implementations (`app/src/behaviors/`), devicetree bindings (`app/dts/bindings/`), Kconfig options (`app/Kconfig*`), and keycode definitions (`app/include/dt-bindings/zmk/`). Note: this repo uses caksoylar's fork (`caksoylar/zmk` branch `zen-v1+v2`), which may diverge from upstream.
+- **ZMK source**: https://github.com/zmkfirmware/zmk — the ZMK firmware codebase. Needed when the docs are insufficient — behavior implementations (`app/src/behaviors/`), devicetree bindings (`app/dts/bindings/`), Kconfig options (`app/Kconfig*`), and keycode definitions (`app/include/dt-bindings/zmk/`). Note: this repo uses the custom fork (`paoloantinori/zmk` branch `zen-v1+v2-rebased`), which carries Zen-specific patches on top of upstream.
 - **caksoylar's keymap**: https://github.com/caksoylar/zmk-config — upstream inspiration for this config's architecture
 - **Keymap editor**: https://nickcoutsos.github.io/keymap-editor/ — visual editor that can load this repo's config directly
 - **keymap-drawer**: https://github.com/caksoylar/keymap-drawer — generates the SVG keymap visualizations in `keymap-drawer/`
