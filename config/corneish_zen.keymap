@@ -323,7 +323,6 @@
             bindings = <&soft_off_hold>;
             key-positions = <0 1>;
             layers = <FUNC>;
-            require-prior-idle-ms = <1000>;
         };
 
 
