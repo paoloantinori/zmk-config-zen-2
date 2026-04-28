@@ -150,6 +150,14 @@
     behaviors {
         /omit-if-no-ref/
 
+        soft_off_hold: soft_off_hold {
+            compatible = "zmk,behavior-soft-off";
+            #binding-cells = <0>;
+            hold-time-ms = <500>;
+        };
+
+        /omit-if-no-ref/
+
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -307,6 +315,13 @@
         activate_bootloader{
             bindings = <&bootloader>;
             key-positions = <24 25>;
+            layers = <FUNC>;
+            require-prior-idle-ms = <1000>;
+        };
+
+        soft_off_combo{
+            bindings = <&soft_off_hold>;
+            key-positions = <0 1>;
             layers = <FUNC>;
             require-prior-idle-ms = <1000>;
         };
@@ -483,7 +498,7 @@
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
         XXXXX           XXXXX            XXXXX            XXXXX            XXXXX                  XXXXX            XXXXX            XXXXX          XXXXX             XXXXX
 //╰───────────────┴────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┴───────────────╯
-                                         XXXXX            XXXXX            XXXXX                  XXXXX            XXXXX            XXXXX
+                                     &soft_off_hold    XXXXX            XXXXX                  XXXXX            XXXXX            XXXXX
 //                                 ╰────────────────┴────────────────┴───────────────╯     ╰───────────────┴────────────────┴────────────────╯
 >;
         };
