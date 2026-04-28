@@ -222,7 +222,8 @@ layers:
   - ''
   - {t: '$$mdi:mouse$$', h: L}
   - {t: '$$mdi:mouse$$', h: R}
-  LOCK: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']
+  LOCK: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '&soft_off_hold', '', '', '', '',
+    '']
 combos:
 - p: [12, 16]
   k: CAPS WORD
@@ -251,6 +252,9 @@ combos:
   l: [FUNC]
 - p: [24, 25]
   k: {t: '$$mdi:progress-download$$', type: bootloader}
+  l: [FUNC]
+- p: [0, 1]
+  k: '&soft_off_hold'
   l: [FUNC]
 - p: [8, 9]
   k: {t: '$$mdi:backspace$$', type: backspace}
