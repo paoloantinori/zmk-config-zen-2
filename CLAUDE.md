@@ -8,10 +8,37 @@ ZMK firmware configuration for a **Corne-ish Zen v2** split keyboard with a 36-k
 
 ## Build System
 
-Firmware is built exclusively via **GitHub Actions** — there is no local build. Pushing to `main` triggers the build workflow if relevant files change.
+Firmware can be built via **GitHub Actions** (push to `main`) or **locally with Podman** using the same container CI uses.
+
+### GitHub Actions (CI)
 
 - **Firmware build**: `.github/workflows/build.yml` — triggers on changes to `config/west.yml`, `config/*.keymap`, `config/*.dtsi`, `config/corneish_zen.conf`, `config/boards/**`, `build.yaml`. Uses ZMK's reusable `build-user-config.yml` workflow.
 - **Keymap visualization**: `.github/workflows/draw-keymaps.yml` — triggers on changes to keymap/config files. Uses `caksoylar/keymap-drawer` to generate SVG diagrams in `keymap-drawer/`.
+
+### Local Build (Podman)
+
+Uses the official ZMK build container (`zmkfirmware/zmk-build-arm:stable`) with `podman`. This mirrors the CI build exactly — same toolchain, same Zephyr SDK, no local dependency installation needed.
+
+**Prerequisites**: Podman (available by default on Fedora).
+
+**Build both halves:**
+```bash
+# Left half
+podman run --rm -v "$PWD:/work:Z" -v /tmp/zmk-artifacts:/artifacts:Z \
+  zmkfirmware/zmk-build-arm:stable bash /work/build-local.sh "corneish_zen_left@2//zmk" "left"
+
+# Right half
+podman run --rm -v "$PWD:/work:Z" -v /tmp/zmk-artifacts:/artifacts:Z \
+  zmkfirmware/zmk-build-arm:stable bash /work/build-local.sh "corneish_zen_right@2//zmk" "right"
+```
+
+Firmware artifacts are written to `/tmp/zmk-artifacts/` as `corneish_zen_left_zmk.uf2` and `corneish_zen_right_zmk.uf2`.
+
+**`build-local.sh`** handles the full build pipeline inside the container: copies config into a temp workspace, runs `west init -l` → `west update` → `west zephyr-export` → `west build`. The `west zephyr-export` step is critical — it registers the Zephyr CMake package so `find_package(Zephyr)` works.
+
+**Known pitfalls:**
+- `CONFIG_ZMK_USB_LOGGING=y` causes Kconfig errors on the Zen board (nRF52840) because it selects USB serial symbols that depend on `SERIAL`, which is not enabled. Use commented-out form for debug sessions only.
+- `west init -l` cannot be combined with `-m` or `--mr` flags — use it plain with a clean workspace.
 
 ## Key Files
 
@@ -25,6 +52,7 @@ Firmware is built exclusively via **GitHub Actions** — there is no local build
 | `config/italian.keycodes` | Custom keycode defines for Italian keyboard layout input |
 | `config/keys_en_gb.h` | GB keycodes header (used at compile time, not for keymap-drawer) |
 | `build.yaml` | Declares board halves for ZMK build (`corneish_zen_left@2//zmk` / `corneish_zen_right@2//zmk`) |
+| `build-local.sh` | Local build script for Podman — runs full west pipeline inside ZMK build container |
 
 ## Inspiration and Lineage
 
