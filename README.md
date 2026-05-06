@@ -51,22 +51,12 @@ Repeat for the other half. A single press of reset only reboots -- you need the 
 You can also build firmware locally using the same container that CI uses. No toolchain installation needed — just [Podman](https://podman.io/) (default on Fedora) or Docker.
 
 ```bash
-# Build left half
-podman run --rm \
-  -v "$PWD:/work:Z" \
-  -v /tmp/zmk-artifacts:/artifacts:Z \
-  zmkfirmware/zmk-build-arm:stable \
-  bash /work/build-local.sh "corneish_zen_left@2//zmk" "left"
-
-# Build right half
-podman run --rm \
-  -v "$PWD:/work:Z" \
-  -v /tmp/zmk-artifacts:/artifacts:Z \
-  zmkfirmware/zmk-build-arm:stable \
-  bash /work/build-local.sh "corneish_zen_right@2//zmk" "right"
+./fwbuild          # both halves
+./fwbuild left     # left only
+./fwbuild right    # right only
 ```
 
-The `build-local.sh` script handles the full pipeline: initializes a West workspace from `config/west.yml`, fetches all ZMK/Zephyr dependencies, exports the Zephyr CMake package, builds the firmware, and copies the `.uf2` artifacts to `/tmp/zmk-artifacts/`. First build takes ~3-4 minutes per half (fetching repos); subsequent builds are faster.
+The `fwbuild` helper wraps Podman and the internal `build-local.sh` script, which handles the full pipeline: initializes a West workspace from `config/west.yml`, fetches all ZMK/Zephyr dependencies, exports the Zephyr CMake package, builds the firmware, and copies the `.uf2` artifacts to `/tmp/zmk-artifacts/`. First build takes ~3-4 minutes per half (fetching repos); subsequent builds are faster.
 
 > **Note**: `CONFIG_ZMK_USB_LOGGING=y` does not work on the Zen board — it causes Kconfig errors because USB serial requires the `SERIAL` subsystem, which is not enabled on this nRF52840 board config. Keep it commented out.
 

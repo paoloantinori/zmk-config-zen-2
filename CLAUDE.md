@@ -23,13 +23,9 @@ Uses the official ZMK build container (`zmkfirmware/zmk-build-arm:stable`) with 
 
 **Build both halves:**
 ```bash
-# Left half
-podman run --rm -v "$PWD:/work:Z" -v /tmp/zmk-artifacts:/artifacts:Z \
-  zmkfirmware/zmk-build-arm:stable bash /work/build-local.sh "corneish_zen_left@2//zmk" "left"
-
-# Right half
-podman run --rm -v "$PWD:/work:Z" -v /tmp/zmk-artifacts:/artifacts:Z \
-  zmkfirmware/zmk-build-arm:stable bash /work/build-local.sh "corneish_zen_right@2//zmk" "right"
+./fwbuild          # both halves
+./fwbuild left     # left only
+./fwbuild right    # right only
 ```
 
 Firmware artifacts are written to `/tmp/zmk-artifacts/` as `corneish_zen_left_zmk.uf2` and `corneish_zen_right_zmk.uf2`.
@@ -52,7 +48,8 @@ Firmware artifacts are written to `/tmp/zmk-artifacts/` as `corneish_zen_left_zm
 | `config/italian.keycodes` | Custom keycode defines for Italian keyboard layout input |
 | `config/keys_en_gb.h` | GB keycodes header (used at compile time, not for keymap-drawer) |
 | `build.yaml` | Declares board halves for ZMK build (`corneish_zen_left@2//zmk` / `corneish_zen_right@2//zmk`) |
-| `build-local.sh` | Local build script for Podman — runs full west pipeline inside ZMK build container |
+| `build-local.sh` | Internal build script for the ZMK container — called by `fwbuild` |
+| `fwbuild` | Helper script to build firmware locally via Podman (`./fwbuild [left|right|both]`) |
 
 ## Inspiration and Lineage
 

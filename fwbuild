@@ -1,0 +1,40 @@
+#!/bin/bash
+set -e
+
+IMAGE="zmkfirmware/zmk-build-arm:stable"
+ARTIFACTS_DIR="/tmp/zmk-artifacts"
+SCRIPT="/work/build-local.sh"
+HALF="${1:-both}"
+
+build_half() {
+    local board="$1" half="$2"
+    echo "=== Building $half half ==="
+    podman run --rm \
+        -v "$PWD:/work:Z" \
+        -v "$ARTIFACTS_DIR:/artifacts:Z" \
+        "$IMAGE" \
+        bash "$SCRIPT" "$board" "$half"
+}
+
+mkdir -p "$ARTIFACTS_DIR"
+
+case "$HALF" in
+    left)
+        build_half "corneish_zen_left@2//zmk" "left"
+        ;;
+    right)
+        build_half "corneish_zen_right@2//zmk" "right"
+        ;;
+    both)
+        build_half "corneish_zen_left@2//zmk" "left"
+        build_half "corneish_zen_right@2//zmk" "right"
+        ;;
+    *)
+        echo "Usage: $0 [left|right|both]"
+        exit 1
+        ;;
+esac
+
+echo ""
+echo "Artifacts in $ARTIFACTS_DIR:"
+ls -lh "$ARTIFACTS_DIR"/*.uf2 2>/dev/null

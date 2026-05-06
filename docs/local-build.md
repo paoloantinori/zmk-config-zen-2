@@ -21,20 +21,12 @@ The `build-local.sh` script runs inside the official ZMK build container (`zmkfi
 ## Usage
 
 ```bash
-# Left half
-podman run --rm \
-  -v "$PWD:/work:Z" \
-  -v /tmp/zmk-artifacts:/artifacts:Z \
-  zmkfirmware/zmk-build-arm:stable \
-  bash /work/build-local.sh "corneish_zen_left@2//zmk" "left"
-
-# Right half
-podman run --rm \
-  -v "$PWD:/work:Z" \
-  -v /tmp/zmk-artifacts:/artifacts:Z \
-  zmkfirmware/zmk-build-arm:stable \
-  bash /work/build-local.sh "corneish_zen_right@2//zmk" "right"
+./fwbuild          # build both halves
+./fwbuild left     # left half only
+./fwbuild right    # right half only
 ```
+
+Under the hood, `fwbuild` runs `build-local.sh` inside the ZMK build container via Podman.
 
 Artifacts are written to `/tmp/zmk-artifacts/`:
 - `corneish_zen_left_zmk.uf2`
