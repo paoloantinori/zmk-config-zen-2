@@ -1,8 +1,9 @@
 #!/bin/bash
-set -e
+set -eo pipefail
 
 IMAGE="zmkfirmware/zmk-build-arm:stable"
 ARTIFACTS_DIR="/tmp/zmk-artifacts"
+WORKSPACE_DIR="/tmp/zmk-workspace"
 SCRIPT="/work/build-local.sh"
 HALF="${1:-both}"
 
@@ -12,11 +13,13 @@ build_half() {
     podman run --rm \
         -v "$PWD:/work:Z" \
         -v "$ARTIFACTS_DIR:/artifacts:Z" \
+        -v "$WORKSPACE_DIR:/workspace:Z" \
         "$IMAGE" \
-        bash "$SCRIPT" "$board" "$half"
+        bash "$SCRIPT" "$board" "$half" "/workspace"
 }
 
 mkdir -p "$ARTIFACTS_DIR"
+mkdir -p "$WORKSPACE_DIR"
 
 case "$HALF" in
     left)
@@ -29,12 +32,19 @@ case "$HALF" in
         build_half "corneish_zen_left@2//zmk" "left"
         build_half "corneish_zen_right@2//zmk" "right"
         ;;
+    clean)
+        echo "Removing shared workspace ($WORKSPACE_DIR)..."
+        rm -rf "$WORKSPACE_DIR"
+        echo "Done. Next build will fetch repos from scratch."
+        ;;
     *)
-        echo "Usage: $0 [left|right|both]"
+        echo "Usage: $0 [left|right|both|clean]"
         exit 1
         ;;
 esac
 
-echo ""
-echo "Artifacts in $ARTIFACTS_DIR:"
-ls -lh "$ARTIFACTS_DIR"/*.uf2 2>/dev/null
+if [ "$HALF" != "clean" ]; then
+    echo ""
+    echo "Artifacts in $ARTIFACTS_DIR:"
+    ls -lh "$ARTIFACTS_DIR"/*.uf2 2>/dev/null
+fi

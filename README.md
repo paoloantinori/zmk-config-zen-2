@@ -1,19 +1,45 @@
 # Corne-ish Zen V2 Custom Configuration
 
-This is my config repo for this super cool keyboard. Unfortunately the person I've bought it from chose the 36 keys layout, so my config has strange configuration due to the lack of additional keys.
+ZMK firmware config for a 36-key Corne-ish Zen v2 split keyboard, using a custom ZMK fork that rebases all Zen display patches on top of upstream ZMK main (Zephyr 4.1).
 
-I'm using a custom fork of `zmk` that rebases all Corne-ish Zen display patches from @caksoylar's `zen-v1+v2` branch on top of upstream ZMK main (Zephyr 4.1).
+**Key features**: battery percentage on e-ink display, soft-off power-down, smooth mouse scrolling, positional home row mods, Italian locale, local Podman builds.
 
-https://github.com/paoloantinori/zmk/tree/zen-v1+v2-rebased
+## Features
 
-I'm also using his Keymap diagram generator to produce the nice images you see below.
+- **Battery percentage display** — E-ink display shows numeric battery percentage (e.g. "85%") alongside the icon, via a patched battery widget that reads the voltage divider's pre-computed state-of-charge
+- **Soft-off** — Hold a key combo on the FUNC layer to fully power down the keyboard with near-zero battery drain. Wake by pressing the reset button
+- **Smooth scrolling** — Mouse scroll axis uses ZMK's smooth scrolling mode for natural trackpad-like feel
+- **BLE split battery proxy** — The central (left) half fetches the peripheral's battery level over BLE and reports both halves to the host
+- **Local Podman builds** — Build firmware locally with `./fwbuild` using the same container CI uses, no toolchain setup needed
+- **Board patches** — Widget customizations (status screen, battery display) live in `config/patches/` and overlay the ZMK board directory at build time
+- **Positional home row mods** — Left-hand keys only trigger hold when right-hand keys are pressed (and vice versa), with `require-prior-idle-ms` to prevent false triggers
+- **7 keymap layers** — Base, NAV, SYMB, FUNC, QUICK, MOUSE, LOCK
 
-And, I'm also using https://nickcoutsos.github.io/keymap-editor/ as an editor to modify things on the fly.
+## Changelog
 
-Inspirations:
+### 2026-05 — Battery display, soft-off, local builds
 
-- https://github.com/maxpetretta/keymap/tree/master for my first encounter with Combos and Capsword
-- https://github.com/nickfaraco/zmk-config for a reverse engineered Urob's timeless HRMs and the idea of a LOCK layer
+- **Battery percentage as text** on the e-ink display via patched `battery_status` widget
+- **Soft-off behavior** — hold-to-power-down combo on FUNC layer, peripheral power cutoff during deep sleep
+- **Smooth scrolling** enabled for mouse pointing (`CONFIG_ZMK_POINTING_SMOOTH_SCROLLING`)
+- **BLE split battery** — central fetches and proxies peripheral battery level to host
+- **Battery reporting fix** — switched from `LITHIUM_VOLTAGE` to `STATE_OF_CHARGE` mode, matching the voltage divider driver's actual sensor channel
+- **Local Podman build** — `./fwbuild` helper script using `zmkfirmware/zmk-build-arm:stable` container
+- **Board patches system** — `config/patches/` overlay mechanism for customizing widgets without forking board code
+- **Custom status screen** patch with rearranged widget layout
+
+### 2026-04 — ZMK fork, display patches
+
+- Switched to custom ZMK fork (`paoloantinori/zmk` branch `zen-v1+v2-rebased`) rebased on upstream main
+- All caksoylar Zen display patches working on Zephyr 4.1
+- E-ink ghosting mitigation via periodic full refresh (300s)
+- Momentary layer hiding to reduce display flicker
+
+### Earlier
+
+- Mouse keys support, RGB LED widget, smart-toggle swapper
+- Italian locale keycodes, `cap_after_period` tap-dance
+- Positional home row mods with `hold-trigger-key-positions`
 
 ## ZMK Fork Patches
 
@@ -56,7 +82,7 @@ You can also build firmware locally using the same container that CI uses. No to
 ./fwbuild right    # right only
 ```
 
-The `fwbuild` helper wraps Podman and the internal `build-local.sh` script, which handles the full pipeline: initializes a West workspace from `config/west.yml`, fetches all ZMK/Zephyr dependencies, exports the Zephyr CMake package, builds the firmware, and copies the `.uf2` artifacts to `/tmp/zmk-artifacts/`. First build takes ~3-4 minutes per half (fetching repos); subsequent builds are faster.
+The `fwbuild` helper wraps Podman and the internal `build-local.sh` script, which handles the full pipeline: initializes a West workspace from `config/west.yml`, fetches all ZMK/Zephyr dependencies, applies board patches from `config/patches/`, builds the firmware, and copies the `.uf2` artifacts to `/tmp/zmk-artifacts/`. First build takes ~3-4 minutes per half (fetching repos); subsequent builds reuse the workspace and are faster.
 
 > **Note**: `CONFIG_ZMK_USB_LOGGING=y` does not work on the Zen board — it causes Kconfig errors because USB serial requires the `SERIAL` subsystem, which is not enabled on this nRF52840 board config. Keep it commented out.
 

@@ -8,6 +8,7 @@ on:
       - config/*.dtsi
       - config/corneish_zen.conf
       - config/boards/**
+      - config/patches/**
       - build.yaml
 
 jobs:

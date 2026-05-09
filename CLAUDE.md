@@ -12,7 +12,7 @@ Firmware can be built via **GitHub Actions** (push to `main`) or **locally with 
 
 ### GitHub Actions (CI)
 
-- **Firmware build**: `.github/workflows/build.yml` — triggers on changes to `config/west.yml`, `config/*.keymap`, `config/*.dtsi`, `config/corneish_zen.conf`, `config/boards/**`, `build.yaml`. Uses ZMK's reusable `build-user-config.yml` workflow.
+- **Firmware build**: `.github/workflows/build.yml` — triggers on changes to `config/west.yml`, `config/*.keymap`, `config/*.dtsi`, `config/corneish_zen.conf`, `config/patches/**`, `build.yaml`. Uses ZMK's reusable `build-user-config.yml` workflow.
 - **Keymap visualization**: `.github/workflows/draw-keymaps.yml` — triggers on changes to keymap/config files. Uses `caksoylar/keymap-drawer` to generate SVG diagrams in `keymap-drawer/`.
 
 ### Local Build (Podman)
@@ -36,6 +36,14 @@ Firmware artifacts are written to `/tmp/zmk-artifacts/` as `corneish_zen_left_zm
 - `CONFIG_ZMK_USB_LOGGING=y` causes Kconfig errors on the Zen board (nRF52840) because it selects USB serial symbols that depend on `SERIAL`, which is not enabled. Use commented-out form for debug sessions only.
 - `west init -l` cannot be combined with `-m` or `--mr` flags — use it plain with a clean workspace.
 
+### Board Patches
+
+Files in `config/patches/lowprokb/corneish_zen/` overlay the ZMK board directory during build — `build-local.sh` copies them onto `zmk/app/boards/`. This is how we customize widgets without forking the board code. CI also triggers on `config/patches/**` changes.
+
+Current patches:
+- `custom_status_screen.c` — Custom status screen layout
+- `widgets/battery_status.c` / `.h` — Battery widget with percentage text display
+
 ## Key Files
 
 | File | Purpose |
@@ -53,20 +61,7 @@ Firmware artifacts are written to `/tmp/zmk-artifacts/` as `corneish_zen_left_zm
 
 ## Inspiration and Lineage
 
-The keymap is heavily influenced by [caksoylar/zmk-config](https://github.com/caksoylar/zmk-config), sharing these design patterns:
-- **Positional home row mods** (`aml`/`amr` in caksoylar's, `hml`/`hmr` here) with `hold-trigger-key-positions` and `require-prior-idle-ms`
-- **Swapper** behavior for Alt+Tab window switching (using `zmk-smart-toggle`)
-- **Mouse layer** layout with same movement/scroll placement pattern (left-hand modifiers, right-hand movement)
-- **Combos** for common keys (backspace, escape, tab) with horizontal key pairs
-- **Layer activation** through thumb keys with `&mo`/`&lt`
-
-Key differences from caksoylar's config:
-- QWERTY alpha layout (vs Colemak-DH)
-- Italian locale keycodes (`GB_` prefix) instead of standard US keycodes
-- 7 layers vs 5 (adds QUICK layer, LOCK layer)
-- No conditional/tri-layer for FUNC (FUNC is independently accessed via thumb)
-- Uses `zmk,behavior-tri-state` for swapper (vs `zmk,behavior-smart-toggle`)
-- Includes `cap_after_period` tap-dance and `lm` layer-modifier macro
+The keymap is heavily influenced by [caksoylar/zmk-config](https://github.com/caksoylar/zmk-config), sharing positional home row mods, swapper behavior, mouse layer layout, combo patterns, and thumb-key layer activation. Key differences: QWERTY (vs Colemak-DH), Italian locale keycodes (`GB_` prefix), 7 layers (adds QUICK, LOCK), uses `zmk,behavior-tri-state` for swapper, and includes `cap_after_period` tap-dance and `lm` layer-modifier macro.
 
 ## Architecture
 
@@ -82,7 +77,7 @@ This repo uses `paoloantinori/zmk` branch `zen-v1+v2-rebased`, which carries all
 | **Momentary layer tracking** | Tracks which layers were activated via `&mo`/`&lt` (upstream only tracks `&tog`) | `CONFIG_ZMK_TRACK_MOMENTARY_LAYERS=y` |
 | **Hide momentary layers in widget** | Zen's layer status widget can hide momentary layers to reduce display flicker | `CONFIG_ZMK_DISPLAY_HIDE_MOMENTARY_LAYERS=y` |
 | **Battery widget tweaks** | Skip updates when unchanged; adjusted level thresholds | (always active in Zen board code) |
-| **Custom status screen layout** | Rearranged widget layout for Zen's OLED; selectable logo images (ZMK, Miryoku, LPKB, Zen) | `CONFIG_CUSTOM_WIDGET_LOGO_IMAGE_ZEN=y` |
+| **Custom status screen layout** | Rearranged widget layout for Zen's OLED; selectable logo images (ZMK, Miryoku, LPKB, Zen) | `CONFIG_CUSTOM_WIDGET_LOGO_IMAGE_ZEN` (disabled, no logo selected) |
 | **Conditional layer momentary** | Propagates momentary state through conditional layer chains | (always active) |
 
 The rebased fork adapts these patches for upstream API changes (e.g., `zmk_keymap_layer_activate(layer, bool locking)` uses a separate `mark_momentary()` function; LVGL uses `lv_image_*` not `lv_img_*`).
