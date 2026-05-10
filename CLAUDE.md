@@ -41,8 +41,7 @@ Firmware artifacts are written to `/tmp/zmk-artifacts/` as `corneish_zen_left_zm
 Files in `config/patches/lowprokb/corneish_zen/` overlay the ZMK board directory during build — `build-local.sh` copies them onto `zmk/app/boards/`. This is how we customize widgets without forking the board code. CI also triggers on `config/patches/**` changes.
 
 Current patches:
-- `custom_status_screen.c` — Custom status screen layout
-- `widgets/battery_status.c` / `.h` — Battery widget with percentage text display
+- `widgets/battery_status.c` / `.h` — Canvas-based battery widget drawing icon + percentage text into a single LVGL object (requires `CONFIG_LV_USE_CANVAS=y`)
 
 ## Key Files
 

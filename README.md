@@ -6,7 +6,7 @@ ZMK firmware config for a 36-key Corne-ish Zen v2 split keyboard, using a custom
 
 ## Features
 
-- **Battery percentage display** — E-ink display shows numeric battery percentage (e.g. "85%") alongside the icon, via a patched battery widget that reads the voltage divider's pre-computed state-of-charge
+- **Battery icon + percentage display** — E-ink display shows battery icon and numeric percentage (e.g. "85") side by side using an LVGL canvas widget, via a patched battery widget that reads the voltage divider's pre-computed state-of-charge
 - **Soft-off** — Hold a key combo on the FUNC layer to fully power down the keyboard with near-zero battery drain. Wake by pressing the reset button
 - **Smooth scrolling** — Mouse scroll axis uses ZMK's smooth scrolling mode for natural trackpad-like feel
 - **BLE split battery proxy** — The central (left) half fetches the peripheral's battery level over BLE and reports both halves to the host
@@ -19,7 +19,7 @@ ZMK firmware config for a 36-key Corne-ish Zen v2 split keyboard, using a custom
 
 ### 2026-05 — Battery display, soft-off, local builds
 
-- **Battery percentage as text** on the e-ink display via patched `battery_status` widget
+- **Battery icon + percentage on e-ink display** — canvas-based widget draws battery icon and percentage text into a single LVGL object, avoiding IL0323 partial refresh corruption
 - **Soft-off behavior** — hold-to-power-down combo on FUNC layer, peripheral power cutoff during deep sleep
 - **Smooth scrolling** enabled for mouse pointing (`CONFIG_ZMK_POINTING_SMOOTH_SCROLLING`)
 - **BLE split battery** — central fetches and proxies peripheral battery level to host
