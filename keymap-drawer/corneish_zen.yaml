@@ -138,16 +138,16 @@ layers:
   - {t: '$$mdi:bluetooth-connect$$', h: '3'}
   - {t: '$$mdi:bluetooth-connect$$', h: '4'}
   - {t: '$$mdi:progress-download$$', type: bootloader}
-  - ''
+  - {t: '$$mdi:bluetooth$$', h: clear}
   - {t: '$$mdi:bluetooth$$', h: prev}
   - {t: '$$mdi:bluetooth$$', h: next}
   - F12
   - ''
+  - BT DISC
   - ''
   - ''
-  - ''
-  - $$mdi:usb$$
-  - {t: '$$mdi:bluetooth$$', type: held}
+  - {t: '$$mdi:toggle-switch$$', h: '$$mdi:bluetooth$$', s: '$$mdi:usb$$', type: toggle}
+  - {type: held}
   QUICK:
   - {t: '`', s: ¬}
   - $$mdi:keyboard-tab$$
@@ -248,7 +248,7 @@ combos:
   k: $$mdi:microsoft-windows$$
   l: [BASE]
 - p: [12, 13, 24]
-  k: {t: '$$mdi:bluetooth$$', h: clear}
+  k: BT CLR ALL
   l: [FUNC]
 - p: [24, 25]
   k: {t: '$$mdi:progress-download$$', type: bootloader}
