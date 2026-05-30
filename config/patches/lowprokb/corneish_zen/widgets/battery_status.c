@@ -13,6 +13,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/display.h>
 #include <zmk/battery.h>
 #include "battery_status.h"
+#include "canvas_utils.h"
 #include <zmk/event_manager.h>
 #include <zmk/events/battery_state_changed.h>
 
@@ -81,6 +82,8 @@ static void draw_battery_widget(lv_obj_t *canvas, uint8_t level) {
     lv_area_t txt_coords = {54, 7, 79, 30};
     lv_draw_label(&txt_layer, &label_dsc, &txt_coords);
     lv_canvas_finish_layer(canvas, &txt_layer);
+
+    canvas_threshold(canvas, BATT_CANVAS_BUF_SIZE);
 }
 
 static void set_battery_symbol(lv_obj_t *canvas, struct battery_status_state state) {
