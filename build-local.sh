@@ -8,10 +8,8 @@ WORKSPACE="${3:-/tmp/zmk-build-workspace}"
 if [ -f "$WORKSPACE/.west/config" ]; then
     echo "=== Reusing existing workspace: $WORKSPACE ==="
     cd "$WORKSPACE"
-    # Re-copy config from host to pick up any keymap/conf changes
     rm -rf "$WORKSPACE/config"
     cp -r /work/config "$WORKSPACE/config"
-    # Quick update in case west.yml changed
     west update --fetch-opt=--filter=tree:0 2>&1 | grep -c "^=== updating" || true
     west zephyr-export 2>&1
 else
@@ -34,6 +32,17 @@ if [ -d "$WORKSPACE/config/patches" ]; then
         cp -rv "${patches[@]}" "$WORKSPACE/zmk/app/boards/"
     fi
     shopt -u nullglob
+fi
+
+# Ensure BT_CLR raises the profile changed event directly (not just via deferred work)
+if grep -q 'clear_profile_bond(active_profile);' "$WORKSPACE/zmk/app/src/ble.c"; then
+    sed -i '/^void zmk_ble_clear_bonds/,/^};$/ {
+        /update_advertising();/ {
+            N
+            s/update_advertising();\n};/update_advertising();\n    raise_profile_changed_event();\n};/
+        }
+    }' "$WORKSPACE/zmk/app/src/ble.c"
+    echo "Patched ble.c: BT_CLR now raises profile changed event directly"
 fi
 
 BUILD_DIR="$WORKSPACE/build-${HALF}"

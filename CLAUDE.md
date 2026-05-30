@@ -36,6 +36,20 @@ Firmware artifacts are written to `/tmp/zmk-artifacts/` as `corneish_zen_left_zm
 - `CONFIG_ZMK_USB_LOGGING=y` causes Kconfig errors on the Zen board (nRF52840) because it selects USB serial symbols that depend on `SERIAL`, which is not enabled. Use commented-out form for debug sessions only.
 - `west init -l` cannot be combined with `-m` or `--mr` flags — use it plain with a clean workspace.
 
+### Bluetooth Troubleshooting
+
+BT issues are the most common problem with this split keyboard. Escalation order:
+
+1. **`BT_DISC`** (FUNC layer, left thumb) — Gracefully disconnect active profile. Host can reconnect without re-pairing.
+2. **`BT_CLR_ALL`** (FUNC layer, between bootloader and BT_PRV) — Clears ALL bonds including split-half pairing. Requires full re-pair to host and between halves.
+3. **`reset_BT` combo** — FUNC layer + keys D+F+B simultaneously (same as `BT_CLR_ALL`, backup trigger).
+4. **`CONFIG_ZMK_BLE_CLEAR_BONDS_ON_START=y`** — Diagnostic: uncomment in `.conf`, flash, test. If BT works, problem is stale bonds. Disable after testing.
+5. **Settings-reset firmware** — Last resort: flash a settings-reset build to wipe all persistent state.
+
+Key settings for BT reliability:
+- `CONFIG_BT_CTLR_TX_PWR_PLUS_8=y` — +8dBm TX power on nRF52840 (recommended by ZMK for connection issues)
+- `CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=1800000` — 30min deep sleep; can cause reconnection issues on some hosts
+
 ### Board Patches
 
 Files in `config/patches/lowprokb/corneish_zen/` overlay the ZMK board directory during build — `build-local.sh` copies them onto `zmk/app/boards/`. This is how we customize widgets without forking the board code. CI also triggers on `config/patches/**` changes.
@@ -48,7 +62,7 @@ Current patches:
 | File | Purpose |
 |------|---------|
 | `config/corneish_zen.keymap` | Main keymap definition (devicetree syntax) — behaviors, combos, layers |
-| `config/corneish_zen.conf` | ZMK Kconfig settings (BLE, display, sleep, mouse pointing) |
+| `config/corneish_zen.conf` | ZMK Kconfig settings (BLE, display, sleep, mouse pointing). Key: `BT_CTLR_TX_PWR_PLUS_8=y` for reliable BT |
 | `config/west.yml` | Zephyr West manifest — pins the ZMK fork and modules |
 | `config/keymap_drawer.config.yaml` | Keymap-drawer rendering config (SVG styling, glyph mappings, combo layout) |
 | `config/includes/mouse.dtsi` | Mouse/pointing device configuration (move/scroll acceleration) |
@@ -81,7 +95,7 @@ This repo uses `paoloantinori/zmk` branch `zen-v1+v2-rebased`, which carries all
 
 The rebased fork adapts these patches for upstream API changes (e.g., `zmk_keymap_layer_activate(layer, bool locking)` uses a separate `mark_momentary()` function; LVGL uses `lv_image_*` not `lv_img_*`).
 
-**Flashing**: Double-click the reset button on the half to enter UF2 bootloader mode. Artifacts: `corneish_zen_left@2_zmk.uf2` / `corneish_zen_right@2_zmk.uf2`. Single press only reboots — must double-click.
+**Flashing**: Double-click the reset button on the half to enter UF2 bootloader mode. Artifacts: `corneish_zen_left_zmk.uf2` / `corneish_zen_right_zmk.uf2` (written to `/tmp/zmk-artifacts/`). Single press only reboots — must double-click.
 
 #### Additional Modules (not in ZMK fork)
 - **`zmk-rgbled-widget`** (`caksoylar/zmk-rgbled-widget`) — RGB LED indicator for battery level (color-coded blinks), BLE connection status, and active layer. Used via `#include <behaviors/rgbled_widget.dtsi>` in the keymap.
@@ -89,11 +103,22 @@ The rebased fork adapts these patches for upstream API changes (e.g., `zmk_keyma
 
 Italian locale keycodes are included via `italian.keycodes` (compiled via `GB_` prefix keys).
 
+### Updating the Fork
+
+The `zen-v1+v2-rebased` branch carries Zen patches as a squashed commit on top of upstream ZMK main. To update:
+
+1. Fetch upstream: `git remote add upstream https://github.com/zmkfirmware/zmk.git && git fetch upstream`
+2. Rebase: `git rebase upstream/main zen-v1+v2-rebased`
+3. Resolve any conflicts in the Zen patch commit (typically in `app/boards/arms/corneish_zen/`)
+4. Force-push the rebased branch
+
+The fork is typically near-current with upstream. **Watch for**: ZMK's planned jump to Zephyr 4.3, which will bring kscan refactoring and require significant patch rework.
+
 ### Keymap Layers (7 total)
 0. **BASE** — Alpha layer with home row mods (positional hold-taps `hml`/`hmr`)
 1. **NAV** — Navigation + mouse movement (left hand mouse, right hand arrows)
 2. **SYMB** — Symbols and numbers
-3. **FUNC** — Function keys, media controls, Bluetooth profiles
+3. **FUNC** — Function keys, media controls, Bluetooth profiles, BT disconnect (`&bt BT_DISC`), and bond reset (`&bt BT_CLR_ALL` direct key + `reset_BT` combo on D+F+B)
 4. **QUICK** — Quick-access layer (grave, tab) via `&lm` (layer+modifier macro)
 5. **MOUSE** — Dedicated mouse layer with scroll on top row, movement on home row
 6. **LOCK** — Empty layer to lock keyboard (toggled via 4-key combo)
