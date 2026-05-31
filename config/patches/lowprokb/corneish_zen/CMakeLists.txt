@@ -3,6 +3,7 @@ if(CONFIG_ZMK_DISPLAY)
   target_sources_ifdef(CONFIG_CUSTOM_WIDGET_OUTPUT_STATUS app PRIVATE widgets/output_status.c)
   target_sources_ifdef(CONFIG_CUSTOM_WIDGET_LAYER_STATUS app PRIVATE widgets/layer_status.c)
   target_sources_ifdef(CONFIG_CUSTOM_WIDGET_PERIPHERAL_STATUS app PRIVATE widgets/peripheral_status.c)
+  target_sources_ifdef(CONFIG_CUSTOM_WIDGET_OUTPUT_STATUS app PRIVATE widgets/lock_status.c)
   target_sources_ifdef(CONFIG_CUSTOM_WIDGET_OUTPUT_STATUS app PRIVATE widgets/verify_status.c)
 
   add_subdirectory_ifdef(CONFIG_ZMK_DISPLAY_STATUS_SCREEN_CUSTOM widgets/icons)
