@@ -224,6 +224,43 @@ layers:
   - {t: '$$mdi:mouse$$', h: R}
   LOCK: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '&soft_off_hold', '', '', '', '',
     '']
+  VERIFY:
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - ''
+  - ''
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - ''
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
 combos:
 - p: [12, 16]
   k: CAPS WORD
@@ -256,6 +293,8 @@ combos:
 - p: [0, 1]
   k: '&soft_off_hold'
   l: [FUNC]
+- p: [30, 35]
+  k: {t: VERIFY, h: toggle}
 - p: [8, 9]
   k: {t: '$$mdi:backspace$$', type: backspace}
   l: [BASE]
