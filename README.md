@@ -10,7 +10,7 @@ The Zen v2 has an 80x128 pixel IL0323 e-paper display on each half. This config 
 
 ### Left Half — Battery + BT Status + Layer
 
-<!-- TODO: Add photo of left half display -->
+![Left half display](img/left.jpg)
 
 The left (central) half shows three sections:
 
@@ -20,7 +20,7 @@ The left (central) half shows three sections:
 
 ### Right Half — Battery + BT Legend
 
-<!-- TODO: Add photo of right half display -->
+![Left half display](img/right_legend.jpg)
 
 The right (peripheral) half shows:
 
@@ -30,7 +30,10 @@ The right (peripheral) half shows:
 
 ### Verify Mode — Keymap Learning Tool
 
-<!-- TODO: Add photo of verify mode in action -->
+![Left half display](img/verify1.jpg)
+![Left half display](img/verify2.jpg)
+![Left half display](img/verify3.jpg)
+![Left half display](img/verify4.jpg)
 
 A built-in keymap verification mode that lets you check what any key does without sending keystrokes to the host. When activated, the left display shows the layer name and key binding for each key you press.
 
