@@ -1,0 +1,28 @@
+// Italian accented characters via zmk-helpers Unicode support.
+// Tap = lowercase, Shift+tap = uppercase.
+// OS input method controlled by HOST_OS define in the keymap.
+
+ZMK_UNICODE_PAIR(it_a_grv,  N0, N0, E, N0,   N0, N0, C, N0)  // à / À
+ZMK_UNICODE_PAIR(it_e_grv,  N0, N0, E, N8,   N0, N0, C, N8)  // è / È
+ZMK_UNICODE_PAIR(it_e_acu,  N0, N0, E, N9,   N0, N0, C, N9)  // é / É
+ZMK_UNICODE_PAIR(it_i_grv,  N0, N0, E, C,    N0, N0, C, C)   // ì / Ì
+ZMK_UNICODE_PAIR(it_o_grv,  N0, N0, F, N2,   N0, N0, D, N2)  // ò / Ò
+ZMK_UNICODE_PAIR(it_u_grv,  N0, N0, F, N9,   N0, N0, D, N9)  // ù / Ù
+ZMK_UNICODE_SINGLE(it_euro, N2, N0, A, C)                     // €
+
+/ {
+    behaviors {
+        leader: leader {
+            compatible = "zmk,behavior-leader-key";
+            #binding-cells = <0>;
+
+            it_a   { sequence = <A>;     bindings = <&it_a_grv>; };
+            it_e   { sequence = <E>;     bindings = <&it_e_grv>; };
+            it_ee  { sequence = <E E>;   bindings = <&it_e_acu>; };
+            it_i   { sequence = <I>;     bindings = <&it_i_grv>; };
+            it_o   { sequence = <O>;     bindings = <&it_o_grv>; };
+            it_u   { sequence = <U>;     bindings = <&it_u_grv>; };
+            it_eur { sequence = <E U>;   bindings = <&it_euro>; };
+        };
+    };
+};

@@ -65,9 +65,18 @@ The text-only widgets (profile label, layer status, BT legend, peripheral status
 - **Local Podman builds** — Build firmware locally with `./fwbuild` using the same container CI uses, no toolchain setup needed
 - **Board patches** — Widget customizations live in `config/patches/` and overlay the ZMK board directory at build time
 - **Positional home row mods** — Left-hand keys only trigger hold when right-hand keys are pressed (and vice versa), with `require-prior-idle-ms` to prevent false triggers
-- **8 keymap layers** — Base, NAV, SYMB, FUNC, QUICK, MOUSE, LOCK, VERIFY
+- **8 keymap layers** — Base, NAV, NUM, FUNC, QUICK, MOUSE, LOCK, VERIFY
+- **Numword** — Smart number layer (via `zmk-auto-layer` module): tap combo to activate, auto-deactivates after non-number keypress. No sustained hold needed for typing `192.168.1.1`
+- **Leader key for Italian accents** — Tap left thumb, then a vowel to produce accented characters (à è é ì ò ù) via Unicode input. Shift for uppercase. Works on any OS keyboard layout (controlled by `HOST_OS` define)
 
 ## Changelog
+
+### 2026-06-01 — ZMK modules: Numword, Leader key, Italian accents
+
+- **zmk-auto-layer (Numword)** — Smart number layer activated via right thumb combo (keys 34+35). Stays active while typing digits and `.`, `,`, `+`, `-`, `*`, `/`, `=`; auto-deactivates on any other key
+- **zmk-leader-key** — Vim-style leader key on left thumb (key 32). Sequences for Italian accented characters: Leader > A → à, E → è, EE → é, I → ì, O → ò, U → ù, EU → €. Shift+vowel for uppercase
+- **zmk-helpers v2** — Convenience macros for keymap config. Used for `ZMK_UNICODE_PAIR` to define OS-portable Unicode character input (`#define HOST_OS 1` for Linux, `2` for macOS)
+- **Removed tri-state swapper** — Dead behavior definition removed. `zmk-smart-toggle` module retained for future Alt+Tab use
 
 ### 2026-05-30 — Custom display widgets, verify mode, ZMK rebase
 

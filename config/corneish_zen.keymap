@@ -1,6 +1,9 @@
 #include <behaviors.dtsi>
 #include "italian.keycodes"
 
+#define HOST_OS 1 // 1 = Linux, 2 = macOS
+#include <zmk-helpers/helper.h>
+
 
 #ifndef KEYMAP_DRAWER
 #   include "keys_en_gb.h"
@@ -11,6 +14,7 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #include <behaviors/rgbled_widget.dtsi>
+#include <behaviors/num_word.dtsi>
 
 #define MS_ACT(key) &lt MSE key
 
@@ -28,6 +32,8 @@
 #define LOCK 6
 #define VERIFY 7
 #define COMBO_TIMEOUT_MS 80
+
+#include "includes/leader.dtsi"
 
 #define XXXXX &none
 #define ___ &trans
@@ -196,19 +202,6 @@
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <LEFT_KEYS THUMBS>;
             hold-trigger-on-release;
-        };
-
-        // Swapper for smart alt+tab
-
-        /omit-if-no-ref/
-
-        swapper: swapper {
-            compatible = "zmk,behavior-tri-state";
-            label = "SWAPPER";
-            #binding-cells = <0>;
-            bindings = <&kt LALT>, <&kp TAB>, <&kt LALT>;
-
-            //ignored-key-positions = <SWP_POS>;
         };
 
 /*
@@ -385,7 +378,13 @@
             require-prior-idle-ms = <1000>;
         };
 
-
+        numword {
+            bindings = <&num_word NUM>;
+            key-positions = <34 35>;
+            layers = <BASE>;
+            timeout-ms = <COMBO_TIMEOUT_MS>;
+            require-prior-idle-ms = <150>;
+        };
 
     };
 
@@ -414,7 +413,7 @@
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
     &mt LCTRL GB_Z      &kp GB_X        &kp GB_C         &kp GB_V        &kp GB_B               &kp GB_N       &kp GB_M        &kp GB_COMMA  &cap_after_period      &kp GB_SLASH
 //╰───────────────┴────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┴───────────────╯
-                                     &lm QUICK LALT  &lt NAV GB_SPACE   XXXXX                  &mo NAV       &lt NUM GB_SPACE   &mo FUNC           
+                                     &lm QUICK LALT  &lt NAV GB_SPACE   &leader                &mo NAV       &lt NUM GB_SPACE   &mo FUNC
 //                                 ╰────────────────┴────────────────┴───────────────╯     ╰───────────────┴────────────────┴────────────────╯
             >;
         };

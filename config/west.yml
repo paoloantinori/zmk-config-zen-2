@@ -6,6 +6,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: paoloantinori
       url-base: https://github.com/paoloantinori
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: paoloantinori
@@ -16,6 +18,15 @@ manifest:
       revision: main
     - name: zmk-smart-toggle
       remote: caksoylar
+      revision: main
+    - name: zmk-auto-layer
+      remote: urob
+      revision: main
+    - name: zmk-leader-key
+      remote: urob
+      revision: main
+    - name: zmk-helpers
+      remote: urob
       revision: main
   self:
     path: config

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-ZMK firmware configuration for a **Corne-ish Zen v2** split keyboard with a 36-key layout. Uses a custom ZMK fork (`paoloantinori/zmk` branch `zen-v1+v2-rebased`) that carries Zen display patches on top of upstream ZMK main (Zephyr 4.1), plus modules for RGB LED widget and smart toggle.
+ZMK firmware configuration for a **Corne-ish Zen v2** split keyboard with a 36-key layout. Uses a custom ZMK fork (`paoloantinori/zmk` branch `zen-v1+v2-rebased`) that carries Zen display patches on top of upstream ZMK main (Zephyr 4.1), plus modules for RGB LED widget, smart toggle, auto-layer (Numword), leader key (Italian accents), and zmk-helpers (keymap macros).
 
 ## Build System
 
@@ -66,7 +66,8 @@ Current patches:
 | `config/west.yml` | Zephyr West manifest — pins the ZMK fork and modules |
 | `config/keymap_drawer.config.yaml` | Keymap-drawer rendering config (SVG styling, glyph mappings, combo layout) |
 | `config/includes/mouse.dtsi` | Mouse/pointing device configuration (move/scroll acceleration) |
-| `config/italian.keycodes` | Custom keycode defines for Italian keyboard layout input |
+| `config/includes/leader.dtsi` | Leader key behavior + Italian accented character sequences (Unicode via zmk-helpers) |
+| `config/italian.keycodes` | Custom keycode defines for Italian keyboard layout input (legacy; leader.dtsi uses Unicode instead) |
 | `config/keys_en_gb.h` | GB keycodes header (used at compile time, not for keymap-drawer) |
 | `build.yaml` | Declares board halves for ZMK build (`corneish_zen_left@2//zmk` / `corneish_zen_right@2//zmk`) |
 | `build-local.sh` | Internal build script for the ZMK container — called by `fwbuild` |
@@ -85,7 +86,7 @@ This repo uses `paoloantinori/zmk` branch `zen-v1+v2-rebased`, which carries all
 | Area | Changes | Config options used here |
 |------|---------|--------------------------|
 | **IL0323 invert** | Option to invert IL0323 epaper display (white-on-black) | `CONFIG_IL0323_INVERT` (disabled) |
-| **IL0323 alt refresh** | Alternative partial refresh mode for display driver | `CONFIG_IL0323_ALTERNATIVE_REFRESH` (not enabled) |
+| **IL0323 alt refresh** | Alternative partial refresh mode for display driver | `CONFIG_IL0323_ALTERNATIVE_REFRESH=y` |
 | **Display refresh** | Periodic full refresh to clear e-ink ghosting | `CONFIG_ZMK_DISPLAY_FULL_REFRESH_PERIOD=300` |
 | **Momentary layer tracking** | Tracks which layers were activated via `&mo`/`&lt` (upstream only tracks `&tog`) | `CONFIG_ZMK_TRACK_MOMENTARY_LAYERS=y` |
 | **Hide momentary layers in widget** | Zen's layer status widget can hide momentary layers to reduce display flicker | `CONFIG_ZMK_DISPLAY_HIDE_MOMENTARY_LAYERS=y` |
@@ -99,9 +100,10 @@ The rebased fork adapts these patches for upstream API changes (e.g., `zmk_keyma
 
 #### Additional Modules (not in ZMK fork)
 - **`zmk-rgbled-widget`** (`caksoylar/zmk-rgbled-widget`) — RGB LED indicator for battery level (color-coded blinks), BLE connection status, and active layer. Used via `#include <behaviors/rgbled_widget.dtsi>` in the keymap.
-- **`zmk-smart-toggle`** (`caksoylar/zmk-smart-toggle`) — Custom behavior `zmk,behavior-smart-toggle` that holds a key until a non-ignored key is pressed or the layer deactivates. Powers the "swapper" pattern for single-key Alt+Tab window switching. Note: this keymap uses `zmk,behavior-tri-state` instead, which is a different approach to the same problem.
-
-Italian locale keycodes are included via `italian.keycodes` (compiled via `GB_` prefix keys).
+- **`zmk-smart-toggle`** (`caksoylar/zmk-smart-toggle`) — Custom behavior `zmk,behavior-smart-toggle` for single-key Alt+Tab window switching. Not currently wired to a key but available for future use.
+- **`zmk-auto-layer`** (`urob/zmk-auto-layer`) — Auto-deactivating layer behavior. Used for **Numword**: tap combo (keys 34+35) to activate NUM layer, which stays active while typing digits and auto-deactivates on any non-number key. Pre-configured via `#include <behaviors/num_word.dtsi>`.
+- **`zmk-leader-key`** (`urob/zmk-leader-key`) — Vim-style leader key sequences. Bound to left thumb key 32. After tapping the leader key, press a vowel to output an Italian accented character via Unicode (e.g., Leader > A → à, Leader > E → è, Leader > E E → é, Leader > E U → €). Shift+vowel produces uppercase. Sequences defined in `config/includes/leader.dtsi`.
+- **`zmk-helpers`** (`urob/zmk-helpers`) — Convenience macros for keymap configuration (`ZMK_BEHAVIOR`, `ZMK_COMBO`, `ZMK_LAYER`, `ZMK_UNICODE_PAIR`). Used by `leader.dtsi` for OS-portable Unicode input. The OS input method is controlled by `#define HOST_OS` in the keymap (1 = Linux via `Ctrl+Shift+U`, 2 = macOS via `Option` key).
 
 ### Updating the Fork
 
@@ -114,19 +116,21 @@ The `zen-v1+v2-rebased` branch carries Zen patches as a squashed commit on top o
 
 The fork is typically near-current with upstream. **Watch for**: ZMK's planned jump to Zephyr 4.3, which will bring kscan refactoring and require significant patch rework.
 
-### Keymap Layers (7 total)
+### Keymap Layers (8 total)
 0. **BASE** — Alpha layer with home row mods (positional hold-taps `hml`/`hmr`)
 1. **NAV** — Navigation + mouse movement (left hand mouse, right hand arrows)
-2. **SYMB** — Symbols and numbers
+2. **NUM** — Numbers and symbols
 3. **FUNC** — Function keys, media controls, Bluetooth profiles, BT disconnect (`&bt BT_DISC`), and bond reset (`&bt BT_CLR_ALL` direct key + `reset_BT` combo on D+F+B)
 4. **QUICK** — Quick-access layer (grave, tab) via `&lm` (layer+modifier macro)
 5. **MOUSE** — Dedicated mouse layer with scroll on top row, movement on home row
 6. **LOCK** — Empty layer to lock keyboard (toggled via 4-key combo)
+7. **VERIFY** — Keymap learning tool: press keys to see their binding on the e-ink display without sending keystrokes
 
 ### Custom Behaviors
 - **`hml`/`hmr`**: Positional hold-taps for home row mods — uses `hold-trigger-key-positions` so left-hand keys only trigger hold when right-hand keys are pressed (and vice versa). "Balanced" flavor with `require-prior-idle-ms` to avoid false triggers during fast typing.
 - **`lm`**: Layer-modifier macro — activates a layer while holding a modifier (analogous to QMK's `LM()`).
-- **`swapper`**: Tri-state behavior for Alt+Tab window switching.
+- **`leader`**: Leader key on left thumb (key 32) for Italian accented character sequences via Unicode input.
+- **`num_word`**: Auto-layer behavior from `zmk-auto-layer` module — activated via combo (keys 34+35), stays active while typing numbers, auto-deactivates on non-number keys.
 - **`cap_after_period`**: Tap-dance — single tap: `.`, double tap: `. SPACE sticky-shift`, triple tap: `...`
 
 ### Keymap Drawing
