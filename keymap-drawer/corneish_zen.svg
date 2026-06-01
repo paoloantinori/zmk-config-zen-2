@@ -500,6 +500,7 @@ path.combo {
 </a></g>
 <g transform="translate(422, 320) rotate(30.0)" class="key keypos-32">
 <rect rx="4" ry="4" x="-39" y="-59" width="78" height="118" class="key"/>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 71%">&amp;leader</tspan></text>
 </g>
 <g transform="translate(618, 320) rotate(-30.0)" class="key keypos-33">
 <rect rx="4" ry="4" x="-39" y="-59" width="78" height="118" class="key"/>
@@ -593,6 +594,12 @@ path.combo {
 <a href="#NAV">
 <text x="665" y="312" class="combo tap layer-activator">NAV</text>
 </a></g>
+<g class="combo combopos-15">
+<rect rx="4" ry="4" x="735" y="278" width="42" height="42" class="combo"/>
+<text x="756" y="299" class="combo tap">
+<tspan x="756" dy="-0.5em" style="font-size: 62%">&amp;num_wo…</tspan><tspan x="756" dy="1.0em" style="font-size: 62%">2</tspan>
+</text>
+</g>
 </g>
 </g>
 <g transform="translate(0, 392)" class="layer-NAV">

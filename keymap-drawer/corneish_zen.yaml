@@ -33,7 +33,7 @@ layers:
   - {t: /, s: '?'}
   - ALT
   - {t: '$$mdi:keyboard-space$$', h: NAV}
-  - ''
+  - '&leader'
   - NAV
   - {t: '$$mdi:keyboard-space$$', h: SYMB}
   - FUNC
@@ -315,4 +315,7 @@ combos:
   l: [BASE]
 - p: [33, 34]
   k: NAV
+  l: [BASE]
+- p: [34, 35]
+  k: '&num_word 2'
   l: [BASE]
