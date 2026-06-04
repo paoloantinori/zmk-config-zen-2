@@ -186,11 +186,11 @@ layers:
   - {t: '$$mdi:chevron-down$$', type: trans}
   - ''
   MOUSE:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
   - {t: '$$mdi:mouse$$', h: scroll left}
   - $$mdi:mouse-move-down$$
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
@@ -200,26 +200,26 @@ layers:
   - {t: '$$mdi:monitor-dashboard$$', h: Meta, type: info}
   - Alt
   - $$mdi:apple-keyboard-shift$$
-  - ''
-  - ''
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-left-bold$$'}
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-down-bold$$'}
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-right-bold$$'}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
   - {t: '$$mdi:mouse$$', h: '1'}
   - {t: '$$mdi:mouse$$', h: M}
   - {t: '$$mdi:mouse$$', h: '2'}
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {t: '$$mdi:chevron-down$$', type: trans}
   - {t: '$$mdi:mouse$$', h: L}
   - {t: '$$mdi:mouse$$', h: R}
   LOCK: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '&soft_off_hold', '', '', '', '',
@@ -318,4 +318,7 @@ combos:
   l: [BASE]
 - p: [34, 35]
   k: '&num_word 2'
+  l: [BASE]
+- p: [1, 9]
+  k: '&smart_mouse 5'
   l: [BASE]
