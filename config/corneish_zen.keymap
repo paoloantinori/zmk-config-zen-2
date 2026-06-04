@@ -231,6 +231,14 @@
             tapping-term-ms = <300>;
             bindings = <&kp GB_DOT>, <&dot_spc>, <&three_dots_macro>;
         };
+
+        /omit-if-no-ref/
+        smart_mouse: smart_mouse {
+            compatible = "zmk,behavior-auto-layer";
+            #binding-cells = <1>;
+            continue-list = <BSPC DEL>;
+            ignore-modifiers;
+        };
     };
 /*                KEY POSITIONS
 36 keys:
@@ -386,6 +394,14 @@
             require-prior-idle-ms = <150>;
         };
 
+        smart_mouse_combo {
+            bindings = <&smart_mouse MOUSE>;
+            key-positions = <1 9>;
+            layers = <BASE>;
+            timeout-ms = <COMBO_TIMEOUT_MS>;
+            require-prior-idle-ms = <150>;
+        };
+
     };
 
 ///// KEYMAP ///////////////
@@ -483,13 +499,13 @@
             label = "MOUSE";
             bindings = <
 //╭───────────────┬────────────────┬────────────────┬────────────────┬───────────────╮     ╭───────────────┬────────────────┬────────────────┬────────────────┬───────────────╮
-        XXXXX          XXXXX             XXXXX             XXXXX            XXXXX            &msc SCRL_LEFT   &msc SCRL_DOWN    &mmv MOVE_UP      &msc SCRL_UP   &msc SCRL_RIGHT
+          ___            ___               ___               ___              ___             &msc SCRL_LEFT   &msc SCRL_DOWN    &mmv MOVE_UP      &msc SCRL_UP   &msc SCRL_RIGHT
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
-        &kp LCTRL      &kp LGUI          &kp LALT         &kp LSHFT         XXXXX                 XXXXX        &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT       XXXXX
+        &kp LCTRL      &kp LGUI          &kp LALT         &kp LSHFT          ___                   ___        &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT        ___
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
-        XXXXX          XXXXX             XXXXX             XXXXX            XXXXX                 XXXXX          &mkp MB4        &mkp MCLK        &mkp MB5           XXXXX
+          ___            ___               ___               ___              ___                   ___          &mkp MB4        &mkp MCLK        &mkp MB5            ___
 //╰───────────────┴────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┴───────────────╯
-                                         XXXXX             XXXXX           XXXXX                 XXXXX          &mkp LCLK      &mkp RCLK
+                                          ___               ___              ___                   ___          &mkp LCLK      &mkp RCLK
 //                                 ╰────────────────┴────────────────┴───────────────╯     ╰───────────────┴────────────────┴────────────────╯
             >;
         };

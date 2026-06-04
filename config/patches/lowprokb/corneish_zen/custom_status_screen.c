@@ -12,6 +12,7 @@
 #include "widgets/profile_label.h"
 #include "widgets/bt_legend.h"
 #include "widgets/lock_status.h"
+#include "widgets/mouse_status.h"
 #include "widgets/verify_status.h"
 #include "custom_status_screen.h"
 
@@ -26,6 +27,7 @@ static struct zmk_widget_battery_status battery_status_widget;
 static struct zmk_widget_output_status output_status_widget;
 static struct zmk_widget_profile_label profile_label_widget;
 static struct zmk_widget_lock_status lock_status_widget;
+static struct zmk_widget_mouse_status mouse_status_widget;
 static struct zmk_widget_verify_status verify_status_widget;
 #endif
 
@@ -59,12 +61,6 @@ lv_obj_t *zmk_display_status_screen() {
 #endif
 
 #if IS_ENABLED(CONFIG_CUSTOM_WIDGET_PERIPHERAL_STATUS)
-    zmk_widget_peripheral_status_init(&peripheral_status_widget, screen);
-    lv_obj_set_style_text_font(zmk_widget_peripheral_status_obj(&peripheral_status_widget),
-                               &lv_font_montserrat_16, LV_PART_MAIN);
-    lv_obj_align(zmk_widget_peripheral_status_obj(&peripheral_status_widget), LV_ALIGN_TOP_MID, 0,
-                 33);
-
     zmk_widget_bt_legend_init(&bt_legend_widget, screen);
     lv_obj_set_style_text_font(zmk_widget_bt_legend_obj(&bt_legend_widget),
                                &lv_font_montserrat_16, LV_PART_MAIN);
@@ -78,13 +74,22 @@ lv_obj_t *zmk_display_status_screen() {
     zmk_widget_layer_status_init(&layer_status_widget, screen);
     lv_obj_set_style_text_font(zmk_widget_layer_status_obj(&layer_status_widget),
                                &lv_font_montserrat_16, LV_PART_MAIN);
+#if IS_ENABLED(CONFIG_CUSTOM_WIDGET_PERIPHERAL_STATUS)
+    lv_obj_align(zmk_widget_layer_status_obj(&layer_status_widget), LV_ALIGN_TOP_MID, 0, 33);
+#else
     lv_obj_align(zmk_widget_layer_status_obj(&layer_status_widget), LV_ALIGN_TOP_MID, 0, 102);
+#endif
 #endif
 
 #if IS_ENABLED(CONFIG_CUSTOM_WIDGET_OUTPUT_STATUS) && IS_ENABLED(CONFIG_CUSTOM_WIDGET_LAYER_STATUS)
     zmk_widget_lock_status_init(&lock_status_widget,
                                 zmk_widget_profile_label_obj(&profile_label_widget),
                                 zmk_widget_layer_status_obj(&layer_status_widget));
+    zmk_widget_mouse_status_init(&mouse_status_widget,
+                                  zmk_widget_battery_status_obj(&battery_status_widget),
+                                  zmk_widget_output_status_obj(&output_status_widget),
+                                  zmk_widget_profile_label_obj(&profile_label_widget),
+                                  zmk_widget_layer_status_obj(&layer_status_widget));
     zmk_widget_verify_status_init(&verify_status_widget,
                                   zmk_widget_profile_label_obj(&profile_label_widget),
                                   zmk_widget_layer_status_obj(&layer_status_widget));

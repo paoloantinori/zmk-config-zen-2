@@ -12,6 +12,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include "lock_status.h"
 #include <zmk/event_manager.h>
 #include <zmk/events/layer_state_changed.h>
+#include <zmk/events/activity_state_changed.h>
 #include <zmk/keymap.h>
 
 #define LOCK_LAYER_INDEX 6
@@ -57,6 +58,7 @@ static void lock_status_update_cb(struct lock_status_state state) {
 ZMK_DISPLAY_WIDGET_LISTENER(widget_lock_status, struct lock_status_state,
                             lock_status_update_cb, get_state)
 ZMK_SUBSCRIPTION(widget_lock_status, zmk_layer_state_changed);
+ZMK_SUBSCRIPTION(widget_lock_status, zmk_activity_state_changed);
 
 int zmk_widget_lock_status_init(struct zmk_widget_lock_status *widget,
                                 lv_obj_t *profile_label, lv_obj_t *layer_label) {

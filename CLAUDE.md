@@ -56,6 +56,16 @@ Files in `config/patches/lowprokb/corneish_zen/` overlay the ZMK board directory
 
 Current patches:
 - `widgets/battery_status.c` / `.h` — Canvas-based battery widget drawing icon + percentage text into a single LVGL object (requires `CONFIG_LV_USE_CANVAS=y`)
+- `widgets/output_status.c` / `.h` — Canvas-based BT/USB connection status icon with profile number
+- `widgets/layer_status.c` — Patched to show active layer on both central (via keymap API) and peripheral (via BLE-relayed `zmk_split_peripheral_layer_changed` event). Hardcoded layer names on peripheral.
+- `widgets/mouse_status.c` / `.h` — MOUSE layer overlay: hides normal widgets and shows mouse key reference card
+- `widgets/lock_status.c` / `.h` — LOCK layer overlay: replaces profile/layer labels with "LOCKED"
+- `widgets/verify_status.c` / `.h` — VERIFY mode overlay: shows key binding labels when keys are pressed
+- `widgets/profile_label.c` / `.h` — BT profile name label (e.g. "LINUX", "MAC")
+- `widgets/bt_legend.c` / `.h` — Multi-line BT profile slot legend (peripheral only)
+- `widgets/peripheral_status.c` / `.h` — Peripheral BLE connection status text (currently not displayed — replaced by layer_status at y=33)
+- `custom_status_screen.c` — Main display layout: wires all widgets, positions differ for central vs peripheral
+- `CMakeLists.txt` — Build config for widget sources and icon assets
 
 ## Key Files
 
@@ -93,10 +103,12 @@ This repo uses `paoloantinori/zmk` branch `zen-v1+v2-rebased`, which carries all
 | **Battery widget tweaks** | Skip updates when unchanged; adjusted level thresholds | (always active in Zen board code) |
 | **Custom status screen layout** | Rearranged widget layout for Zen's OLED; selectable logo images (ZMK, Miryoku, LPKB, Zen) | `CONFIG_CUSTOM_WIDGET_LOGO_IMAGE_ZEN` (disabled, no logo selected) |
 | **Conditional layer momentary** | Propagates momentary state through conditional layer chains | (always active) |
+| **Layer state relay** | Relays highest active layer from central to peripheral via BLE GATT for display | `CONFIG_ZMK_SPLIT_PERIPHERAL_LAYER_STATE=y` |
+| **USB suspend-timeout** | Treats prolonged USB suspend as disconnect on boards without VBUS detection | `CONFIG_ZMK_USB_SUSPEND_DISCONNECT_TIMEOUT_MS=2000` (Zen default) |
 
 The rebased fork adapts these patches for upstream API changes (e.g., `zmk_keymap_layer_activate(layer, bool locking)` uses a separate `mark_momentary()` function; LVGL uses `lv_image_*` not `lv_img_*`).
 
-**Flashing**: Double-click the reset button on the half to enter UF2 bootloader mode. Artifacts: `corneish_zen_left_zmk.uf2` / `corneish_zen_right_zmk.uf2` (written to `/tmp/zmk-artifacts/`). Single press only reboots — must double-click.
+**Flashing**: Enter UF2 bootloader via the FUNC layer bootloader key, or double-click the physical reset button. Artifacts: `corneish_zen_left_zmk.uf2` / `corneish_zen_right_zmk.uf2` (written to `/tmp/zmk-artifacts/`). Single press only reboots — must double-click.
 
 #### Additional Modules (not in ZMK fork)
 - **`zmk-rgbled-widget`** (`caksoylar/zmk-rgbled-widget`) — RGB LED indicator for battery level (color-coded blinks), BLE connection status, and active layer. Used via `#include <behaviors/rgbled_widget.dtsi>` in the keymap.
@@ -119,7 +131,7 @@ The fork is typically near-current with upstream. **Watch for**: ZMK's planned j
 ### Keymap Layers (8 total)
 0. **BASE** — Alpha layer with home row mods (positional hold-taps `hml`/`hmr`)
 1. **NAV** — Navigation + mouse movement (left hand mouse, right hand arrows)
-2. **NUM** — Numbers and symbols
+2. **SYMB** — Numbers and symbols
 3. **FUNC** — Function keys, media controls, Bluetooth profiles, BT disconnect (`&bt BT_DISC`), and bond reset (`&bt BT_CLR_ALL` direct key + `reset_BT` combo on D+F+B)
 4. **QUICK** — Quick-access layer (grave, tab) via `&lm` (layer+modifier macro)
 5. **MOUSE** — Dedicated mouse layer with scroll on top row, movement on home row

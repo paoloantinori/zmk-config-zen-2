@@ -1,5 +1,5 @@
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // 10
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 200   // 10
 
 #include <dt-bindings/zmk/pointing.h>
 #include <input/processors.dtsi>
@@ -7,13 +7,13 @@
 &mmv {
     acceleration-exponent = <1>;      // 1
     time-to-max-speed-ms = <500>;     // 300
-    trigger-period-ms = <16>;
+    trigger-period-ms = <8>;
 };
 
 &msc {
     acceleration-exponent = <1>;      // 0
     time-to-max-speed-ms = <40>;      // 300
-    trigger-period-ms = <16>;
+    trigger-period-ms = <8>;
 };
 
 &mmv_input_listener {
@@ -26,6 +26,6 @@
 &msc_input_listener {
     turbo {
         layers = <NAV>;
-        input-processors = <&zip_scroll_scaler 3 1>;
+        input-processors = <&zip_scroll_scaler 4 1>;
     };
 };

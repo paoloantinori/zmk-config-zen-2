@@ -25,7 +25,7 @@ The left (central) half shows three sections:
 The right (peripheral) half shows:
 
 - **Battery icon + percentage** — Same canvas widget as the left half.
-- **BT connection status** — Short text label ("BT ON" / "BT OFF") indicating peripheral-to-central connection.
+- **Active layer** — Shows the current layer name (BASE, NAV, SYMB, etc.) relayed from the central via BLE GATT. Updates within one BLE connection interval (~30ms) of a layer change.
 - **BT profile legend** — Multi-line label listing all 5 BT profile slots with their names (e.g. "0 LINUX", "1 MAC", "2 PHONE", "3 EBOOK", "4 —").
 
 ### Verify Mode — Keymap Learning Tool
@@ -65,11 +65,18 @@ The text-only widgets (profile label, layer status, BT legend, peripheral status
 - **Local Podman builds** — Build firmware locally with `./fwbuild` using the same container CI uses, no toolchain setup needed
 - **Board patches** — Widget customizations live in `config/patches/` and overlay the ZMK board directory at build time
 - **Positional home row mods** — Left-hand keys only trigger hold when right-hand keys are pressed (and vice versa), with `require-prior-idle-ms` to prevent false triggers
-- **8 keymap layers** — Base, NAV, NUM, FUNC, QUICK, MOUSE, LOCK, VERIFY
+- **8 keymap layers** — Base, NAV, SYMB, FUNC, QUICK, MOUSE, LOCK, VERIFY
 - **Numword** — Smart number layer (via `zmk-auto-layer` module): tap combo to activate, auto-deactivates after non-number keypress. No sustained hold needed for typing `192.168.1.1`
 - **Leader key for Italian accents** — Tap left thumb, then a vowel to produce accented characters (à è é ì ò ù) via Unicode input. Shift for uppercase. Works on any OS keyboard layout (controlled by `HOST_OS` define)
 
 ## Changelog
+
+### 2026-06-03 — Layer state relay, USB disconnect fix
+
+- **Layer state relay** — Central relays highest active layer to peripheral via new BLE GATT characteristic (`CONFIG_ZMK_SPLIT_PERIPHERAL_LAYER_STATE`). Peripheral e-ink display shows current layer name (BASE, NAV, SYMB, etc.). Follows the HID indicators relay pattern.
+- **Peripheral display layout** — Layer status shown at y=33 (replaced peripheral_status "BT ON" label). Change-detection guard and fixed-width label minimize e-ink partial refreshes.
+- **USB suspend-timeout fix** — Boards without VBUS detection (like the Zen) now treat prolonged USB suspend (>2s) as a disconnect, switching the endpoint to BLE. Previously the USB icon stayed stuck after unplugging the cable. (`CONFIG_ZMK_USB_SUSPEND_DISCONNECT_TIMEOUT_MS=2000`)
+- **Patched layer_status widget** — Dual central/peripheral code paths via `#if IS_ENABLED(CONFIG_ZMK_SPLIT_ROLE_CENTRAL)` guards. Peripheral uses hardcoded layer names; central uses ZMK keymap API.
 
 ### 2026-06-01 — ZMK modules: Numword, Leader key, Italian accents
 
@@ -124,6 +131,8 @@ The custom fork ([`paoloantinori/zmk` branch `zen-v1+v2-rebased`](https://github
 7. **Custom status screen layout** — Rearranged widget layout for Zen's display with optional heading strip hiding (`CONFIG_CUSTOM_WIDGET_LAYER_STATUS_HIDE_HEADING`)
 8. **Selectable logo images** — `CONFIG_CUSTOM_WIDGET_LOGO_IMAGE_ZEN/LPKB/ZMK/MIRYOKU` — Choice of logo on the right-half status screen (Zen, LPKB, ZMK, Miryoku)
 9. **Conditional layer momentary propagation** — Propagates momentary state through conditional layer chains so the layer widget correctly reflects auto-activated layers
+10. **Layer state relay** — `CONFIG_ZMK_SPLIT_PERIPHERAL_LAYER_STATE` — Relays the highest active layer index from central to peripheral via a new BLE GATT characteristic, allowing the peripheral display to show which layer is active
+11. **USB suspend-timeout** — `CONFIG_ZMK_USB_SUSPEND_DISCONNECT_TIMEOUT_MS` — Treats prolonged USB suspend as a cable disconnect on boards without VBUS detection (Zen default: 2000ms)
 
 The patches were adapted for upstream API changes: `zmk_keymap_layer_activate()` gained a `bool locking` parameter (momentary tracking uses a separate function), and LVGL renamed `lv_img_*` to `lv_image_*`.
 

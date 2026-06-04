@@ -15,6 +15,7 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include "profile_labels.h"
 #include <zmk/event_manager.h>
 #include <zmk/events/ble_active_profile_changed.h>
+#include <zmk/events/activity_state_changed.h>
 #include <zmk/ble.h>
 
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
@@ -49,6 +50,7 @@ static void profile_label_update_cb(struct profile_label_state state) {
 ZMK_DISPLAY_WIDGET_LISTENER(widget_profile_label, struct profile_label_state,
                             profile_label_update_cb, get_state)
 ZMK_SUBSCRIPTION(widget_profile_label, zmk_ble_active_profile_changed);
+ZMK_SUBSCRIPTION(widget_profile_label, zmk_activity_state_changed);
 
 int zmk_widget_profile_label_init(struct zmk_widget_profile_label *widget, lv_obj_t *parent) {
     widget->obj = lv_label_create(parent);
