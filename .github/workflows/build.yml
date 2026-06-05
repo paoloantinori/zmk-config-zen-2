@@ -9,8 +9,94 @@ on:
       - config/corneish_zen.conf
       - config/boards/**
       - config/patches/**
+      - config/includes/**
       - build.yaml
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    runs-on: ubuntu-latest
+    container:
+      image: zmkfirmware/zmk-build-arm:stable
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - board: corneish_zen_left@2//zmk
+            half: left
+          - board: corneish_zen_right@2//zmk
+            half: right
+    name: Build (${{ matrix.half }})
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Create build directory
+        run: echo "build_dir=$(mktemp -d)" >> $GITHUB_ENV
+
+      - name: Cache west modules
+        uses: actions/cache@v5
+        continue-on-error: true
+        with:
+          path: |
+            modules/
+            tools/
+            zephyr/
+            bootloader/
+            zmk/
+          key: ${{ runner.os }}-zmk-${{ hashFiles('config/west.yml') }}
+          restore-keys: ${{ runner.os }}-zmk-
+
+      - name: West Init
+        run: west init -l config/
+
+      - name: West Update
+        run: west update --fetch-opt=--filter=tree:0
+
+      - name: West Zephyr Export
+        run: west zephyr-export
+
+      - name: Apply board patches
+        run: |
+          if [ -d config/patches ] && ls config/patches/* >/dev/null 2>&1; then
+            cp -rv config/patches/* zmk/app/boards/
+          fi
+
+      - name: Patch ble.c for BT_CLR event
+        run: |
+          if grep -q 'clear_profile_bond(active_profile);' zmk/app/src/ble.c; then
+            sed -i '/^void zmk_ble_clear_bonds/,/^};$/ {
+                /update_advertising();/ {
+                    N
+                    s/update_advertising();\n};/update_advertising();\n    raise_profile_changed_event();\n};/
+                }
+            }' zmk/app/src/ble.c
+            echo "Patched ble.c: BT_CLR now raises profile changed event directly"
+          fi
+
+      - name: West Build (${{ matrix.half }})
+        run: west build -s zmk/app -d "${{ env.build_dir }}" -b "${{ matrix.board }}" -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
+
+      - name: Rename artifacts
+        run: |
+          mkdir -p "${{ env.build_dir }}/artifacts"
+          if [ -f "${{ env.build_dir }}/zephyr/zmk.uf2" ]; then
+            cp "${{ env.build_dir }}/zephyr/zmk.uf2" "${{ env.build_dir }}/artifacts/corneish_zen_${{ matrix.half }}_zmk.uf2"
+          fi
+
+      - name: Upload firmware
+        uses: actions/upload-artifact@v7
+        with:
+          name: artifact-${{ matrix.half }}
+          path: ${{ env.build_dir }}/artifacts
+
+  merge:
+    runs-on: ubuntu-latest
+    needs: build
+    name: Merge Artifacts
+    steps:
+      - name: Merge firmware artifacts
+        uses: actions/upload-artifact/merge@v7
+        with:
+          name: firmware
+          pattern: artifact-*
+          delete-merged: true
