@@ -255,12 +255,6 @@
     combos {
         compatible = "zmk,combos";
 
-        caps_word {
-            bindings = <&caps_word>;
-            key-positions = <12 16>;
-            layers = <BASE>;
-            require-prior-idle-ms = <1000>;
-        };
 
         LOCK_keyboard {
             bindings = <&tog LOCK>;
@@ -373,11 +367,6 @@
             layers = <BASE>;
         };
 
-        apostrophe_2 {
-            bindings = <&kp GB_APOSTROPHE>;
-            key-positions = <16 17>;
-            layers = <BASE>;
-        };
 
         symb_layer {
             bindings = <&mo NAV>;
@@ -396,10 +385,10 @@
 
         smart_mouse_combo {
             bindings = <&smart_mouse MOUSE>;
-            key-positions = <1 9>;
+            key-positions = <13 16>;
             layers = <BASE>;
-            timeout-ms = <COMBO_TIMEOUT_MS>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <40>;
+            require-prior-idle-ms = <200>;
         };
 
     };
@@ -425,7 +414,7 @@
 //╭───────────────┬────────────────┬────────────────┬────────────────┬───────────────╮     ╭───────────────┬────────────────┬────────────────┬────────────────┬───────────────╮
         &kp GB_Q       &kp GB_W        &kp GB_E          &kp GB_R       &kp GB_T                &kp GB_Y       &kp GB_U          &kp GB_I        &kp GB_O         &kp GB_P
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
-        &kp GB_A    &hml LALT GB_S  &hml LSHIFT GB_D  &hml LCTRL GB_F    &kp GB_G           &hmr RCTRL GB_H  &hmr RSHFT GB_J  &hmr RALT GB_K       &kp GB_L       &kp ENTER
+        &kp GB_A    &hml LALT GB_S  &hml LSHIFT GB_D  &hml LCTRL GB_F    &kp GB_G           &hmr RCTRL GB_H  &hmr RSHFT GB_J  &hmr RALT GB_K       &kp GB_L       &lt MOUSE ENTER
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
     &mt LCTRL GB_Z      &kp GB_X        &kp GB_C         &kp GB_V        &kp GB_B               &kp GB_N       &kp GB_M        &kp GB_COMMA  &cap_after_period      &kp GB_SLASH
 //╰───────────────┴────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┴───────────────╯
@@ -470,7 +459,7 @@
 //╭───────────────┬────────────────┬────────────────┬────────────────┬───────────────╮     ╭───────────────┬────────────────┬────────────────┬────────────────┬───────────────╮
         &kp F1          &kp F2           &kp F3           &kp F4          &kp F5                 &kp F6         &kp F7            &kp F8           &kp F9          &kp F10
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
-     &kp C_MUTE     &kp C_VOL_DN      &kp C_VOL_UP    &kp C_BRI_DN     &kp C_BRI_UP    &hmr RCTRL GB_SPACE  &hmr RSHFT GB_SPACE  &hmr RALT GB_SPACE   XXXXX    &hmr ENTER F11
+     &kp C_MUTE     &kp C_VOL_DN      &kp C_VOL_UP    &kp C_BRI_DN     &kp C_BRI_UP    &hmr RCTRL GB_SPACE  &hmr RSHFT GB_SPACE  &hmr RALT GB_SPACE   &caps_word    &hmr ENTER F11
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
     &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4            &bootloader       &bt BT_CLR       &bt BT_PRV       &bt BT_NXT        &kp F12
 //╰───────────────┴────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┴───────────────╯
@@ -499,11 +488,11 @@
             label = "MOUSE";
             bindings = <
 //╭───────────────┬────────────────┬────────────────┬────────────────┬───────────────╮     ╭───────────────┬────────────────┬────────────────┬────────────────┬───────────────╮
-          ___            ___               ___               ___              ___             &msc SCRL_LEFT   &msc SCRL_DOWN    &mmv MOVE_UP      &msc SCRL_UP   &msc SCRL_RIGHT
+        XXXXX          &mkp MB5          &mkp MB4          &mkp RCLK        XXXXX             &msc SCRL_LEFT   &msc SCRL_DOWN    &mmv MOVE_UP      &msc SCRL_UP   &msc SCRL_RIGHT
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
-        &kp LCTRL      &kp LGUI          &kp LALT         &kp LSHFT          ___                   ___        &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT        ___
+        &kp LCTRL      &kp LGUI          &kp LALT         &kp LSHFT        XXXXX                   ___        &mmv MOVE_LEFT &mmv MOVE_DOWN  &mmv MOVE_RIGHT        ___
 //├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┼───────────────┤
-          ___            ___               ___               ___              ___                   ___          &mkp MB4        &mkp MCLK        &mkp MB5            ___
+        XXXXX          &mkp MCLK         &mkp LCLK          XXXXX           XXXXX                  ___          &mkp MB4        &mkp MCLK        &mkp MB5            ___
 //╰───────────────┴────────────────┼────────────────┼────────────────┼───────────────┤     ├───────────────┼────────────────┼────────────────┼────────────────┴───────────────╯
                                           ___               ___              ___                   ___          &mkp LCLK      &mkp RCLK
 //                                 ╰────────────────┴────────────────┴───────────────╯     ╰───────────────┴────────────────┴────────────────╯
