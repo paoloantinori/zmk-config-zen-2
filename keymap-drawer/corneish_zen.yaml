@@ -20,7 +20,7 @@ layers:
   - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
   - {t: K, h: AltGr}
   - L
-  - {t: '$$mdi:keyboard-return$$', type: enter}
+  - {t: '$$mdi:keyboard-return$$', h: MOUSE}
   - {t: Z, h: Ctrl}
   - X
   - C
@@ -130,7 +130,7 @@ layers:
   - {t: '$$mdi:keyboard-space$$', h: Ctrl}
   - {t: '$$mdi:keyboard-space$$', h: '$$mdi:apple-keyboard-shift$$'}
   - {t: '$$mdi:keyboard-space$$', h: AltGr}
-  - ''
+  - '&caps_word'
   - {t: F11, h: '$$mdi:keyboard-return$$'}
   - {t: '$$mdi:bluetooth-connect$$', h: '1'}
   - {t: '$$mdi:bluetooth-connect$$', h: '2'}
@@ -186,11 +186,11 @@ layers:
   - {t: '$$mdi:chevron-down$$', type: trans}
   - ''
   MOUSE:
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
+  - ''
+  - {t: '$$mdi:mouse$$', h: '2'}
+  - {t: '$$mdi:mouse$$', h: '1'}
+  - {t: '$$mdi:mouse$$', h: R}
+  - ''
   - {t: '$$mdi:mouse$$', h: scroll left}
   - $$mdi:mouse-move-down$$
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-up-bold$$'}
@@ -200,17 +200,17 @@ layers:
   - {t: '$$mdi:monitor-dashboard$$', h: Meta, type: info}
   - Alt
   - $$mdi:apple-keyboard-shift$$
-  - {t: '$$mdi:chevron-down$$', type: trans}
+  - ''
   - {t: '$$mdi:chevron-down$$', type: trans}
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-left-bold$$'}
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-down-bold$$'}
   - {t: '$$mdi:mouse$$', h: '$$mdi:arrow-right-bold$$'}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
-  - {t: '$$mdi:chevron-down$$', type: trans}
+  - {type: held}
+  - ''
+  - {t: '$$mdi:mouse$$', h: M}
+  - {t: '$$mdi:mouse$$', h: L}
+  - ''
+  - ''
   - {t: '$$mdi:chevron-down$$', type: trans}
   - {t: '$$mdi:mouse$$', h: '1'}
   - {t: '$$mdi:mouse$$', h: M}
@@ -262,9 +262,6 @@ layers:
   - {t: '$$mdi:chevron-down$$', type: trans}
   - {t: '$$mdi:chevron-down$$', type: trans}
 combos:
-- p: [12, 16]
-  k: CAPS WORD
-  l: [BASE]
 - p: [0, 9, 32, 33]
   k: {t: '$$mdi:lock-open-outline$$', h: Toggle}
 - p: [12, 13]
@@ -310,15 +307,12 @@ combos:
 - p: [19, 18]
   k: ''''
   l: [BASE]
-- p: [16, 17]
-  k: ''''
-  l: [BASE]
 - p: [33, 34]
   k: NAV
   l: [BASE]
 - p: [34, 35]
   k: '&num_word 2'
   l: [BASE]
-- p: [1, 9]
+- p: [13, 16]
   k: '&smart_mouse 5'
   l: [BASE]

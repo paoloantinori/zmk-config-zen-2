@@ -439,10 +439,12 @@ path.combo {
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
 <text x="0" y="0" class="key tap">L</text>
 </g>
-<g transform="translate(1000, 150)" class="key enter keypos-19">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key enter"/>
-<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-13" y="-13" height="26" width="26.0" class="key enter tap glyph mdi:keyboard-return"/>
-</g>
+<g transform="translate(1000, 150)" class="key keypos-19">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
+<use href="#mdi:keyboard-return" xlink:href="#mdi:keyboard-return" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:keyboard-return"/>
+<a href="#MOUSE">
+<text x="0" y="35" class="key hold layer-activator">MOUSE</text>
+</a></g>
 <g transform="translate(40, 230)" class="key keypos-20">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
 <text x="0" y="0" class="key tap">Z</text>
@@ -519,14 +521,6 @@ path.combo {
 <text x="0" y="0" class="key tap layer-activator">FUNC</text>
 </a></g>
 <g class="combo combopos-0">
-<path d="M480,125 l-253,-5" class="combo"/>
-<path d="M480,125 l253,5" class="combo"/>
-<rect rx="4" ry="4" x="459" y="104" width="42" height="42" class="combo"/>
-<text x="480" y="125" class="combo tap">
-<tspan x="480" dy="-0.5em">CAPS</tspan><tspan x="480" dy="1.0em">WORD</tspan>
-</text>
-</g>
-<g class="combo combopos-1">
 <path d="M520,195 l-454,-118" class="combo"/>
 <path d="M520,195 l454,-118" class="combo"/>
 <path d="M520,195 l-82,104" class="combo"/>
@@ -535,29 +529,29 @@ path.combo {
 <use href="#mdi:lock-open-outline" xlink:href="#mdi:lock-open-outline" x="507" y="182" height="26" width="26.0" class="combo tap glyph mdi:lock-open-outline"/>
 <text x="520" y="212" class="combo hold"><tspan style="font-size: 83%">Toggle</tspan></text>
 </g>
-<g class="combo combopos-2">
+<g class="combo combopos-1">
 <path d="M240,68 h-34 a6.0,6.0 0 0 0 -6.0,6.0 v20" class="combo"/>
 <path d="M240,68 h34 a6.0,6.0 0 0 1 6.0,6.0 v30" class="combo"/>
 <rect rx="4" ry="4" x="219" y="46" width="42" height="42" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="227" y="54" height="26" width="26.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-3">
+<g class="combo combopos-2">
 <rect rx="4" ry="4" x="19" y="89" width="42" height="42" class="combo"/>
 <text x="40" y="110" class="combo tap">`</text>
 </g>
-<g class="combo combopos-4">
+<g class="combo combopos-3">
 <rect rx="4" ry="4" x="59" y="39" width="42" height="42" class="combo"/>
 <use href="#mdi:keyboard-esc" xlink:href="#mdi:keyboard-esc" x="67" y="47" height="26" width="26.0" class="combo tap glyph mdi:keyboard-esc"/>
 </g>
-<g class="combo combopos-5">
+<g class="combo combopos-4">
 <rect rx="4" ry="4" x="139" y="24" width="42" height="42" class="combo"/>
 <use href="#mdi:keyboard-tab" xlink:href="#mdi:keyboard-tab" x="147" y="32" height="26" width="26.0" class="combo tap glyph mdi:keyboard-tab"/>
 </g>
-<g class="combo combopos-6">
+<g class="combo combopos-5">
 <rect rx="4" ry="4" x="263" y="278" width="42" height="42" class="combo"/>
 <use href="#mdi:microsoft-windows" xlink:href="#mdi:microsoft-windows" x="271" y="286" height="26" width="26.0" class="combo tap glyph mdi:microsoft-windows"/>
 </g>
-<g class="combo combopos-7">
+<g class="combo combopos-6">
 <path d="M520,293 l-253,0" class="combo"/>
 <path d="M520,293 l253,0" class="combo"/>
 <rect rx="4" ry="4" x="499" y="272" width="42" height="42" class="combo"/>
@@ -565,47 +559,43 @@ path.combo {
 <text x="520" y="293" class="combo tap layer-activator"><tspan style="font-size: 83%">VERIFY</tspan></text>
 </a><text x="520" y="310" class="combo hold"><tspan style="font-size: 83%">toggle</tspan></text>
 </g>
-<g class="combo backspace combopos-8">
+<g class="combo backspace combopos-7">
 <rect rx="4" ry="4" x="939" y="39" width="42" height="42" class="combo backspace"/>
 <use href="#mdi:backspace" xlink:href="#mdi:backspace" x="947" y="47" height="26" width="26.0" class="combo backspace tap glyph mdi:backspace"/>
 </g>
-<g class="combo combopos-9">
+<g class="combo combopos-8">
 <rect rx="4" ry="4" x="859" y="104" width="42" height="42" class="combo"/>
 <text x="880" y="125" class="combo tap">-</text>
 </g>
-<g class="combo combopos-10">
+<g class="combo combopos-9">
 <rect rx="4" ry="4" x="979" y="89" width="42" height="42" class="combo"/>
 <use href="#mdi:backspace-reverse-outline" xlink:href="#mdi:backspace-reverse-outline" x="987" y="97" height="26" width="26.0" class="combo tap glyph mdi:backspace-reverse-outline"/>
 </g>
-<g class="combo combopos-11">
+<g class="combo combopos-10">
 <rect rx="4" ry="4" x="939" y="199" width="42" height="42" class="combo"/>
 <text x="960" y="220" class="combo tap">?</text>
 </g>
-<g class="combo combopos-12">
+<g class="combo combopos-11">
 <rect rx="4" ry="4" x="939" y="119" width="42" height="42" class="combo"/>
 <text x="960" y="140" class="combo tap">&#x27;</text>
 </g>
-<g class="combo combopos-13">
-<rect rx="4" ry="4" x="779" y="104" width="42" height="42" class="combo"/>
-<text x="800" y="125" class="combo tap">&#x27;</text>
-</g>
-<g class="combo combopos-14">
+<g class="combo combopos-12">
 <rect rx="4" ry="4" x="644" y="291" width="42" height="42" class="combo"/>
 <a href="#NAV">
 <text x="665" y="312" class="combo tap layer-activator">NAV</text>
 </a></g>
-<g class="combo combopos-15">
+<g class="combo combopos-13">
 <rect rx="4" ry="4" x="735" y="278" width="42" height="42" class="combo"/>
 <text x="756" y="299" class="combo tap">
 <tspan x="756" dy="-0.5em" style="font-size: 62%">&amp;num_wo…</tspan><tspan x="756" dy="1.0em" style="font-size: 62%">2</tspan>
 </text>
 </g>
-<g class="combo combopos-16">
-<path d="M560,60 l-413,-9" class="combo"/>
-<path d="M560,60 l413,9" class="combo"/>
-<rect rx="4" ry="4" x="539" y="39" width="42" height="42" class="combo"/>
-<text x="560" y="60" class="combo tap">
-<tspan x="560" dy="-0.5em" style="font-size: 62%">&amp;smart_…</tspan><tspan x="560" dy="1.0em" style="font-size: 62%">5</tspan>
+<g class="combo combopos-14">
+<path d="M520,130 l-213,0" class="combo"/>
+<path d="M520,130 l213,0" class="combo"/>
+<rect rx="4" ry="4" x="499" y="109" width="42" height="42" class="combo"/>
+<text x="520" y="130" class="combo tap">
+<tspan x="520" dy="-0.5em" style="font-size: 62%">&amp;smart_…</tspan><tspan x="520" dy="1.0em" style="font-size: 62%">5</tspan>
 </text>
 </g>
 </g>
@@ -1051,6 +1041,7 @@ path.combo {
 </g>
 <g transform="translate(920, 130)" class="key keypos-18">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 62%">&amp;caps_w…</tspan></text>
 </g>
 <g transform="translate(1000, 150)" class="key keypos-19">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
@@ -1333,25 +1324,26 @@ path.combo {
 <g transform="translate(0, 1962)" class="layer-MOUSE">
 <text x="0" y="0" class="label" id="MOUSE">MOUSE</text>
 <g transform="translate(0, 0)">
-<g transform="translate(40, 70)" class="key trans keypos-0">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(40, 70)" class="key keypos-0">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
 </g>
-<g transform="translate(120, 50)" class="key trans keypos-1">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(120, 50)" class="key keypos-1">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
+<use href="#mdi:mouse" xlink:href="#mdi:mouse" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse"/>
+<text x="0" y="35" class="key hold">2</text>
 </g>
-<g transform="translate(200, 40)" class="key trans keypos-2">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(200, 40)" class="key keypos-2">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
+<use href="#mdi:mouse" xlink:href="#mdi:mouse" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse"/>
+<text x="0" y="35" class="key hold">1</text>
 </g>
-<g transform="translate(280, 50)" class="key trans keypos-3">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(280, 50)" class="key keypos-3">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
+<use href="#mdi:mouse" xlink:href="#mdi:mouse" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse"/>
+<text x="0" y="35" class="key hold">R</text>
 </g>
-<g transform="translate(360, 60)" class="key trans keypos-4">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(360, 60)" class="key keypos-4">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
 </g>
 <g transform="translate(680, 60)" class="key keypos-5">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
@@ -1393,9 +1385,8 @@ path.combo {
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
 <use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:apple-keyboard-shift"/>
 </g>
-<g transform="translate(360, 140)" class="key trans keypos-14">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(360, 140)" class="key keypos-14">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
 </g>
 <g transform="translate(680, 140)" class="key trans keypos-15">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
@@ -1416,29 +1407,27 @@ path.combo {
 <use href="#mdi:mouse" xlink:href="#mdi:mouse" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse"/>
 <use href="#mdi:arrow-right-bold" xlink:href="#mdi:arrow-right-bold" x="-9" y="17" height="18" width="18.0" class="key hold glyph mdi:arrow-right-bold"/>
 </g>
-<g transform="translate(1000, 150)" class="key trans keypos-19">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(1000, 150)" class="key held keypos-19">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key held"/>
 </g>
-<g transform="translate(40, 230)" class="key trans keypos-20">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(40, 230)" class="key keypos-20">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
 </g>
-<g transform="translate(120, 210)" class="key trans keypos-21">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(120, 210)" class="key keypos-21">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
+<use href="#mdi:mouse" xlink:href="#mdi:mouse" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse"/>
+<text x="0" y="35" class="key hold">M</text>
 </g>
-<g transform="translate(200, 200)" class="key trans keypos-22">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(200, 200)" class="key keypos-22">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
+<use href="#mdi:mouse" xlink:href="#mdi:mouse" x="-13" y="-13" height="26" width="26.0" class="key tap glyph mdi:mouse"/>
+<text x="0" y="35" class="key hold">L</text>
 </g>
-<g transform="translate(280, 210)" class="key trans keypos-23">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(280, 210)" class="key keypos-23">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
 </g>
-<g transform="translate(360, 220)" class="key trans keypos-24">
-<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
-<use href="#mdi:chevron-down" xlink:href="#mdi:chevron-down" x="-13" y="-13" height="26" width="26.0" class="key trans tap glyph mdi:chevron-down"/>
+<g transform="translate(360, 220)" class="key keypos-24">
+<rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key"/>
 </g>
 <g transform="translate(680, 220)" class="key trans keypos-25">
 <rect rx="4" ry="4" x="-39" y="-39" width="78" height="78" class="key trans"/>
